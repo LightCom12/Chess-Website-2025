@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Chess Gurus</title>
+        <link rel="icon" type="image/png" href="./images/Guru.png">
+        <style>
+
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+                font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            }
+
+            .AboutUs {
+                margin-left: 175px;
+            }
+
+            .OurMission {
+                left: 90px;
+            }
+
+            .OurImpact {
+                left: 120px;
+            }
+
+            .Lessons {
+                left: 150px;
+            }
+
+            .ContactUs {
+                left: 180px;
+            }
+
+            nav {
+                height: 80px;
+                background: gray;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0rem calc ((100vw - 1300px) / 2);
+            }
+
+            nav a {
+                color: black;
+                text-decoration: none;
+                padding: 0 1.5rem;
+                font-weight: bold;
+            }
+
+            
+            nav a:hover {
+                text-decoration: underline;
+                text-underline-offset: 4px;
+                text-decoration-thickness: 1.25px;
+            }
+
+            nav a:active {
+                text-decoration: underline;
+                text-underline-offset: 4px;
+                text-decoration-thickness: 1.25px;
+            }
+
+            .logo img {
+                border-radius: 80px;
+                width: 50px;
+                margin-left: 50px;
+            }
+
+            .logo span {
+                color: black;
+                font-size: 25px;
+                font-weight: bold;
+                font-style: normal;
+                padding: 0 2rem;
+            }
+
+            .logo {
+                display: flex;
+                align-items: center;
+            }
+
+            .dropdown {
+                position: relative
+            }
+
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #f1f1f1;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1;
+            }
+
+            .dropdown-content a {
+                color: white;
+                font-weight: bold;
+                padding: 13px 17px;
+                display: block;
+            }
+
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+
+            .dropdown-content a:hover {
+                background-color: gray;
+            }
+
+        </style>
+    </head>
+    <body style="background-color: rgb(226, 223, 223);">
+        <nav>
+            <div class="logo">
+                <img src="images/Guru.png" alt="GuruLogo">
+                <span>The Chess Gurus</span>
+            </div>
+            <div class="nav-items">
+                <div class="dropdown">
+                    <a href="#" class="dropbtn">About Us</a>
+                    <div class="dropdown-content">
+                        <a href="OurFounders.html">Our Founders</a>
+                        <a href="OurCoaches.html">Our Coaches</a>
+                    </div>
+                </div>
+                <a href="OurMission.html">Our Mission</a>
+                <a href="OurImpact.html">Our Impact</a>
+                <a href="Lessons.html">Lessons</a>
+                <a href="ContactUs.html">Contact Us</a>
+        </div>
+    </nav>
+</body>
+</html>

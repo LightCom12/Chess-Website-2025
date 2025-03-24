@@ -1,0 +1,101 @@
+<html>
+    <header class="mainheader">
+        <div class="header-container">
+            <div class="logo-container">
+                <img class="gurulogo" src="images/Guru.png" alt="Guru Logo">
+                <span>THE CHESS GURUS</span>
+            </div>
+        </div>
+    </header>
+    <nav class="menu">
+        <a href="AboutUs.html">
+            <button type="button" class="AboutUs">About Us</button>
+        </a>
+        <a href="OurMission.html">
+            <button type="button" class="OurMission">Our Mission</button>
+        </a>
+        <a href="OurImpact.html">
+            <button type="button" class="OurImpact">Our Impact</button>
+        </a>
+        <a href="Lessons.html">
+            <button type="button" class="Lessons">Lessons</button>
+        </a>
+        <a href="ContactUs.html">
+            <button type="button" class="ContactUs">Contact Us</button>
+        </a>
+    </nav>
+
+    <style>
+        .gurulogo {
+            border-radius: 50px;
+            width: 50px;
+            margin-right: 10px;
+        }
+
+        .mainheader {
+            font-size: 30px;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .header-container .mainheader {
+            margin-right: 0;
+        }
+
+
+        .OurMission, .AboutUs, .OurImpact, .Lessons, .ContactUs {
+            background-color: transparent;
+            color: black;
+            height: 45px;
+            width: 110px;
+            font-weight: bold;
+            font-size: 15px;
+            cursor: pointer;
+            border: none;
+            border-radius: 7px;
+            position: relative;
+            line-height: 45px;
+            text-align: center;
+        }
+
+        .OurMission:hover, .AboutUs:hover, .OurImpact:hover, .Lessons:hover, .ContactUs:hover {
+            text-decoration: underline;
+            text-underline-offset: 4px;
+            text-decoration-thickness: 1.25px;
+        }
+
+        .OurMission:active, .AboutUs:active, .OurImpact:active, .Lessons:active, .ContactUs:active {
+            text-decoration: underline;
+            text-underline-offset: 4px;
+            text-decoration-thickness: 1.25px;
+        }
+
+        .AboutUs {
+            margin-left: 500px;
+        }
+
+        .OurMission {
+            left: 90px;
+        }
+
+        .OurImpact {
+            left: 120px;
+        }
+
+        .Lessons {
+            left: 150px;
+        }
+
+        .ContactUs {
+            left: 180px;
+        }
+
+    </style>
+</html>

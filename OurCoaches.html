@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Coaches - The Chess Gurus</title>
+    <link rel="icon" type="image/png" href="./images/Guru.png">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        .CoachesHeader {
+            font-size: 25px;
+            margin-top: 50px;
+            text-align: center;
+            padding-bottom: 10px;
+        }
+        .main-container {
+            display: flex;
+            align-items: center;
+            background-color: white;
+            max-width: 1500px;
+            height: 80vw;
+            max-height: 1500px;
+            width: 60vw;
+            border-radius: 35px;
+            padding: 20px;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            width: 100%;
+            justify-content: flex-start;
+        }
+        .profile {
+            flex: 1 1 calc(33.33% - 40px);
+            max-width: 287px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .profile img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: top;
+            margin-bottom: 20px;
+        }
+        .profile h2 {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+        .profile h3 {
+            font-size: 18px;
+            margin-top: 0;
+        }
+        .profile h4 {
+            font-size: 16px;
+            margin-top: 5px;
+            margin-bottom: 20px;
+        }
+        .profile p {
+            font-size: 15px;
+            line-height: 1.5;
+            text-align: left;
+        }
+    </style>
+</head>
+<body style="background-color: rgb(226, 223, 223);">
+    <div id="header-placeholder"></div>
+    <script src="loadingHeader.js"></script>
+    <header class="CoachesHeader">
+        Coaches
+    </header>
+    <div class="container">
+        <div class="profile">
+            <img src="images/Kasyap.jpg" alt="Kasyap">
+            <h2>Kasyap Avancha</h2>
+            <h3>Coach</h3>
+            <h4>ACP Chess Varsity Player</h4>
+            <p>Kasyap has over 8 years of experience in coaching chess at various levels. He has a deep understanding of game strategies and has successfully trained players to compete in national tournaments.</p>
+        </div>
+        <div class="profile">
+            <img src="images/Coach2.png" alt="Ronak">
+            <h2>Ronak Potnis</h2>
+            <h3>Lead Coach</h3>
+            <h4>ACP Chess Player</h4>
+            <p>Ronak is an expert in endgame strategies and has played competitive chess for over 10 years. His unique insights help players refine their closing tactics and secure wins in critical matches.</p>
+        </div>
+    </div>
+</body>
+</html>
