@@ -136,44 +136,51 @@
     </style>
 </head>
 <body>
-    <div id="header-placeholder"></div>
-    <script>
-        document.getElementById("header-placeholder").innerHTML = `
-        <nav>
-            <div class="logo">
-                <img src="images/chessguru.webp" alt="GuruLogo">
-                <span>The Chess Gurus</span>
-            </div>
+    <nav>
+        <div class="logo">
+            <img src="images/chessguru.webp" alt="GuruLogo">
+            <span>The Chess Gurus</span>
+        </div>
 
-            <div class="hamburger" onclick="toggleMenu()">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
 
-            <div class="nav-items" id="nav-items">
-                <div class="dropdown" onclick="toggleDropdown(this)">
-                    <a href="OurFounders.html" class="dropbtn">About Us</a>
-                    <div class="dropdown-content">
-                        <a href="OurFounders.html">Our Founders</a>
-                        <a href="OurCoaches.html">Our Coaches</a>
-                    </div>
+        <div class="nav-items" id="nav-items">
+            <div class="dropdown">
+                <a href="javascript:void(0);" onclick="toggleDropdown()">About Us ▾</a>
+                <div class="dropdown-content" id="dropdown-content">
+                    <a href="OurFounders.html">Our Founders</a>
+                    <a href="OurCoaches.html">Our Coaches</a>
                 </div>
-                <a href="OurMission.html">Our Mission</a>
-                <a href="OurImpact.html">Our Impact</a>
-                <a href="Lessons.html">Lessons</a>
-                <a href="ContactUs.html">Contact Us</a>
             </div>
-        </nav>`;
+            <a href="OurMission.html">Our Mission</a>
+            <a href="OurImpact.html">Our Impact</a>
+            <a href="Lessons.html">Lessons</a>
+            <a href="ContactUs.html">Contact Us</a>
+        </div>
+    </nav>
 
+    <script>
         function toggleMenu() {
-            const navItems = document.getElementById('nav-items');
-            navItems.classList.toggle('active');
+            const nav = document.getElementById('nav-items');
+            nav.classList.toggle('active');
         }
 
-        function toggleDropdown(dropdown) {
+        function toggleDropdown() {
+            const dropdown = document.getElementById('dropdown-content');
             dropdown.classList.toggle('open');
         }
+
+        // Optional: Close dropdown if clicked outside
+        window.addEventListener('click', function (e) {
+            const dropdown = document.getElementById('dropdown-content');
+            if (!e.target.matches('.dropdown > a')) {
+                dropdown.classList.remove('open');
+            }
+        });
     </script>
 
     <div class="lesson-info">
