@@ -4,32 +4,11 @@
         <title>Chess Gurus</title>
         <link rel="icon" type="image/png" href="./images/chessguru.webp">
         <style>
-
             * {
                 box-sizing: border-box;
                 margin: 0;
                 padding: 0;
-                font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-            }
-
-            .OurFounders {
-                margin-left: 175px;
-            }
-
-            .OurMission {
-                left: 90px;
-            }
-
-            .OurImpact {
-                left: 120px;
-            }
-
-            .Lessons {
-                left: 150px;
-            }
-
-            .ContactUs {
-                left: 180px;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
             }
 
             nav {
@@ -38,11 +17,11 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                padding: 0rem calc ((100vw - 1300px) / 2);
-                position: fixed; /* Added fixed positioning */
-                top: 0; /* Ensures it stays at the top */
-                width: 100%; /* Ensures it spans the full width */
-                z-index: 1000; /* Ensures it stays above other elements */
+                padding: 0rem calc((100vw - 1300px) / 2);
+                position: fixed;
+                top: 0;
+                width: 100%;
+                z-index: 1000;
             }
 
             nav a {
@@ -52,13 +31,7 @@
                 font-weight: bold;
             }
 
-            
-            nav a:hover {
-                text-decoration: underline;
-                text-underline-offset: 4px;
-                text-decoration-thickness: 1.25px;
-            }
-
+            nav a:hover,
             nav a:active {
                 text-decoration: underline;
                 text-underline-offset: 4px;
@@ -75,7 +48,6 @@
                 color: black;
                 font-size: 25px;
                 font-weight: bold;
-                font-style: normal;
                 padding: 0 2rem;
             }
 
@@ -85,7 +57,7 @@
             }
 
             .dropdown {
-                position: relative
+                position: relative;
             }
 
             .dropdown-content {
@@ -93,7 +65,7 @@
                 position: absolute;
                 background-color: black;
                 min-width: 160px;
-                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
                 z-index: 1;
             }
 
@@ -113,27 +85,33 @@
             }
 
             body {
-                background-color: rgba(226, 223, 223, 0.8); /* Slightly transparent */
-                backdrop-filter: blur(5px); /* Adds blur effect */
-                padding-top: 80px; /* Prevents content from overlapping the navbar */
+                background-color: rgba(226, 223, 223, 0.8);
+                backdrop-filter: blur(5px);
+                padding-top: 80px;
             }
 
             .nav-items {
                 display: flex;
                 align-items: center;
-                gap: 20px; /* Adjusted gap to 20px */
+                gap: 20px;
             }
-
         </style>
     </head>
     <body>
         <nav>
             <div class="logo">
-                <img src="images/chessguru.webp" alt="GuruLogo"> <!-- Updated image -->
+                <img src="images/chessguru.webp" alt="GuruLogo">
                 <span>The Chess Gurus</span>
             </div>
-            <div class="nav-items">
-                <div class="dropdown">
+
+            <div class="hamburger" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+
+            <div class="nav-items" id="nav-items">
+                <div class="dropdown" onclick="toggleDropdown(this)">
                     <a href="OurFounders.html" class="dropbtn">About Us</a>
                     <div class="dropdown-content">
                         <a href="OurFounders.html">Our Founders</a>
@@ -144,9 +122,17 @@
                 <a href="OurImpact.html">Our Impact</a>
                 <a href="Lessons.html">Lessons</a>
                 <a href="ContactUs.html">Contact Us</a>
-        </div>
-
+            </div>
         </nav>
+        <script>
+            function toggleMenu() {
+                const navItems = document.getElementById('nav-items');
+                navItems.classList.toggle('active');
+            }
 
+            function toggleDropdown(dropdown) {
+                dropdown.classList.toggle('open');
+            }
+        </script>
     </body>
 </html>

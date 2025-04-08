@@ -8,8 +8,9 @@
                 box-sizing: border-box;
                 margin: 0;
                 padding: 0;
-                font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
             }
+
             .AboutUsHeader {
                 font-size: 35px;
                 margin-top: 50px;
@@ -17,85 +18,86 @@
                 padding-bottom: 10px;
             }
 
-            .AboutUsParagraph1{
+            .AboutUsParagraph1 {
                 font-size: 35px;
                 text-align: center;
                 margin: 20px auto;
                 line-height: 1.75;
                 padding-bottom: 20px;
             }
-        .main-container {
-            display: flex;
-            align-items: center;
-            background-color: white;
-            max-width: 1500px;
-            height: 80vw;
-            max-height: 1500px;
-            width: 60vw;
-            border-radius: 35px;
-            padding: 20px;
-        }
 
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            width: 100%;
-            justify-content: center;
-        }
+            .container {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+                width: 100%;
+                justify-content: center;
+            }
 
-        .profile {
-            flex: 1 1 calc(33.33% - 40px);
-            max-width: 287px;
-            padding: 20px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
+            .profile {
+                flex: 1 1 calc(33.33% - 40px);
+                max-width: 287px;
+                padding: 20px;
+                background-color: white;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                text-align: center;
+            }
 
             .profile img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 20px;
-        }
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+                object-fit: cover;
+                margin-bottom: 20px;
+            }
 
-        .profile h2 {
-            font-size: 24px;
-            margin-bottom: 5px;
-        }
+            .profile h2 {
+                font-size: 24px;
+                margin-bottom: 5px;
+            }
 
-        .profile h3 {
-            font-size: 18px;
-            margin-top: 0;
-        }
+            .profile h3 {
+                font-size: 18px;
+                margin-top: 0;
+            }
 
-        .profile h4 {
-            font-size: 16px;
-            margin-top: 5px;
-            margin-bottom: 20px;
-        }
+            .profile h4 {
+                font-size: 16px;
+                margin-top: 5px;
+                margin-bottom: 20px;
+            }
 
-        .profile p {
-            font-size: 15px;
-            line-height: 1.5;
-            text-align: center;
-        }
+            .profile p {
+                font-size: 15px;
+                line-height: 1.5;
+                text-align: center;
+            }
+
+            body {
+                background-color: rgb(226, 223, 223);
+                padding-top: 80px;
+            }
         </style>
     </head>
-    <body style="background-color: rgb(226, 223, 223); padding-top: 80px;">
+    <body>
         <div id="header-placeholder"></div>
         <script>
             document.getElementById("header-placeholder").innerHTML = `
-            <nav style="position: fixed; top: 0; width: 100%; z-index: 1000; background: gray;"> <!-- Added fixed positioning -->
+            <nav>
                 <div class="logo">
-                    <img src="images/chessguru.webp" alt="GuruLogo"> <!-- Updated image -->
+                    <img src="images/chessguru.webp" alt="GuruLogo">
                     <span>The Chess Gurus</span>
                 </div>
-                <div class="nav-items" style="gap: 20px;"> <!-- Adjusted gap to 20px -->
-                    <div class="dropdown">
+
+                <div class="hamburger" onclick="toggleMenu()">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+
+                <div class="nav-items" id="nav-items">
+                    <div class="dropdown" onclick="toggleDropdown(this)">
                         <a href="OurFounders.html" class="dropbtn">About Us</a>
                         <div class="dropdown-content">
                             <a href="OurFounders.html">Our Founders</a>
@@ -109,52 +111,64 @@
                 </div>
             </nav>`;
         </script>
+        <script>
+            function toggleMenu() {
+                const navItems = document.getElementById('nav-items');
+                navItems.classList.toggle('active');
+            }
+
+            function toggleDropdown(dropdown) {
+                dropdown.classList.toggle('open');
+            }
+        </script>
+
         <header class="AboutUsHeader">
             About Us
         </header>
-    <div class="container">
-        <div class="profile">
-            <img src="images/Amudan.png" alt="Amudan Mangudi">
-            <h2>Amudan Mangudi</h2>
-            <h3>Co-Founder</h3>
-            <h4>Project Manager</h4>
-            <h4>USCF Candidate Master</h4>
-            <p>
-                As a multiple-time state champion and the 2nd board of the ACP High School chess team, Amudan Mangudi is a chess expert currently ranked within the top 50 chess players in Arizona. He has enthusiastically participated in various chess tournaments for 10 years and boasts a rating of over 2000. Furthermore, he represented Arizona College Prep High School during the 2023 and 2024 K-12 National High School Championships, contributing to both a 5th and 9th place team finish. In addition, Amudan is the current president of ACP's Chess Club and has extensive experience volunteering to teach chess to kids through different non-profit organizations. He is devoted to serving and inspiring the Arizona community while creating a lasting impact through the Chess Gurus Organization.  </p>
-        </div>
+        <div class="container">
+            <div class="profile">
+                <img src="images/Amudan.png" alt="Amudan Mangudi">
+                <h2>Amudan Mangudi</h2>
+                <h3>Co-Founder</h3>
+                <h4>Project Manager</h4>
+                <h4>USCF Candidate Master</h4>
+                <p>
+                    As a multiple-time state champion and the 2nd board of the ACP High School chess team, Amudan Mangudi is a chess expert currently ranked within the top 50 chess players in Arizona. He has enthusiastically participated in various chess tournaments for 10 years and boasts a rating of over 2000. Furthermore, he represented Arizona College Prep High School during the 2023 and 2024 K-12 National High School Championships, contributing to both a 5th and 9th place team finish. In addition, Amudan is the current president of ACP's Chess Club and has extensive experience volunteering to teach chess to kids through different non-profit organizations. He is devoted to serving and inspiring the Arizona community while creating a lasting impact through the Chess Gurus Organization.
+                </p>
+            </div>
 
-        <div class="profile">
-            <img src="images/SamikM.jpg" alt="Samik Mathur">
-            <h2>Samik Mathur</h2>
-            <h3>Co-Founder</h3>
-            <h4>Chief Financial Officer</h4>
-            <p>Samik was a Co-founder of The Chess Gurus in early 2024. Being one of the top JV players in Arizona, he has a driving passion to share his skills with aspiring chess players. Samik has placed first at JV tournaments over his chess career, and consistently ranks in the top 3. As the AZ Chess Guru's Chief Financial Officer and Outreach Lead, Samik will be helping to manage finances and connect with other organizations. </p>
-        </div>
-        <div class="profile">
-            <img src="images/Kapil.jpg" alt="Kapil Inguva">
-            <h2>Kapil Inguva</h2>
-            <h3>Co-Founder</h3>
-            <h4>CIO/CTO/Coach</h4>
-            <p>As a JV state finalist, Kapil has had a driving passion towards chess for over 4 years. In 2022, he has represented Arizona's JV Chess Team, placing 7th regionally and at States. Furthermore, Kapil has represented Arizona College Prep High School at the 2024 K-12 National High School Championships placing in the top percentiles as a new player. He has also won awards in many local/regional tournaments showcasing his newfound dedication towards chess. He is currently the secretary of ACP High School's chess club and intends to serve the Arizona community through creating a meaningful impact on his peers. </p>
-        </div>
-        <div class="profile">
-            <img src="images/lee.png" alt="Jayden Lee">
-            <h2>Jayden Lee</h2>
-            <h3>Co-Founder</h3>
-            <h4>Head Coach (USCF National Master)</h4>
-            <p>National Master Jayden Lee is the team captain for the (nationally placing) ACP-HS chess team as well as the reigning AIA Champion, multiple-time state champion, and ranked 9th in the state of Arizona for chess.
+            <div class="profile">
+                <img src="images/SamikM.jpg" alt="Samik Mathur">
+                <h2>Samik Mathur</h2>
+                <h3>Co-Founder</h3>
+                <h4>Chief Financial Officer</h4>
+                <p>
+                    Samik was a Co-founder of The Chess Gurus in early 2024. Being one of the top JV players in Arizona, he has a driving passion to share his skills with aspiring chess players. Samik has placed first at JV tournaments over his chess career, and consistently ranks in the top 3. As the AZ Chess Guru's Chief Financial Officer and Outreach Lead, Samik will be helping to manage finances and connect with other organizations.
+                </p>
+            </div>
+            <div class="profile">
+                <img src="images/Kapil.jpg" alt="Kapil Inguva">
+                <h2>Kapil Inguva</h2>
+                <h3>Co-Founder</h3>
+                <h4>CIO/CTO/Coach</h4>
+                <p>
+                    As a JV state finalist, Kapil has had a driving passion towards chess for over 4 years. In 2022, he has represented Arizona's JV Chess Team, placing 7th regionally and at States. Furthermore, Kapil has represented Arizona College Prep High School at the 2024 K-12 National High School Championships placing in the top percentiles as a new player. He has also won awards in many local/regional tournaments showcasing his newfound dedication towards chess. He is currently the secretary of ACP High School's chess club and intends to serve the Arizona community through creating a meaningful impact on his peers.
+                </p>
+            </div>
+            <div class="profile">
+                <img src="images/lee.png" alt="Jayden Lee">
+                <h2>Jayden Lee</h2>
+                <h3>Co-Founder</h3>
+                <h4>Head Coach (USCF National Master)</h4>
+                <p>
+                    National Master Jayden Lee is the team captain for the (nationally placing) ACP-HS chess team as well as the reigning AIA Champion, multiple-time state champion, and ranked 9th in the state of Arizona for chess.
 
-                From a young age, Jayden's passion for chess was exhibited through his determination and competitive nature which translated into representing USA at the World Cadet Chess Championship in Spain, representing Arizona at the 2022 Barber Championship of Middle School State Champions, 2023 Denker Championship of High School State Champions, acquiring the National Master title, and representing Arizona College Prep High School in the 2023 and 2024 K-12 National High School Championships held in Washington D.C and Baltimore, Maryland respectively. </p>
+                    From a young age, Jayden's passion for chess was exhibited through his determination and competitive nature which translated into representing USA at the World Cadet Chess Championship in Spain, representing Arizona at the 2022 Barber Championship of Middle School State Champions, 2023 Denker Championship of High School State Champions, acquiring the National Master title, and representing Arizona College Prep High School in the 2023 and 2024 K-12 National High School Championships held in Washington D.C and Baltimore, Maryland respectively.
+                </p>
+            </div>
         </div>
-    </div>
         <p class="AboutUsParagraph1">
-            The AZ Chess Gurus is  a student-led initiative revolving around spreading our passion for chess with young students.
-        </p>
-
+            The AZ Chess Gurus is a student-led initiative revolving around spreading our passion for chess with young students.
         </p>
     </body>
-
 </html>
-
-
-

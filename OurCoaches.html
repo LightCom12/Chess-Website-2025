@@ -75,13 +75,20 @@
     <div id="header-placeholder"></div>
     <script>
         document.getElementById("header-placeholder").innerHTML = `
-        <nav style="position: fixed; top: 0; width: 100%; z-index: 1000; background: gray;"> <!-- Added fixed positioning -->
+        <nav>
             <div class="logo">
-                <img src="images/chessguru.webp" alt="GuruLogo"> <!-- Updated image -->
+                <img src="images/chessguru.webp" alt="GuruLogo">
                 <span>The Chess Gurus</span>
             </div>
-            <div class="nav-items" style="gap: 20px;"> <!-- Adjusted gap to 20px -->
-                <div class="dropdown">
+
+            <div class="hamburger" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+
+            <div class="nav-items" id="nav-items">
+                <div class="dropdown" onclick="toggleDropdown(this)">
                     <a href="OurFounders.html" class="dropbtn">About Us</a>
                     <div class="dropdown-content">
                         <a href="OurFounders.html">Our Founders</a>
@@ -94,6 +101,14 @@
                 <a href="ContactUs.html">Contact Us</a>
             </div>
         </nav>`;
+        function toggleMenu() {
+            const navItems = document.getElementById('nav-items');
+            navItems.classList.toggle('active');
+        }
+
+        function toggleDropdown(dropdown) {
+            dropdown.classList.toggle('open');
+        }
     </script>
     <header class="CoachesHeader">
         Coaches

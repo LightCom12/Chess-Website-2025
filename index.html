@@ -122,12 +122,19 @@
     <body>
         <nav>
             <div class="logo">
-                <img src="images/chessguru.webp" alt="GuruLogo"> <!-- Updated image -->
+                <img src="images/chessguru.webp" alt="GuruLogo">
                 <span>The Chess Gurus</span>
             </div>
-            <div class="nav-items" style="gap: 20px;"> <!-- Adjusted gap to 20px -->
-                <div class="dropdown">
-                    <a href="#" class="dropbtn">About Us</a>
+
+            <div class="hamburger" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+
+            <div class="nav-items" id="nav-items">
+                <div class="dropdown" onclick="toggleDropdown(this)">
+                    <a href="OurFounders.html" class="dropbtn">About Us</a>
                     <div class="dropdown-content">
                         <a href="OurFounders.html">Our Founders</a>
                         <a href="OurCoaches.html">Our Coaches</a>
@@ -137,7 +144,17 @@
                 <a href="OurImpact.html">Our Impact</a>
                 <a href="Lessons.html">Lessons</a>
                 <a href="ContactUs.html">Contact Us</a>
-        </div>
-    </nav>
-</body>
+            </div>
+        </nav>
+        <script>
+            function toggleMenu() {
+                const navItems = document.getElementById('nav-items');
+                navItems.classList.toggle('active');
+            }
+
+            function toggleDropdown(dropdown) {
+                dropdown.classList.toggle('open');
+            }
+        </script>
+    </body>
 </html>
