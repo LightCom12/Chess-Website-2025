@@ -130,10 +130,17 @@
             <img src="images/chessguru.webp" alt="GuruLogo">
             <span>The Chess Gurus</span>
         </div>
-        <div class="nav-items">
+
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <div class="nav-items" id="nav-items">
             <div class="dropdown">
-                <a href="OurFounders.html" class="dropbtn">About Us</a>
-                <div class="dropdown-content">
+                <a href="javascript:void(0);" onclick="toggleDropdown()">About Us ▾</a>
+                <div class="dropdown-content" id="dropdown-content">
                     <a href="OurFounders.html">Our Founders</a>
                     <a href="OurCoaches.html">Our Coaches</a>
                 </div>
