@@ -86,10 +86,6 @@
             position: relative;
         }
 
-        .dropdown.open .dropdown-content {
-            display: block;
-        }
-
         .hamburger {
             display: none;
             flex-direction: column;
@@ -232,7 +228,8 @@
         // Optional: Close dropdown if clicked outside
         window.addEventListener('click', function (e) {
             const dropdown = document.getElementById('dropdown-content');
-            if (!e.target.matches('.dropdown > a')) {
+            const dropdownTrigger = document.querySelector('.dropdown > a');
+            if (!dropdown.contains(e.target) && !dropdownTrigger.contains(e.target)) {
                 dropdown.classList.remove('open');
             }
         });
