@@ -3,6 +3,7 @@
 <head>
     <title>Coaches - The Chess Gurus</title>
     <link rel="icon" type="image/png" href="chessguru.webp">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         * {
             box-sizing: border-box;
@@ -10,39 +11,146 @@
             padding: 0;
             font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         }
+
+        /* Header & Nav Styles */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+            padding: 10px 30px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .logo span {
+            font-size: 22px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .nav-items {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .nav-items a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-items a:hover {
+            color: #0077cc;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+            z-index: 1001;
+            margin-top: 10px;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 10px 15px;
+            white-space: nowrap;
+        }
+
+        .dropdown.open .dropdown-content {
+            display: block;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #333;
+            margin: 4px 0;
+        }
+
+        @media (max-width: 768px) {
+            .nav-items {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: white;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                padding: 10px 0;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+            }
+
+            .nav-items.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+        }
+
+        /* Main Styles */
+        body {
+            background-color: rgb(226, 223, 223);
+            padding-top: 80px;
+        }
+
         .CoachesHeader {
             font-size: 25px;
             margin-top: 50px;
             text-align: center;
             padding-bottom: 10px;
         }
-        .main-container {
-            display: flex;
-            align-items: center;
-            background-color: white;
-            max-width: 1500px;
-            height: 80vw;
-            max-height: 1500px;
-            width: 60vw;
-            border-radius: 35px;
-            padding: 20px;
-        }
+
         .container {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
-            width: 100%;
-            justify-content: flex-start;
+            width: 90%;
+            max-width: 1200px;
+            margin: 30px auto;
+            justify-content: center;
         }
+
         .profile {
-            flex: 1 1 calc(33.33% - 40px);
-            max-width: 287px;
+            flex: 1 1 300px;
+            max-width: 300px;
             padding: 20px;
             background-color: white;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             text-align: center;
         }
+
         .profile img {
             width: 150px;
             height: 150px;
@@ -51,19 +159,23 @@
             object-position: top;
             margin-bottom: 20px;
         }
+
         .profile h2 {
             font-size: 24px;
             margin-bottom: 5px;
         }
+
         .profile h3 {
             font-size: 18px;
             margin-top: 0;
         }
+
         .profile h4 {
             font-size: 16px;
             margin-top: 5px;
             margin-bottom: 20px;
         }
+
         .profile p {
             font-size: 15px;
             line-height: 1.5;
@@ -71,7 +183,7 @@
         }
     </style>
 </head>
-<body style="background-color: rgb(226, 223, 223); padding-top: 80px;"> <!-- Prevents content overlap -->
+<body>
     <div id="header-placeholder"></div>
     <script>
         document.getElementById("header-placeholder").innerHTML = `
@@ -101,6 +213,7 @@
                 <a href="ContactUs.html">Contact Us</a>
             </div>
         </nav>`;
+
         function toggleMenu() {
             const navItems = document.getElementById('nav-items');
             navItems.classList.toggle('active');
@@ -110,9 +223,9 @@
             dropdown.classList.toggle('open');
         }
     </script>
-    <header class="CoachesHeader">
-        Coaches
-    </header>
+
+    <header class="CoachesHeader">Coaches</header>
+
     <div class="container">
         <div class="profile">
             <img src="images/Kasyap.jpg" alt="Kasyap">
@@ -121,6 +234,7 @@
             <h4>ACP Chess Varsity Player</h4>
             <p>Kasyap has over 8 years of experience in coaching chess at various levels. He has a deep understanding of game strategies and has successfully trained players to compete in national tournaments.</p>
         </div>
+
         <div class="profile">
             <img src="images/Coach2.png" alt="Ronak">
             <h2>Ronak Potnis</h2>
