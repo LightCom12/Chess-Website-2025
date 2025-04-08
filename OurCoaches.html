@@ -218,17 +218,25 @@
         </div>
     </nav>
 
-<script>
+    <script>
         function toggleMenu() {
-            const navItems = document.getElementById('nav-items');
-            navItems.classList.toggle('active');
+            const nav = document.getElementById('nav-items');
+            nav.classList.toggle('active');
         }
 
-        function toggleDropdown(dropdown) {
+        function toggleDropdown() {
+            const dropdown = document.getElementById('dropdown-content');
             dropdown.classList.toggle('open');
         }
-    </script>
 
+        // Optional: Close dropdown if clicked outside
+        window.addEventListener('click', function (e) {
+            const dropdown = document.getElementById('dropdown-content');
+            if (!e.target.matches('.dropdown > a')) {
+                dropdown.classList.remove('open');
+            }
+        });
+    </script>
     <header class="CoachesHeader">Coaches</header>
 
     <div class="container">
