@@ -1,86 +1,216 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Lessons - The Chess Gurus</title>
-        <link rel="icon" type="image/png" href="chessguru.webp">
-        <style>
-            .lesson-info {
-                max-width: 900px;
-                margin: 80px auto 40px auto;
-                padding: 0 20px;
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                font-size: 1.5em;
-                line-height: 2;
-                color: #333;
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lessons - The Chess Gurus</title>
+    <link rel="icon" type="image/png" href="chessguru.webp">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        body {
+            background-color: rgb(226, 223, 223);
+            padding-top: 80px; /* Prevents content overlap */
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            z-index: 1000;
+        }
+
+        nav .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        nav .logo img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        nav .logo span {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .nav-items {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .nav-items a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 12px;
+        }
+
+        .nav-items a:hover {
+            background-color: #575757;
+            border-radius: 5px;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 38px;
+            background-color: #444;
+            min-width: 160px;
+            z-index: 1;
+            border-radius: 5px;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 10px;
+            color: white;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #575757;
+        }
+
+        .dropdown-content.open {
+            display: block;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+        }
+
+        @media (max-width: 768px) {
+            .nav-items {
+                display: none;
+                flex-direction: column;
+                background-color: #333;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: 200px;
+                padding: 10px 0;
             }
 
-            .form-embed {
+            .nav-items.active {
                 display: flex;
-                justify-content: center;
-                margin-bottom: 60px;
             }
-        </style>
-    </head>
-    <body style="background-color: rgb(226, 223, 223); padding-top: 80px;">
-        <div id="header-placeholder"></div>
-        <script>
-            document.getElementById("header-placeholder").innerHTML = `
-            <nav>
-                <div class="logo">
-                    <img src="images/chessguru.webp" alt="GuruLogo">
-                    <span>The Chess Gurus</span>
-                </div>
 
-                <div class="hamburger" onclick="toggleMenu()">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
+            .hamburger {
+                display: flex;
+            }
+        }
 
-                <div class="nav-items" id="nav-items">
-                    <div class="dropdown" onclick="toggleDropdown(this)">
-                        <a href="OurFounders.html" class="dropbtn">About Us</a>
-                        <div class="dropdown-content">
-                            <a href="OurFounders.html">Our Founders</a>
-                            <a href="OurCoaches.html">Our Coaches</a>
-                        </div>
+        .lesson-info {
+            max-width: 900px;
+            margin: 80px auto 40px auto;
+            padding: 0 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1.5em;
+            line-height: 2;
+            color: #333;
+        }
+
+        .form-link {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .form-link a {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    <script>
+        document.getElementById("header-placeholder").innerHTML = `
+        <nav>
+            <div class="logo">
+                <img src="images/chessguru.webp" alt="GuruLogo">
+                <span>The Chess Gurus</span>
+            </div>
+
+            <div class="hamburger" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+
+            <div class="nav-items" id="nav-items">
+                <div class="dropdown" onclick="toggleDropdown(this)">
+                    <a href="OurFounders.html" class="dropbtn">About Us</a>
+                    <div class="dropdown-content">
+                        <a href="OurFounders.html">Our Founders</a>
+                        <a href="OurCoaches.html">Our Coaches</a>
                     </div>
-                    <a href="OurMission.html">Our Mission</a>
-                    <a href="OurImpact.html">Our Impact</a>
-                    <a href="Lessons.html">Lessons</a>
-                    <a href="ContactUs.html">Contact Us</a>
                 </div>
-            </nav>`;
+                <a href="OurMission.html">Our Mission</a>
+                <a href="OurImpact.html">Our Impact</a>
+                <a href="Lessons.html">Lessons</a>
+                <a href="ContactUs.html">Contact Us</a>
+            </div>
+        </nav>`;
 
-            function toggleMenu() {
-                const navItems = document.getElementById('nav-items');
-                navItems.classList.toggle('active');
-            }
+        function toggleMenu() {
+            const navItems = document.getElementById('nav-items');
+            navItems.classList.toggle('active');
+        }
 
-            function toggleDropdown(dropdown) {
-                dropdown.classList.toggle('open');
-            }
-        </script>
+        function toggleDropdown(dropdown) {
+            dropdown.classList.toggle('open');
+        }
+    </script>
 
-        <div class="lesson-info">
-            <p>
-                ChessGurus offers free Zoom lessons to help players of all levels improve their chess skills. Whether you're just starting or looking to refine your strategy, expert coaches are ready to guide you through each step of the game. We have coaches for all levels ranging from beginners to experts!
-            </p>
-            <p>
-                Our lesson plans are interactive and fun, giving you the opportunity to ask questions, practice new techniques, and build confidence in your play — all from the comfort of your home. No fees, just a chance to grow and enjoy chess.
-            </p>
-            <p>
-                Sign up below for a free lesson today and take your game to new heights!
-            </p>
-        </div>
-        <div class="form-link" style="text-align: center; margin-top: 40px;">
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSc-XK9qlSJSp4H0hmM6NPH-c4qTpeYNOsD4LTa95EMUHaRDVQ/viewform" 
-               target="_blank" 
-               style="display: inline-block; padding: 15px 30px; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 8px; font-size: 1.2em;">
-                Sign Up for a Free Lesson
-            </a>
-        </div>
-    </body>
+    <div class="lesson-info">
+        <p>
+            ChessGurus offers free Zoom lessons to help players of all levels improve their chess skills. Whether you're just starting or looking to refine your strategy, expert coaches are ready to guide you through each step of the game. We have coaches for all levels ranging from beginners to experts!
+        </p>
+        <p>
+            Our lesson plans are interactive and fun, giving you the opportunity to ask questions, practice new techniques, and build confidence in your play — all from the comfort of your home. No fees, just a chance to grow and enjoy chess.
+        </p>
+        <p>
+            Sign up below for a free lesson today and take your game to new heights!
+        </p>
+    </div>
+
+    <div class="form-link">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc-XK9qlSJSp4H0hmM6NPH-c4qTpeYNOsD4LTa95EMUHaRDVQ/viewform" 
+           target="_blank">
+            Sign Up for a Free Lesson
+        </a>
+    </div>
+
+</body>
 </html>
-
-
