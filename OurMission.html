@@ -30,7 +30,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 20px;
+            padding: 20px 20px;
             z-index: 1000;
         }
 
@@ -58,6 +58,7 @@
         .logo img {
             width: 40px; /* Updated size */
             height: 40px;
+            border-radius: 50%; /* Make logo rounded */
             margin-right: 10px;
         }
 
@@ -186,8 +187,6 @@
     </style>
 </head>
 <body>
-
-    <!-- Navbar -->
     <nav>
         <div class="logo">
             <img src="images/chessguru.webp" alt="GuruLogo">
@@ -201,9 +200,9 @@
         </div>
 
         <div class="nav-items" id="nav-items">
-            <div class="dropdown" onclick="toggleDropdown(this)">
-                <a href="OurFounders.html" class="dropbtn">About Us</a>
-                <div class="dropdown-content">
+            <div class="dropdown">
+                <a href="javascript:void(0);" onclick="toggleDropdown()">About Us ▾</a>
+                <div class="dropdown-content" id="dropdown-content">
                     <a href="OurFounders.html">Our Founders</a>
                     <a href="OurCoaches.html">Our Coaches</a>
                 </div>
@@ -233,7 +232,8 @@
             navItems.classList.toggle('active');
         }
 
-        function toggleDropdown(dropdown) {
+        function toggleDropdown() {
+            const dropdown = document.querySelector('.dropdown');
             dropdown.classList.toggle('open');
         }
     </script>
