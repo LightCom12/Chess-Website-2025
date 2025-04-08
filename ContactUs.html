@@ -37,35 +37,45 @@
             color: #000;
         }
 
-            .contact-info a:hover {
-                color: #0073e6;
-            }
-        </style>
-    </head>
-    <body style="padding-top: 80px;"> <!-- Prevents content overlap -->
-        <div id="header-placeholder"></div>
-        <script>
-            document.getElementById("header-placeholder").innerHTML = 
-            <nav style="position: fixed; top: 0; width: 100%; z-index: 1000; background: gray;"> <!-- Added fixed positioning -->
-                <div class="logo">
-                    <img src="images/chessguru.webp" alt="GuruLogo"> <!-- Updated image -->
-                    <span>The Chess Gurus</span>
-                </div>
-                <div class="nav-items" style="gap: 20px;"> <!-- Adjusted gap to 20px -->
-                    <div class="dropdown">
-                        <a href="OurFounders.html" class="dropbtn">About Us</a>
-                        <div class="dropdown-content">
-                            <a href="OurFounders.html">Our Founders</a>
-                            <a href="OurCoaches.html">Our Coaches</a>
-                        </div>
+        .contact-info a:hover {
+            color: #0073e6;
+        }
+    </style>
+</head>
+<body style="padding-top: 80px;"> <!-- Prevents content overlap -->
+    <div id="header-placeholder"></div>
+    <script>
+        document.getElementById("header-placeholder").innerHTML = `
+        <nav style="position: fixed; top: 0; width: 100%; z-index: 1000; background: gray;">
+            <div class="logo">
+                <img src="images/chessguru.webp" alt="GuruLogo">
+                <span>The Chess Gurus</span>
+            </div>
+            <div class="nav-items" style="gap: 20px;">
+                <div class="dropdown">
+                    <a href="OurFounders.html" class="dropbtn">About Us</a>
+                    <div class="dropdown-content">
+                        <a href="OurFounders.html">Our Founders</a>
+                        <a href="OurCoaches.html">Our Coaches</a>
                     </div>
-                    <a href="OurMission.html" style="color: white;">Our Mission</a>
-                    <a href="OurImpact.html" style="color: white;">Our Impact</a>
-                    <a href="Lessons.html" style="color: white;">Lessons</a>
-                    <a href="ContactUs.html" style="color: white;">Contact Us</a>
                 </div>
-            </nav>;
-        </script>
+                <a href="OurMission.html" style="color: white;">Our Mission</a>
+                <a href="OurImpact.html" style="color: white;">Our Impact</a>
+                <a href="Lessons.html" style="color: white;">Lessons</a>
+                <a href="ContactUs.html" style="color: white;">Contact Us</a>
+            </div>
+        </nav>`;
+    </script>
+    <script>
+        function toggleMenu() {
+            const navItems = document.getElementById('nav-items');
+            navItems.classList.toggle('active');
+        }
+
+        function toggleDropdown(dropdown) {
+            dropdown.classList.toggle('open');
+        }
+    </script>
 
     <div class="contact-header">
         Contact Us
