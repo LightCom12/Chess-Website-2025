@@ -1,143 +1,177 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Chess Gurus</title>
-        <link rel="icon" type="image/png" href="chessguru.webp">
-        <style>
+<head>
+    <title>Chess Gurus</title>
+    <link rel="icon" type="image/png" href="chessguru.webp">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
 
-            * {
-                box-sizing: border-box;
-                margin: 0;
-                padding: 0;
-                font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-            }
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #333; /* Updated background color */
+            color: white; /* Updated text color */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            z-index: 1000;
+        }
 
-            .AboutUs {
-                margin-left: 175px;
-            }
+        nav a {
+            color: white; /* Updated link color */
+            text-decoration: none;
+            padding: 8px 12px;
+            font-weight: bold; /* Added font weight */
+        }
 
-            .OurMission {
-                left: 90px;
-            }
+        nav a:hover {
+            background-color: #575757; /* Updated hover background color */
+            border-radius: 5px; /* Added border radius */
+        }
 
-            .OurImpact {
-                left: 120px;
-            }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
 
-            .Lessons {
-                left: 150px;
-            }
+        .logo img {
+            width: 40px; /* Updated size */
+            height: 40px;
+            margin-right: 10px;
+            border-radius: 50%; /* Make the logo round */
+        }
 
-            .ContactUs {
-                left: 180px;
-            }
+        .logo span {
+            font-size: 20px; /* Updated font size */
+            font-weight: bold; /* Added font weight */
+        }
 
-            nav {
-                position: fixed;
-                top: 0;
-                width: 100%;
-                background-color: #333; /* Updated background color */
-                color: white; /* Updated text color */
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding: 10px 20px;
-                z-index: 1000;
-            }
+        .nav-items {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
 
-            nav a {
-                color: white; /* Updated link color */
-                text-decoration: none;
-                padding: 8px 12px;
-                font-weight: bold; /* Added font weight */
-            }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white; /* Updated dropdown background color */
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 5px; /* Added border radius */
+        }
 
-            nav a:hover {
-                background-color: #575757; /* Updated hover background color */
-                border-radius: 5px; /* Added border radius */
-            }
+        .dropdown-content a {
+            color: black; /* Updated dropdown link color */
+            padding: 10px 15px;
+            text-decoration: none;
+            display: block;
+        }
 
-            .logo img {
-                width: 40px; /* Updated size */
-                height: 40px;
-                margin-right: 10px;
-            }
+        .dropdown-content a:hover {
+            background-color: #f1f1f1; /* Updated hover background color */
+        }
 
-            .logo span {
-                font-size: 20px; /* Updated font size */
-                font-weight: bold; /* Added font weight */
-            }
+        .dropdown {
+            position: relative;
+        }
 
+        body {
+            background-color: rgb(226, 223, 223);
+            padding-top: 80px; /* Prevents content from overlapping the navbar */
+        }
+
+        /* Hamburger menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #333;
+            margin: 4px 0;
+        }
+
+        @media (max-width: 768px) {
             .nav-items {
-                display: flex;
-                gap: 20px;
-                align-items: center;
-            }
-
-            .dropdown-content {
                 display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: #333;
                 position: absolute;
-                background-color: white; /* Updated dropdown background color */
-                min-width: 160px;
-                box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-                z-index: 1;
-                border-radius: 5px; /* Added border radius */
+                top: 60px;
+                left: 0;
+                padding: 10px 0;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.15);
             }
 
-            .dropdown-content a {
-                color: black; /* Updated dropdown link color */
-                padding: 10px 15px;
-                text-decoration: none;
-                display: block;
+            .nav-items.active {
+                display: flex;
             }
 
-            .dropdown-content a:hover {
-                background-color: #f1f1f1; /* Updated hover background color */
+            .hamburger {
+                display: flex;
             }
-
-            body {
-                background-color: rgb(226, 223, 223);
-                padding-top: 80px; /* Prevents content from overlapping the navbar */
-            }
-
-        </style>
-    </head>
-    <body>
-        <nav>
-            <div class="logo">
-                <img src="images/chessguru.webp" alt="GuruLogo">
-                <span>The Chess Gurus</span>
-            </div>
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="images/chessguru.webp" alt="GuruLogo">
+            <span>The Chess Gurus</span>
+        </div>
     
-            <div class="hamburger" onclick="toggleMenu()">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
     
-            <div class="nav-items" id="nav-items">
-                <div class="dropdown">
-                    <a href="javascript:void(0);" onclick="toggleDropdown()">About Us ▾</a>
-                    <div class="dropdown-content" id="dropdown-content">
-                        <a href="OurFounders.html">Our Founders</a>
-                        <a href="OurCoaches.html">Our Coaches</a>
-                    </div>
+        <div class="nav-items" id="nav-items">
+            <div class="dropdown">
+                <a href="javascript:void(0);" onclick="toggleDropdown()">About Us ▾</a>
+                <div class="dropdown-content" id="dropdown-content">
+                    <a href="OurFounders.html">Our Founders</a>
+                    <a href="OurCoaches.html">Our Coaches</a>
                 </div>
-                <a href="OurMission.html">Our Mission</a>
-                <a href="OurImpact.html">Our Impact</a>
-                <a href="Lessons.html">Lessons</a>
-                <a href="ContactUs.html">Contact Us</a>
             </div>
-        </nav>
-        <script>
-            function toggleMenu() {
-                const navItems = document.getElementById('nav-items');
-                navItems.classList.toggle('active');
-            }
+            <a href="OurMission.html">Our Mission</a>
+            <a href="OurImpact.html">Our Impact</a>
+            <a href="Lessons.html">Lessons</a>
+            <a href="ContactUs.html">Contact Us</a>
+        </div>
+    </nav>
 
-            function toggleDropdown(dropdown) {
-                dropdown.classList.toggle('open');
+    <script>
+        function toggleMenu() {
+            const navItems = document.getElementById('nav-items');
+            navItems.classList.toggle('active');
+        }
+
+        function toggleDropdown() {
+            const dropdown = document.getElementById('dropdown-content');
+            dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+        }
+
+        // Optional: Close dropdown if clicked outside
+        window.addEventListener('click', function (e) {
+            const dropdown = document.getElementById('dropdown-content');
+            if (!e.target.matches('.dropdown > a') && !e.target.matches('.dropdown-content')) {
+                dropdown.style.display = "none";
             }
-        </script>
-    </body>
+        });
+    </script>
+</body>
 </html>
