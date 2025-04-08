@@ -9,14 +9,15 @@
             font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
             margin: 0;
             padding: 0;
+            padding-top: 80px; /* Adjusted to ensure content isn't overlapped by fixed navbar */
         }
 
         nav {
             position: fixed;
             top: 0;
             width: 100%;
-            background-color: #333; /* Updated background color */
-            color: white; /* Updated text color */
+            background-color: #333;
+            color: white;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -25,15 +26,15 @@
         }
 
         nav a {
-            color: white; /* Updated link color */
+            color: white;
             text-decoration: none;
             padding: 8px 12px;
-            font-weight: bold; /* Added font weight */
+            font-weight: bold;
         }
 
         nav a:hover {
-            background-color: #575757; /* Updated hover background color */
-            border-radius: 5px; /* Added border radius */
+            background-color: #575757;
+            border-radius: 5px;
         }
 
         .logo {
@@ -43,15 +44,14 @@
         }
 
         .logo img {
-            width: 40px; /* Updated size */
+            width: 40px;
             height: 40px;
             margin-right: 10px;
         }
 
         .logo span {
             font-weight: bold;
-            font-size: 20px; /* Updated font size */
-            font-weight: bold; /* Added font weight */
+            font-size: 20px;
         }
 
         .nav-items {
@@ -68,22 +68,22 @@
         .dropdown-content {
             display: none;
             position: absolute;
-            background-color: white; /* Updated dropdown background color */
+            background-color: white;
             min-width: 160px;
             box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
             z-index: 1;
-            border-radius: 5px; /* Added border radius */
+            border-radius: 5px;
         }
 
         .dropdown-content a {
-            color: black; /* Updated dropdown link color */
+            color: black;
             padding: 10px 15px;
             text-decoration: none;
             display: block;
         }
 
         .dropdown-content a:hover {
-            background-color: #f1f1f1; /* Updated hover background color */
+            background-color: #f1f1f1;
         }
 
         .dropdown:hover .dropdown-content {
@@ -93,7 +93,7 @@
         .contact-header {
             font-size: 30px;
             text-align: center;
-            margin-top: 100px;
+            margin-top: 100px; /* Space added to ensure header isn't hidden by navbar */
             padding-bottom: 10px;
         }
 
