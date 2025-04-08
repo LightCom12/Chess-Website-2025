@@ -222,18 +222,18 @@
 
         function toggleDropdown() {
             const dropdown = document.getElementById('dropdown-content');
-            dropdown.classList.toggle('open');
+            dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
         }
 
         // Optional: Close dropdown if clicked outside
         window.addEventListener('click', function (e) {
             const dropdown = document.getElementById('dropdown-content');
-            const dropdownTrigger = document.querySelector('.dropdown > a');
-            if (!dropdown.contains(e.target) && !dropdownTrigger.contains(e.target)) {
-                dropdown.classList.remove('open');
+            if (!e.target.matches('.dropdown > a')) {
+                dropdown.style.display = "none";
             }
         });
     </script>
+
     <header class="CoachesHeader">Coaches</header>
 
     <div class="container">
