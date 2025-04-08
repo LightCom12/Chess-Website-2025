@@ -85,9 +85,30 @@
         }
         </style>
     </head>
-    <body style="background-color: rgb(226, 223, 223);">
+    <body style="background-color: rgb(226, 223, 223); padding-top: 80px;">
         <div id="header-placeholder"></div>
-        <script src="loadingHeader.js"></script>
+        <script>
+            document.getElementById("header-placeholder").innerHTML = `
+            <nav style="position: fixed; top: 0; width: 100%; z-index: 1000; background: gray;"> <!-- Added fixed positioning -->
+                <div class="logo">
+                    <img src="images/chessguru.webp" alt="GuruLogo"> <!-- Updated image -->
+                    <span>The Chess Gurus</span>
+                </div>
+                <div class="nav-items" style="gap: 20px;"> <!-- Adjusted gap to 20px -->
+                    <div class="dropdown">
+                        <a href="OurFounders.html" class="dropbtn">About Us</a>
+                        <div class="dropdown-content">
+                            <a href="OurFounders.html">Our Founders</a>
+                            <a href="OurCoaches.html">Our Coaches</a>
+                        </div>
+                    </div>
+                    <a href="OurMission.html">Our Mission</a>
+                    <a href="OurImpact.html">Our Impact</a>
+                    <a href="Lessons.html">Lessons</a>
+                    <a href="ContactUs.html">Contact Us</a>
+                </div>
+            </nav>`;
+        </script>
         <header class="AboutUsHeader">
             About Us
         </header>

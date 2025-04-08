@@ -39,6 +39,10 @@
                 justify-content: space-between;
                 align-items: center;
                 padding: 0rem calc ((100vw - 1300px) / 2);
+                position: fixed; /* Added fixed positioning */
+                top: 0; /* Ensures it stays at the top */
+                width: 100%; /* Ensures it spans the full width */
+                z-index: 1000; /* Ensures it stays above other elements */
             }
 
             nav a {
@@ -108,15 +112,20 @@
                 background-color: gray;
             }
 
+            body {
+                background-color: rgb(226, 223, 223);
+                padding-top: 80px; /* Prevents content from overlapping the navbar */
+            }
+
         </style>
     </head>
-    <body style="background-color: rgb(226, 223, 223);">
+    <body>
         <nav>
             <div class="logo">
-                <img src="chessguru.webp" alt="GuruLogo">
+                <img src="images/chessguru.webp" alt="GuruLogo"> <!-- Updated image -->
                 <span>The Chess Gurus</span>
             </div>
-            <div class="nav-items">
+            <div class="nav-items" style="gap: 20px;"> <!-- Adjusted gap to 20px -->
                 <div class="dropdown">
                     <a href="#" class="dropbtn">About Us</a>
                     <div class="dropdown-content">
