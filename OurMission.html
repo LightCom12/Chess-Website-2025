@@ -2,15 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Our Mission - The Chess Gurus</title>
+    <title>The Chess Gurus - Our Mission</title>
     <link rel="icon" type="image/png" href="chessguru.webp">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Magik:wght@400;700&display=swap" rel="stylesheet">
     <style>
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-family: 'Magik', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        title {
+            font-family: 'Magik', sans-serif; /* Ensure consistent font for the tab title */
         }
 
         html {
@@ -18,7 +23,7 @@
         }
 
         body {
-            background-color: rgb(226, 223, 223);
+            background-color: #F1DFB4;
             margin: 0;
             font-family: Arial, sans-serif;
             padding-top: 80px;
@@ -172,6 +177,13 @@
             }
         }
 
+        nav .logo span, 
+        .nav-items a {
+            font-family: 'Magik', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; /* Ensure consistent font */
+            font-size: 16px; /* Ensure consistent font size */
+            font-weight: bold; /* Ensure consistent font weight */
+        }
+
         header {
             text-align: center;
             font-size: 35px;
@@ -203,7 +215,7 @@
         </div>
 
         <div class="nav-items" id="nav-items">
-            <a href="AboutUs.html">About Us</a>
+            <a href="index.html">Home</a>
             <div class="dropdown">
                 <a href="javascript:void(0);" onclick="toggleDropdown()">Our Team ▾</a>
                 <div class="dropdown-content" id="dropdown-content">
