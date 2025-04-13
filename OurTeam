@@ -1,1 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Our Team - ChessGurus</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Magik', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
 
+        title {
+            font-family: 'Magik', sans-serif; /* Ensure consistent font for the tab title */
+        }
+
+        body {
+            background-color: #F1DFB4;
+            padding-top: 80px; /* Prevents content overlap */
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 20px;
+            z-index: 1000;
+        }
+
+        nav .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        nav .logo img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            border-radius: 50%; /* Make the logo circular */
+        }
+
+        nav .logo span {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .nav-items {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .nav-items a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 12px;
+        }
+
+        .nav-items a:hover {
+            background-color: #575757;
+            border-radius: 5px;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 38px;
+            background-color: #444;
+            min-width: 160px;
+            z-index: 1;
+            border-radius: 5px;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 10px;
+            color: white;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #575757;
+        }
+
+        .dropdown-content.open {
+            display: block;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+        }
+
+        @media (max-width: 768px) {
+            .nav-items {
+                display: none;
+                flex-direction: column;
+                background-color: #333;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: 200px;
+                padding: 10px 0;
+            }
+
+            .nav-items.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+        }
+
+        .lesson-info {
+            max-width: 900px;
+            margin: 80px auto;
+            padding: 0 20px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 1.5em;
+            line-height: 2;
+            color: #333;
+        }
+
+        .logo span, 
+        .nav-items a {
+            font-family: 'Magik', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 16px; /* Ensure consistent font size */
+            font-weight: bold; /* Ensure consistent font weight */
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="images/chessguru.webp" alt="GuruLogo">
+            <span>The Chess Gurus</span>
+        </div>
+
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <div class="nav-items" id="nav-items">
+            <a href="index.html">Home</a>
+            <div class="dropdown">
+                <a href="javascript:void(0);" onclick="toggleDropdown()">Our Team ▾</a>
+                <div class="dropdown-content" id="dropdown-content">
+                    <a href="OurFounders.html">Our Founders</a>
+                    <a href="OurCoaches.html">Our Coaches</a>
+                </div>
+            </div>
+            <a href="OurMission.html">Our Mission</a>
+            <a href="OurImpact.html">Our Impact</a>
+            <a href="Lessons.html">Lessons</a>
+            <a href="ContactUs.html">Contact Us</a>
+        </div>
+    </nav>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById('nav-items');
+            nav.classList.toggle('active');
+        }
+
+        function toggleDropdown() {
+            const dropdown = document.getElementById('dropdown-content');
+            dropdown.classList.toggle('open');
+        }
+
+        // Optional: Close dropdown if clicked outside
+        window.addEventListener('click', function (e) {
+            const dropdown = document.getElementById('dropdown-content');
+            if (!e.target.matches('.dropdown > a')) {
+                dropdown.classList.remove('open');
+            }
+        });
+    </script>
+
+    <div class="lesson-info">
+        <p>
+            At ChessGurus, we believe the impact of chess goes far beyond the board. We’ve seen how it helps students develop focus, patience, and problem-solving skills — all while having fun and building confidence.
+        </p>
+        <p>
+            We’re proud to bring our teaching into schools like Ryan Elementary, where we introduce young minds to the power of strategic thinking through engaging lessons and playful competition. Watching students grow, not just in skill, but in mindset, is at the heart of what we do.
+        </p>
+        <p>
+            Whether it’s guiding a beginner through their first checkmate or helping a player sharpen their strategy, we’re here to support meaningful growth, one move at a time.
+        </p>
+    </div>
+
+    <script src="loadingHeader.js"></script>
+</body>
+</html>
