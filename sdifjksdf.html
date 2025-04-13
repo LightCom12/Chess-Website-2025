@@ -11,9 +11,6 @@
         <a href="OurTeam.html">
             <button type="button" class="OurTeam">Our Team</button>
         </a>
-        <a href="OurTeam.html">
-            <button type="button" class="OurTeam">Our Team</button>
-        </a>
         <a href="OurMission.html">
             <button type="button" class="OurMission">Our Mission</button>
         </a>
@@ -44,22 +41,18 @@
             font-weight: bold;
             font-family: Arial, Helvetica, sans-serif;
             margin: 0;
-            text-align: center; /* Center the header */
+            text-align: center;
         }
 
         .header-container {
             display: flex;
-            justify-content: center; /* Center the content */
+            justify-content: center;
             padding: 20px;
         }
 
-        .header-container .mainheader {
-            margin-right: 0;
-        }
-
-        .OurTeam, .OurMission, .AboutUs, .OurImpact, .Lessons, .ContactUs {
-            background-color: transparent;
-            color: black;
+        .OurTeam, .OurMission, .OurImpact, .Lessons, .ContactUs {
+            background-color: #537a5a; /* Cactus Green */
+            color: white;
             height: 45px;
             width: 110px;
             font-weight: bold;
@@ -67,48 +60,27 @@
             cursor: pointer;
             border: none;
             border-radius: 7px;
-            position: relative;
             line-height: 45px;
             text-align: center;
+            transition: background-color 0.3s ease;
         }
 
-       .OurTeam:active, .OurMission:hover, .AboutUs:hover, .OurImpact:hover, .Lessons:hover, .ContactUs:hover {
-            text-decoration: underline;
-            text-underline-offset: 4px;
-            text-decoration-thickness: 1.25px;
-        }
-
-       .OurTeam:active, .OurMission:active, .AboutUs:active, .OurImpact:active, .Lessons:active, .ContactUs:active {
-            text-decoration: underline;
-            text-underline-offset: 4px;
-            text-decoration-thickness: 1.25px;
-        }
-
-        .OurTeam {
-            margin-left: 0; /* Remove left margin */
-        }
-
-        .OurMission {
-            left: 90px;
-        }
-
-        .OurImpact {
-            left: 120px;
-        }
-
-        .Lessons {
-            left: 150px;
+        .OurTeam:hover, .OurMission:hover, .OurImpact:hover, .Lessons:hover {
+            background-color: #46694d; /* Darker Cactus Green on hover */
         }
 
         .ContactUs {
-            left: 180px;
+            background-color: #f4a259; /* Orange Sun */
+        }
+
+        .ContactUs:hover {
+            background-color: #d9883f; /* Darker Orange Sun on hover */
         }
 
         .menu {
             display: flex;
-            justify-content: center; /* Center the menu */
-            gap: 20px; /* Add spacing between buttons */
+            justify-content: center;
+            gap: 20px;
         }
-
     </style>
 </html>
