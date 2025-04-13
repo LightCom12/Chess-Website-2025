@@ -29,6 +29,8 @@
                 text-decoration: none;
                 padding: 0 1.5rem;
                 font-weight: bold;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; /* Ensure consistent font */
+                font-size: 16px; /* Adjust font size for consistency */
             }
 
             nav a:hover,
@@ -100,8 +102,10 @@
     <body>
         <nav>
             <div class="logo">
-                <img src="images/chessguru.webp" alt="GuruLogo">
-                <span>The Chess Gurus</span>
+                <a href="index.html">
+                    <img src="images/chessguru.webp" alt="GuruLogo">
+                    <span>The Chess Gurus</span>
+                </a>
             </div>
 
             <div class="hamburger" onclick="toggleMenu()">
@@ -111,9 +115,10 @@
             </div>
 
             <div class="nav-items" id="nav-items">
-                <div class="dropdown" onclick="toggleDropdown(this)">
-                    <a href="OurFounders.html" class="dropbtn">Our Team</a>
-                    <div class="dropdown-content">
+                <a href="AboutUs.html">About Us</a>
+                <div class="dropdown">
+                    <a href="javascript:void(0);" onclick="toggleDropdown()">Our Team ▾</a>
+                    <div class="dropdown-content" id="dropdown-content">
                         <a href="OurFounders.html">Our Founders</a>
                         <a href="OurCoaches.html">Our Coaches</a>
                     </div>
