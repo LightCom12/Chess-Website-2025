@@ -1,22 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Chess Gurus</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - The Chess Gurus</title>
     <link rel="icon" type="image/png" href="chessguru.webp">
     <style>
+        * {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        body {
+            background-color: rgb(226, 223, 223);
+            padding-top: 80px;
         }
 
         nav {
             position: fixed;
             top: 0;
             width: 100%;
-            background-color: #333; /* Updated background color */
-            color: white; /* Updated text color */
+            background-color: #333;
+            color: white;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -24,33 +34,21 @@
             z-index: 1000;
         }
 
-        nav a {
-            color: white; /* Updated link color */
-            text-decoration: none;
-            padding: 8px 12px;
-            font-weight: bold; /* Added font weight */
-        }
-
-        nav a:hover {
-            background-color: #575757; /* Updated hover background color */
-            border-radius: 5px; /* Added border radius */
-        }
-
-        .logo {
+        nav .logo {
             display: flex;
             align-items: center;
         }
 
-        .logo img {
-            width: 40px; /* Updated size */
+        nav .logo img {
+            width: 40px;
             height: 40px;
             margin-right: 10px;
-            border-radius: 50%; /* Make the logo round */
+            border-radius: 50%;
         }
 
-        .logo span {
-            font-size: 20px; /* Updated font size */
-            font-weight: bold; /* Added font weight */
+        nav .logo span {
+            font-size: 20px;
+            font-weight: bold;
         }
 
         .nav-items {
@@ -59,61 +57,68 @@
             align-items: center;
         }
 
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #444; /* Updated dropdown background color */
-            min-width: 160px;
-            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-            z-index: 1;
-            border-radius: 5px; /* Added border radius */
-        }
-
-        .dropdown-content a {
-            color: white; /* Updated dropdown link color */
-            padding: 10px 15px;
+        .nav-items a {
+            color: white;
             text-decoration: none;
-            display: block;
+            padding: 8px 12px;
         }
 
-        .dropdown-content a:hover {
-            background-color: #575757; /* Updated hover background color */
+        .nav-items a:hover {
+            background-color: #575757;
+            border-radius: 5px;
         }
 
         .dropdown {
             position: relative;
         }
 
-        body {
-            background-color: rgb(226, 223, 223);
-            padding-top: 80px; /* Prevents content from overlapping the navbar */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 38px;
+            background-color: #444;
+            min-width: 160px;
+            z-index: 1;
+            border-radius: 5px;
         }
 
-        /* Hamburger menu */
+        .dropdown-content a {
+            display: block;
+            padding: 10px;
+            color: white;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #575757;
+        }
+
+        .dropdown-content.open {
+            display: block;
+        }
+
         .hamburger {
             display: none;
             flex-direction: column;
             cursor: pointer;
+            gap: 5px;
         }
 
         .hamburger div {
             width: 25px;
             height: 3px;
-            background-color: #333;
-            margin: 4px 0;
+            background-color: white;
         }
 
         @media (max-width: 768px) {
             .nav-items {
                 display: none;
                 flex-direction: column;
-                width: 100%;
                 background-color: #333;
                 position: absolute;
                 top: 60px;
-                left: 0;
+                right: 0;
+                width: 200px;
                 padding: 10px 0;
-                box-shadow: 0 2px 5px rgba(0,0,0,0.15);
             }
 
             .nav-items.active {
@@ -124,6 +129,35 @@
                 display: flex;
             }
         }
+
+        .about-header {
+            font-size: 35px;
+            margin-top: 50px;
+            text-align: center;
+            padding-bottom: 10px;
+        }
+
+        .about-content {
+            font-size: 18px;
+            text-align: center;
+            margin: 20px auto;
+            line-height: 1.75;
+            padding-bottom: 20px;
+            max-width: 800px;
+        }
+
+        .about-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px auto;
+            max-width: 800px;
+            text-align: left;
+        }
+
+        .about-list li {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body>
@@ -132,16 +166,17 @@
             <img src="images/chessguru.webp" alt="GuruLogo">
             <span>The Chess Gurus</span>
         </div>
-    
+
         <div class="hamburger" onclick="toggleMenu()">
             <div></div>
             <div></div>
             <div></div>
         </div>
-    
+
         <div class="nav-items" id="nav-items">
+            <a href="AboutUs.html">About Us</a>
             <div class="dropdown">
-                <a href="javascript:void(0);" onclick="toggleDropdown()">About Us ▾</a>
+                <a href="javascript:void(0);" onclick="toggleDropdown()">Our Team ▾</a>
                 <div class="dropdown-content" id="dropdown-content">
                     <a href="OurFounders.html">Our Founders</a>
                     <a href="OurCoaches.html">Our Coaches</a>
@@ -154,24 +189,35 @@
         </div>
     </nav>
 
+    <header class="about-header">About Us</header>
+
+    <div class="about-content">
+        <p>At ChessGurus, we help you unlock your full potential in the timeless game of chess.</p>
+        <p>We believe chess is more than just a game, it’s a powerful tool for developing critical thinking, improving cognitive abilities, patience, and strategy. Whether you're a complete beginner or an experienced player aiming to sharpen your skills, we’re here to guide you every step of the way.</p>
+    </div>
+
+    <ul class="about-list">
+        <li>One-on-one Online Coaching with Chess Masters</li>
+        <li>Expert tips and strategies</li>
+        <li>Puzzles, practice boards, and interactive tools</li>
+        <li>Step-by-step lessons for all levels</li>
+    </ul>
+
+    <div class="about-content">
+        <p>Our team is made up of passionate chess lovers, qualified instructors, and tournament players dedicated to helping you grow. With ChessGurus, you're not just learning moves – you're learning how to think like a champion.</p>
+        <p>Join ChessGurus today, let's make every move count!</p>
+    </div>
+
     <script>
         function toggleMenu() {
-            const navItems = document.getElementById('nav-items');
-            navItems.classList.toggle('active');
+            const nav = document.getElementById('nav-items');
+            nav.classList.toggle('active');
         }
 
         function toggleDropdown() {
             const dropdown = document.getElementById('dropdown-content');
-            dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+            dropdown.classList.toggle('open');
         }
-
-        // Optional: Close dropdown if clicked outside
-        window.addEventListener('click', function (e) {
-            const dropdown = document.getElementById('dropdown-content');
-            if (!e.target.matches('.dropdown > a') && !e.target.matches('.dropdown-content')) {
-                dropdown.style.display = "none";
-            }
-        });
     </script>
 </body>
 </html>
