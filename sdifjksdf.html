@@ -8,8 +8,8 @@
         </div>
     </header>
     <nav class="menu">
-        <a href="AboutUs.html">
-            <button type="button" class="AboutUs">About Us</button>
+        <a href="OurTeam.html">
+            <button type="button" class="OurTeam">Our Team</button>
         </a>
         <a href="OurTeam.html">
             <button type="button" class="OurTeam">Our Team</button>
@@ -29,6 +29,10 @@
     </nav>
 
     <style>
+        * {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
         .gurulogo {
             border-radius: 50px;
             width: 50px;
@@ -40,18 +44,18 @@
             font-weight: bold;
             font-family: Arial, Helvetica, sans-serif;
             margin: 0;
+            text-align: center; /* Center the header */
         }
 
         .header-container {
             display: flex;
-            justify-content: space-between;
+            justify-content: center; /* Center the content */
             padding: 20px;
         }
 
         .header-container .mainheader {
             margin-right: 0;
         }
-
 
         .OurTeam, .OurMission, .AboutUs, .OurImpact, .Lessons, .ContactUs {
             background-color: transparent;
@@ -81,7 +85,7 @@
         }
 
         .OurTeam {
-            margin-left: 500px;
+            margin-left: 0; /* Remove left margin */
         }
 
         .OurMission {
@@ -98,6 +102,12 @@
 
         .ContactUs {
             left: 180px;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: center; /* Center the menu */
+            gap: 20px; /* Add spacing between buttons */
         }
 
     </style>
