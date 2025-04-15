@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>About Us - The Chess Gurus</title>
+    <title>Our Team - The Chess Gurus</title>
     <link rel="icon" type="image/png" href="./images/chessguru.webp">
     <style>
         * {
@@ -13,7 +13,7 @@
         }
 
         body {
-            background-color: rgb(226, 223, 223);
+            background-color: #F1DFB4;
             padding-top: 80px;
         }
 
@@ -188,6 +188,13 @@
             line-height: 1.5;
             text-align: center;
         }
+
+        .logo span, 
+        .nav-items a {
+            font-family: 'Magik', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 16px; /* Ensure consistent font size */
+            font-weight: bold; /* Ensure consistent font weight */
+        }
     </style>
 </head>
 <body>
@@ -204,8 +211,9 @@
         </div>
 
         <div class="nav-items" id="nav-items">
+            <a href="index.html">Home</a>
             <div class="dropdown">
-                <a href="javascript:void(0);" onclick="toggleDropdown()">About Us ▾</a>
+                <a href="javascript:void(0);" onclick="toggleDropdown()">Our Team ▾</a>
                 <div class="dropdown-content" id="dropdown-content">
                     <a href="OurFounders.html">Our Founders</a>
                     <a href="OurCoaches.html">Our Coaches</a>
@@ -218,7 +226,7 @@
         </div>
     </nav>
 
-    <header class="AboutUsHeader">About Us</header>
+    <header class="AboutUsHeader">Founders</header>
 
     <div class="container">
         <div class="profile">

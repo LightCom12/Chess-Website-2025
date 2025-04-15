@@ -3,12 +3,13 @@
     <head>
         <title>Chess Gurus</title>
         <link rel="icon" type="image/png" href="./images/chessguru.webp">
+        <link href="https://fonts.googleapis.com/css2?family=Magik:wght@400;700&display=swap" rel="stylesheet">
         <style>
             * {
                 box-sizing: border-box;
                 margin: 0;
                 padding: 0;
-                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                font-family: 'Magik', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
             }
 
             nav {
@@ -29,6 +30,8 @@
                 text-decoration: none;
                 padding: 0 1.5rem;
                 font-weight: bold;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; /* Ensure consistent font */
+                font-size: 16px; /* Adjust font size for consistency */
             }
 
             nav a:hover,
@@ -42,6 +45,7 @@
                 border-radius: 80px;
                 width: 50px;
                 margin-left: 50px;
+                animation: bounce 2s ease-out;
             }
 
             .logo span {
@@ -49,11 +53,30 @@
                 font-size: 25px;
                 font-weight: bold;
                 padding: 0 2rem;
+                animation: fadeIn 3s ease-out;
             }
 
             .logo {
                 display: flex;
                 align-items: center;
+            }
+
+            @keyframes bounce {
+                0%, 100% {
+                    transform: translateY(0);
+                }
+                50% {
+                    transform: translateY(-10px);
+                }
+            }
+
+            @keyframes fadeIn {
+                0% {
+                    opacity: 0.5;
+                }
+                100% {
+                    opacity: 1;
+                }
             }
 
             .dropdown {
@@ -95,13 +118,22 @@
                 align-items: center;
                 gap: 20px;
             }
+
+            .logo span, 
+            .nav-items a {
+                font-family: 'Magik', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; /* Ensure consistent font */
+                font-size: 16px; /* Ensure consistent font size */
+                font-weight: bold; /* Ensure consistent font weight */
+            }
         </style>
     </head>
     <body>
         <nav>
             <div class="logo">
-                <img src="images/chessguru.webp" alt="GuruLogo">
-                <span>The Chess Gurus</span>
+                <a href="index.html">
+                    <img src="images/chessguru.webp" alt="GuruLogo">
+                    <span>The Chess Gurus</span>
+                </a>
             </div>
 
             <div class="hamburger" onclick="toggleMenu()">
@@ -111,9 +143,10 @@
             </div>
 
             <div class="nav-items" id="nav-items">
-                <div class="dropdown" onclick="toggleDropdown(this)">
-                    <a href="OurFounders.html" class="dropbtn">About Us</a>
-                    <div class="dropdown-content">
+                <a href="index.html">Home</a>
+                <div class="dropdown">
+                    <a href="javascript:void(0);" onclick="toggleDropdown()">Our Team ▾</a>
+                    <div class="dropdown-content" id="dropdown-content">
                         <a href="OurFounders.html">Our Founders</a>
                         <a href="OurCoaches.html">Our Coaches</a>
                     </div>

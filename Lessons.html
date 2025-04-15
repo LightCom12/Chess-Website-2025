@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lessons - The Chess Gurus</title>
+    <title>The Chess Gurus - Lessons</title> <!-- Ensure consistent title -->
     <link rel="icon" type="image/png" href="chessguru.webp">
+    <link href="https://fonts.googleapis.com/css2?family=Magik:wght@400;700&display=swap" rel="stylesheet">
     <style>
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-family: 'Magik', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         }
 
         body {
-            background-color: rgb(226, 223, 223);
+            background-color: #F1DFB4;
             padding-top: 80px; /* Prevents content overlap */
         }
 
@@ -47,6 +48,7 @@
             width: 40px; /* Updated size */
             height: 40px;
             margin-right: 10px;
+            border-radius: 50%; /* Make the logo circular */
         }
 
         .logo span {
@@ -147,7 +149,7 @@
             max-width: 900px;
             margin: 80px auto 40px auto;
             padding: 0 20px;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
             font-size: 1.5em;
             line-height: 2;
             color: #333;
@@ -167,6 +169,17 @@
             border-radius: 8px;
             font-size: 1.2em;
         }
+
+        title {
+            font-family: 'Magik', sans-serif; /* Ensure consistent font for the tab title */
+        }
+
+        .logo span, 
+        .nav-items a {
+            font-family: 'Magik', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; /* Ensure consistent font */
+            font-size: 16px; /* Ensure consistent font size */
+            font-weight: bold; /* Ensure consistent font weight */
+        }
     </style>
 </head>
 <body>
@@ -183,8 +196,9 @@
         </div>
 
         <div class="nav-items" id="nav-items">
+            <a href="index.html">Home</a>
             <div class="dropdown">
-                <a href="javascript:void(0);" onclick="toggleDropdown()">About Us ▾</a>
+                <a href="javascript:void(0);" onclick="toggleDropdown()">Our Team ▾</a>
                 <div class="dropdown-content" id="dropdown-content">
                     <a href="OurFounders.html">Our Founders</a>
                     <a href="OurCoaches.html">Our Coaches</a>

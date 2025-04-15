@@ -8,11 +8,15 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-family: 'Magik', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        title {
+            font-family: 'Magik', sans-serif; /* Ensure consistent font for the tab title */
         }
 
         body {
-            background-color: rgb(226, 223, 223);
+            background-color: #F1DFB4;
             padding-top: 80px; /* Prevents content overlap */
         }
 
@@ -134,6 +138,13 @@
             line-height: 2;
             color: #333;
         }
+
+        .logo span, 
+        .nav-items a {
+            font-family: 'Magik', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 16px; /* Ensure consistent font size */
+            font-weight: bold; /* Ensure consistent font weight */
+        }
     </style>
 </head>
 <body>
@@ -150,7 +161,7 @@
         </div>
 
         <div class="nav-items" id="nav-items">
-            <a href="AboutUs.html">About Us</a>
+            <a href="index.html">Home</a>
             <div class="dropdown">
                 <a href="javascript:void(0);" onclick="toggleDropdown()">Our Team ▾</a>
                 <div class="dropdown-content" id="dropdown-content">

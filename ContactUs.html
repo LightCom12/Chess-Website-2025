@@ -3,10 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Contact Us - The Chess Gurus</title>
+    <link href="https://fonts.googleapis.com/css2?family=Magik:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Magik', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
         body {
-            background-color: rgb(226, 223, 223);
-            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            background-color: #F1DFB4;
             margin: 0;
             padding: 0;
             padding-top: 100px; /* Adjusted padding to ensure content is not cut off */
@@ -207,6 +213,15 @@
         .contact-info a:hover {
             color: #0073e6;
         }
+        title {
+            font-family: 'Magik', sans-serif; /* Ensure consistent font for the tab title */
+        }
+        .logo span, 
+        .nav-items a {
+            font-family: 'Magik', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; /* Ensure consistent font */
+            font-size: 16px; /* Ensure consistent font size */
+            font-weight: bold; /* Ensure consistent font weight */
+        }
     </style>
 </head>
 <body>
@@ -223,8 +238,9 @@
         </div>
 
         <div class="nav-items" id="nav-items">
+            <a href="index.html">About Us</a>
             <div class="dropdown">
-                <a href="javascript:void(0);" onclick="toggleDropdown()">About Us ▾</a>
+                <a href="javascript:void(0);" onclick="toggleDropdown()">Our Team ▾</a>
                 <div class="dropdown-content" id="dropdown-content">
                     <a href="OurFounders.html">Our Founders</a>
                     <a href="OurCoaches.html">Our Coaches</a>
