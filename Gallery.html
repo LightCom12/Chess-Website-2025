@@ -1,1 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Chess Gurus - Gallery</title>
+    <link rel="icon" type="image/png" href="chessguru.webp">
+    <link href="https://fonts.googleapis.com/css2?family=Magik:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Magik', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        body {
+            background-color: #F1DFB4;
+            padding-top: 80px;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 20px;
+            z-index: 1000;
+        }
+
+        nav .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        nav .logo img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+
+        nav .logo span {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .nav-items {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .nav-items a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 12px;
+        }
+
+        .nav-items a:hover {
+            background-color: #575757;
+            border-radius: 5px;
+        }
+
+        .carousel {
+            max-width: 800px;
+            margin: 20px auto;
+            overflow: hidden;
+            border-radius: 10px;
+            background-color: #F1DFB4;
+            display: flex;
+            align-items: center; /* Center images vertically */
+            justify-content: center; /* Center images horizontally */
+        }
+
+        .carousel-images {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: calc(100% * 3); /* Adjust for three images */
+        }
+
+        .carousel-images img {
+            width: 100%; /* Restore the full width of the images */
+            height: auto; /* Maintain aspect ratio */
+            flex-shrink: 0;
+            object-fit: contain; /* Ensure the entire image is visible */
+            margin: 0 auto; /* Center the images within their container */
+        }
+
+        .carousel-button {
+            position: absolute;
+            top: 55%; /* Adjusted to make the arrows slightly lower */
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+            z-index: 1000;
+        }
+
+        .carousel-button.prev {
+            left: 275px;
+        }
+
+        .carousel-button.next {
+            right: 275px;
+        }
+
+        .carousel-button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="images/chessguru.webp" alt="GuruLogo">
+            <span>The Chess Gurus</span>
+        </div>
+
+        <div class="nav-items" id="nav-items">
+            <a href="index.html">Home</a>
+            <a href="OurMission.html">Our Mission</a>
+            <a href="OurImpact.html">Our Impact</a>
+            <a href="Lessons.html">Lessons</a>
+            <a href="Gallery.html">Gallery</a>
+            <a href="ContactUs.html">Contact Us</a>
+        </div>
+    </nav>
+
+    <div class="carousel">
+        <div class="carousel-images">
+            <img src="images/sophnats.jpg" alt="Sophomore Nationals">
+            <img src="images/freshmannats.jpg" alt="Freshman Nationals">
+            <img src="images/statejunior.jpg" alt="State Junior Championship">
+        </div>
+        <button class="carousel-button prev" onclick="moveCarousel(-1)">&#10094;</button>
+        <button class="carousel-button next" onclick="moveCarousel(1)">&#10095;</button>
+    </div>
+
+    <script>
+        let currentIndex = 0;
+
+        function moveCarousel(direction) {
+            const carouselImages = document.querySelector('.carousel-images');
+            const totalImages = document.querySelectorAll('.carousel-images img').length;
+
+            currentIndex = (currentIndex + direction + totalImages) % totalImages;
+
+            const offset = -currentIndex * 100; // Move by 100% of the container width
+            carouselImages.style.transform = `translateX(${offset}%)`;
+        }
+    </script>
+</body>
+</html>
 
