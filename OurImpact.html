@@ -2,18 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Our Team - ChessGurus</title>
+    <title>Our Impact - The Chess Gurus</title>
+    <link rel="icon" type="image/png" href="chessguru.webp">
+    <link href="https://fonts.googleapis.com/css2?family=Magik:wght@400;700&display=swap" rel="stylesheet">
     <style>
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-family: 'Magik', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         }
 
         body {
-            background-color: rgb(226, 223, 223);
-            padding-top: 80px; /* Prevents content overlap */
+            background-color: #F1DFB4;
+            padding-top: 80px;
         }
 
         nav {
@@ -38,7 +40,7 @@
             width: 40px;
             height: 40px;
             margin-right: 10px;
-            border-radius: 50%; /* Make the logo circular */
+            border-radius: 50%;
         }
 
         nav .logo span {
@@ -125,14 +127,20 @@
             }
         }
 
-        .lesson-info {
-            max-width: 900px;
-            margin: 80px auto;
-            padding: 0 20px;
-            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-            font-size: 1.5em;
-            line-height: 2;
-            color: #333;
+        .impact-header {
+            font-size: 35px;
+            margin-top: 50px;
+            text-align: center;
+            padding-bottom: 10px;
+        }
+
+        .impact-content {
+            font-size: 18px;
+            text-align: center;
+            margin: 20px auto;
+            line-height: 1.75;
+            padding-bottom: 20px;
+            max-width: 800px;
         }
     </style>
 </head>
@@ -150,7 +158,7 @@
         </div>
 
         <div class="nav-items" id="nav-items">
-            <a href="AboutUs.html">About Us</a>
+            <a href="index.html">Home</a>
             <div class="dropdown">
                 <a href="javascript:void(0);" onclick="toggleDropdown()">Our Team ▾</a>
                 <div class="dropdown-content" id="dropdown-content">
@@ -161,9 +169,24 @@
             <a href="OurMission.html">Our Mission</a>
             <a href="OurImpact.html">Our Impact</a>
             <a href="Lessons.html">Lessons</a>
+            <a href="Gallery.html">Gallery</a>
             <a href="ContactUs.html">Contact Us</a>
         </div>
     </nav>
+
+    <header class="impact-header">Our Impact</header>
+
+    <div class="impact-content">
+        <p>
+            At ChessGurus, we are proud of the positive impact we’ve made in the community. Through our programs, we’ve helped students develop critical thinking, patience, and strategic skills that extend beyond the chessboard.
+        </p>
+        <p>
+            Our outreach includes partnerships with schools, community centers, and non-profit organizations to bring chess education to students of all backgrounds. We’ve seen firsthand how chess can inspire confidence, foster creativity, and build lifelong skills.
+        </p>
+        <p>
+            Join us in making a difference, one move at a time.
+        </p>
+    </div>
 
     <script>
         function toggleMenu() {
@@ -175,28 +198,6 @@
             const dropdown = document.getElementById('dropdown-content');
             dropdown.classList.toggle('open');
         }
-
-        // Optional: Close dropdown if clicked outside
-        window.addEventListener('click', function (e) {
-            const dropdown = document.getElementById('dropdown-content');
-            if (!e.target.matches('.dropdown > a')) {
-                dropdown.classList.remove('open');
-            }
-        });
     </script>
-
-    <div class="lesson-info">
-        <p>
-            At ChessGurus, we believe the impact of chess goes far beyond the board. We’ve seen how it helps students develop focus, patience, and problem-solving skills — all while having fun and building confidence.
-        </p>
-        <p>
-            We’re proud to bring our teaching into schools like Ryan Elementary, where we introduce young minds to the power of strategic thinking through engaging lessons and playful competition. Watching students grow, not just in skill, but in mindset, is at the heart of what we do.
-        </p>
-        <p>
-            Whether it’s guiding a beginner through their first checkmate or helping a player sharpen their strategy, we’re here to support meaningful growth, one move at a time.
-        </p>
-    </div>
-
-    <script src="loadingHeader.js"></script>
 </body>
 </html>
