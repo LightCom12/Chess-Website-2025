@@ -73,6 +73,7 @@
         .dropdown-content {
             display: none;
             position: absolute;
+            top: 25px; /* Move the dropdown box closer to the parent element */
             background-color: #333;
             box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
             z-index: 1;
@@ -87,6 +88,11 @@
 
         .dropdown-content a:hover {
             background-color: #575757;
+        }
+
+        .dropdown:hover .dropdown-content,
+        .dropdown-content:hover {
+            display: block;
         }
 
         .gallery-container {
@@ -242,22 +248,29 @@
 <body>
     <nav>
         <div class="logo">
-            <img src="images/chessguru.webp" alt="GuruLogo">
+            <img src="./images/chessguru.webp" alt="GuruLogo"> <!-- Fixed path -->
             <span>The Chess Gurus</span>
         </div>
 
         <div class="nav-items" id="nav-items">
-            <a href="index.html">Home</a>
+            <a href="./index.html">Home</a> <!-- Fixed path -->
             <div class="dropdown">
-                <a href="javascript:void(0);" onclick="toggleDropdown()">About Us ▾</a>
-                <div class="dropdown-content" id="dropdown-content">
-                    <a href="OurMission.html">Our Mission</a>
-                    <a href="OurImpact.html">Our Impact</a>
+                <a href="javascript:void(0);">About Us ▾</a>
+                <div class="dropdown-content">
+                    <a href="./OurMission.html">Our Mission</a> <!-- Fixed path -->
+                    <a href="./OurImpact.html">Our Impact</a> <!-- Fixed path -->
                 </div>
             </div>
-            <a href="Lessons.html">Lessons</a>
-            <a href="Gallery.html">Gallery</a>
-            <a href="ContactUs.html">Join Now</a>
+            <div class="dropdown">
+                <a href="javascript:void(0);">Our Team ▾</a>
+                <div class="dropdown-content">
+                    <a href="./OurFounders.html">Our Founders</a> <!-- Fixed path -->
+                    <a href="./OurCoaches.html">Our Coaches</a> <!-- Fixed path -->
+                </div>
+            </div>
+            <a href="./Lessons.html">Lessons</a> <!-- Fixed path -->
+            <a href="./Gallery.html">Gallery</a> <!-- Fixed path -->
+            <a href="./ContactUs.html">Join Now</a> <!-- Fixed path -->
         </div>
     </nav>
 
@@ -384,9 +397,9 @@
         updateDots();
         updateDots2();
 
-        function toggleDropdown() {
-            const dropdownContent = document.getElementById('dropdown-content');
-            dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+        function toggleMenu() {
+            const navItems = document.getElementById('nav-items');
+            navItems.classList.toggle('active');
         }
     </script>
 </body>
