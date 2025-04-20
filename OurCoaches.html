@@ -72,6 +72,7 @@
             box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
             z-index: 1;
             border-radius: 5px; /* Added border radius */
+            top: 25px; /* Move the dropdown box closer to the parent element */
         }
 
         .dropdown-content a {
@@ -87,6 +88,11 @@
 
         .dropdown {
             position: relative;
+        }
+
+        .dropdown:hover .dropdown-content,
+        .dropdown-content:hover {
+            display: block;
         }
 
         .hamburger {
@@ -213,14 +219,19 @@
         <div class="nav-items" id="nav-items">
             <a href="index.html">Home</a>
             <div class="dropdown">
-                <a href="javascript:void(0);" onclick="toggleDropdown()">Our Team ▾</a>
-                <div class="dropdown-content" id="dropdown-content">
+                <a href="javascript:void(0);">About Us ▾</a>
+                <div class="dropdown-content">
+                    <a href="OurMission.html">Our Mission</a>
+                    <a href="OurImpact.html">Our Impact</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="javascript:void(0);">Our Team ▾</a>
+                <div class="dropdown-content">
                     <a href="OurFounders.html">Our Founders</a>
                     <a href="OurCoaches.html">Our Coaches</a>
                 </div>
             </div>
-            <a href="OurMission.html">Our Mission</a>
-            <a href="OurImpact.html">Our Impact</a>
             <a href="Lessons.html">Lessons</a>
             <a href="Gallery.html">Gallery</a>
             <a href="ContactUs.html">Join Now</a>
@@ -232,19 +243,6 @@
             const nav = document.getElementById('nav-items');
             nav.classList.toggle('active');
         }
-
-        function toggleDropdown() {
-            const dropdown = document.getElementById('dropdown-content');
-            dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
-        }
-
-        // Optional: Close dropdown if clicked outside
-        window.addEventListener('click', function (e) {
-            const dropdown = document.getElementById('dropdown-content');
-            if (!e.target.matches('.dropdown > a')) {
-                dropdown.style.display = "none";
-            }
-        });
     </script>
 
     <header class="CoachesHeader">Coaches</header>
