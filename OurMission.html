@@ -188,16 +188,18 @@
             text-align: center;
             font-size: 35px;
             margin-top: 40px;
+            font-family: 'Magik', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; /* Ensure consistent font */
         }
 
         p {
             text-align: center;
-            font-size: 18px;
+            font-size: 18px; /* Match font size */
             margin: 20px auto;
             line-height: 1.75;
             padding-bottom: 20px;
             width: 80%;
             max-width: 900px;
+            font-family: 'Magik', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; /* Ensure consistent font */
         }
     </style>
 </head>
@@ -217,17 +219,15 @@
         <div class="nav-items" id="nav-items">
             <a href="index.html">Home</a>
             <div class="dropdown">
-                <a href="javascript:void(0);" onclick="toggleDropdown()">Our Team ▾</a>
+                <a href="javascript:void(0);" onclick="toggleDropdown()">About Us ▾</a>
                 <div class="dropdown-content" id="dropdown-content">
-                    <a href="OurFounders.html">Our Founders</a>
-                    <a href="OurCoaches.html">Our Coaches</a>
+                    <a href="OurMission.html">Our Mission</a>
+                    <a href="OurImpact.html">Our Impact</a>
                 </div>
             </div>
-            <a href="OurMission.html">Our Mission</a>
-            <a href="OurImpact.html">Our Impact</a>
             <a href="Lessons.html">Lessons</a>
             <a href="Gallery.html">Gallery</a>
-            <a href="ContactUs.html">Contact Us</a>
+            <a href="ContactUs.html">Join Now</a>
         </div>
     </nav>
 
@@ -243,6 +243,18 @@
         we’re here to help every learner unlock their full potential, one move at a time.
     </p>
 
+    <header style="font-size: 35px; text-align: center; margin-top: 40px; font-family: 'Magik', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+        Our Co-founders
+    </header>
+
+    <p style="font-size: 18px; line-height: 1.75; text-align: center; margin: 20px auto; max-width: 900px;">
+        Officers from the multiple-time award-winning chess team at Arizona College Prep took the initiative to create the AZ Chess Gurus Organization in 2024. Motivated by their shared passion for the game and a desire to give back to the community, they envisioned a platform that would make chess accessible, engaging, and meaningful for students of all ages and backgrounds. Drawing on their experience in competitive play, leadership, and mentorship, the co-founders launched the organization to promote critical thinking, strategic learning, and a lasting love for chess across Arizona and beyond.
+    </p>
+
+    <div style="text-align: center; margin: 20px auto;">
+        <img src="images/founder.jpeg" alt="Our Co-founders" style="max-width: 50%; height: auto; border-radius: 10px;">
+    </div>
+
     <script>
         function toggleMenu() {
             const navItems = document.getElementById('nav-items');
@@ -250,9 +262,17 @@
         }
 
         function toggleDropdown() {
-            const dropdown = document.querySelector('.dropdown');
-            dropdown.classList.toggle('open');
+            const dropdownContent = document.getElementById('dropdown-content');
+            dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
         }
+
+        // Optional: Close dropdown if clicked outside
+        window.addEventListener('click', function (e) {
+            const dropdownContent = document.getElementById('dropdown-content');
+            if (!e.target.matches('.dropdown > a')) {
+                dropdownContent.style.display = 'none';
+            }
+        });
     </script>
 </body>
 </html>
