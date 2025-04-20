@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Contact Us - The Chess Gurus</title>
+    <title>Join our Program - The Chess Gurus</title>
     <link href="https://fonts.googleapis.com/css2?family=Magik:wght@400;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -238,39 +238,73 @@
         </div>
 
         <div class="nav-items" id="nav-items">
-            <a href="index.html">About Us</a>
+            <a href="index.html">Home</a>
             <div class="dropdown">
-                <a href="javascript:void(0);" onclick="toggleDropdown()">Our Team ▾</a>
+                <a href="javascript:void(0);" onclick="toggleDropdown()">About Us ▾</a>
                 <div class="dropdown-content" id="dropdown-content">
-                    <a href="OurFounders.html">Our Founders</a>
-                    <a href="OurCoaches.html">Our Coaches</a>
+                    <a href="OurMission.html">Our Mission</a>
+                    <a href="OurImpact.html">Our Impact</a>
                 </div>
             </div>
-            <a href="OurMission.html">Our Mission</a>
-            <a href="OurImpact.html">Our Impact</a>
             <a href="Lessons.html">Lessons</a>
             <a href="Gallery.html">Gallery</a>
-            <a href="ContactUs.html">Contact Us</a>
+            <a href="ContactUs.html">Join Now</a>
         </div>
     </nav>
 
-    <div class="contact-header">
-        Contact Us
+    <div class="contact-header" style="margin-top: 40px;"> <!-- Reduced margin-top -->
+        Join our Program
     </div>
 
     <div class="contact-paragraph">
-        Have questions or need more information? We’re here to help! Whether you’re interested in our free Zoom lessons, want to learn more about our programs, or have any other inquiries, don’t hesitate to reach out.
+        At AZChessGurus, our goal is to make chess accessible to everyone—and our free lessons program is a great example of that mission in action. We welcome students of all experience levels, from complete beginners to advanced players, and all lessons are offered at no cost. If you’re interested in free lessons, please fill out the form below. A coach from the AZChessGurus team will contact you to schedule your sessions.
     </div>
 
-    <div class="contact-info">
-        <p>Email: <a href="mailto:chessgurusaz@gmail.com">chessgurusaz@gmail.com</a></p>
-        <p>Social Media:</p>
-        <p>Instagram: <a href="https://www.instagram.com/azchessgurus" target="_blank">azchessgurus</a></p>
-        <p>YouTube: <a href="https://www.youtube.com/c/AzChessGurus" target="_blank">AzChessGurus</a></p>
-    </div>
+    <div class="contact-form-container" style="display: flex; flex-direction: column; align-items: center; gap: 40px; max-width: 800px; margin: 40px auto;">
+        <div style="width: 100%;">
+            <form action="mailto:chessgurusaz@gmail.com" method="post" style="display: flex; flex-direction: column; gap: 15px; width: 100%;">
+                <label for="name" style="font-size: 16px; color: #333;">Your Name (required):</label>
+                <input type="text" id="name" name="name" required style="padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
 
-    <div class="contact-paragraph">
-        We look forward to hearing from you and helping you on your chess journey!
+                <label for="email" style="font-size: 16px; color: #333;">Your Email (required):</label>
+                <input type="email" id="email" name="email" required style="padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+
+                <label for="phone" style="font-size: 16px; color: #333;">Phone Number (required):</label>
+                <input type="text" id="phone" name="phone" required style="padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+
+                <label for="uscf" style="font-size: 16px; color: #333;">USCF Rating (if applicable):</label>
+                <input type="text" id="uscf" name="uscf" style="padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+
+                <label for="fide" style="font-size: 16px; color: #333;">FIDE Rating (if applicable):</label>
+                <input type="text" id="fide" name="fide" style="padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+
+                <label for="online" style="font-size: 16px; color: #333;">Online Rating (if applicable):</label>
+                <input type="text" id="online" name="online" style="padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+
+                <label for="experience" style="font-size: 16px; color: #333;">How long have you been playing? (required):</label>
+                <input type="text" id="experience" name="experience" required style="padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+
+                <button type="submit" style="padding: 10px 20px; background-color: #333; color: white; border: none; border-radius: 5px; cursor: pointer;">Send Message</button>
+            </form>
+
+            <div style="width: 100%; text-align: center; margin-top: 20px;">
+                <h3 style="font-size: 24px; color: #333;">Social Media</h3>
+                <p style="display: flex; justify-content: center; gap: 40px; align-items: center; margin: 0; padding-left: 150px;">
+                    <a href="https://www.instagram.com/azchessgurus" target="_blank" style="text-decoration: none;" title="https://www.instagram.com/azchessgurus">
+                        <img src="images/instalogo.png" alt="Instagram Logo" style="width: 50px; height: 50px;">
+                    </a>
+                    <a href="https://www.youtube.com/@AZChessGurus" target="_blank" style="text-decoration: none;" title="https://www.youtube.com/@AZChessGurus">
+                        <img src="images/ytlogo.png" alt="YouTube Logo" style="width: 50px; height: 50px;">
+                    </a>
+                    <a href="https://www.linkedin.com/in/az-chessgurus-b73740319/" target="_blank" style="text-decoration: none;" title="https://www.linkedin.com/in/az-chessgurus-b73740319/">
+                        <img src="images/linklogo.png" alt="LinkedIn Logo" style="width: 50px; height: 50px;">
+                    </a>
+                    <a href="mailto:chessgurusaz@gmail.com" style="text-decoration: none;" title="mailto:chessgurusaz@gmail.com">
+                        <img src="images/maillogo.png" alt="Gmail Logo" style="width: 50px; height: 50px;">
+                    </a>
+                </p>
+            </div>
+        </div>
     </div>
 </body>
 </html>
