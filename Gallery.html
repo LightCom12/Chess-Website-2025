@@ -66,54 +66,176 @@
             border-radius: 5px;
         }
 
-        .carousel {
-            max-width: 800px;
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 8px 12px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #575757;
+        }
+
+        .gallery-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 40px;
+            max-width: 1200px;
             margin: 20px auto;
+        }
+
+        .gallery-container .carousel:first-child {
+            margin-top: 70px; /* Existing margin to move the first carousel down */
+            border: none; /* Remove the border */
+            border-radius: 0; /* Reset border radius */
+        }
+
+        .gallery-container .carousel:nth-child(2) {
+            margin-top: 70px; /* Move the second carousel down */
+            margin-left: 20px; /* Add margin to move the second carousel to the right */
+            position: relative; /* Ensure dots are positioned relative to the second carousel */
+        }
+
+        .carousel {
+            flex: 1;
+            max-width: 48%; /* Adjust width to fit two carousels side by side */
             overflow: hidden;
             border-radius: 10px;
             background-color: #F1DFB4;
             display: flex;
-            align-items: center; /* Center images vertically */
-            justify-content: center; /* Center images horizontally */
+            align-items: center;
+            justify-content: center;
+            position: relative; /* Ensure dots are positioned relative to the carousel */
         }
 
         .carousel-images {
             display: flex;
             transition: transform 0.5s ease-in-out;
-            width: calc(100% * 3); /* Adjust for three images */
+            width: calc(100% * 5); /* Adjust width for five images */
+        }
+
+        .carousel-images#carousel-2 {
+            width: calc(100% * 7); /* Adjust width for seven images */
         }
 
         .carousel-images img {
-            width: 100%; /* Restore the full width of the images */
-            height: auto; /* Maintain aspect ratio */
+            width: 100%;
+            height: auto;
             flex-shrink: 0;
-            object-fit: contain; /* Ensure the entire image is visible */
-            margin: 0 auto; /* Center the images within their container */
+            object-fit: contain;
+            margin: 0 auto;
+        }
+
+        #carousel-1 img:nth-child(3) {
+            object-fit: cover; /* Ensure the third image fits within the border */
+            width: 100%; /* Maintain full width */
+            height: 100%; /* Maintain full height */
         }
 
         .carousel-button {
             position: absolute;
-            top: 55%; /* Adjusted to make the arrows slightly lower */
+            top: 50%; /* Center vertically */
             transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.5); /* Revert arrow background to original */
             color: white;
             border: none;
             padding: 10px;
             cursor: pointer;
             border-radius: 50%;
             z-index: 1000;
+            width: 40px; /* Ensure consistent size */
+            height: 40px; /* Ensure consistent size */
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .carousel-button.prev {
-            left: 275px;
+            left: 1000px; /* Adjusted to ensure visibility */
         }
 
         .carousel-button.next {
-            right: 275px;
+            right: 10px; /* Adjusted to ensure visibility */
         }
 
         .carousel-button:hover {
-            background-color: rgba(0, 0, 0, 0.8);
+            background-color: rgba(0, 0, 0, 0.8); /* Keep hover effect consistent */
+        }
+
+        .carousel-button.first-carousel-prev {
+            left: 70px; /* Custom position for the first carousel's previous button */
+        }
+
+        .carousel-button.first-carousel-next {
+            right: 690px; /* Custom position for the first carousel's next button */
+        }
+
+        .carousel-button.prev {
+            left: 1000px; /* Adjusted to ensure visibility */
+        }
+
+        .carousel-button.next {
+            right: 10px; /* Adjusted to ensure visibility */
+        }
+
+        .carousel-button.first-carousel-prev:hover,
+        .carousel-button.first-carousel-next:hover {
+            background-color: rgba(255, 255, 255, 0.8); /* Custom hover effect */
+            color: black; /* Change arrow color on hover */
+        }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            bottom: 20px; /* Move dots slightly higher */
+            width: 100%;
+            gap: 10px;
+        }
+
+        .carousel-dots .dot {
+            width: 12px;
+            height: 12px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .carousel-dots .dot.active {
+            background-color: black;
+        }
+
+        #carousel-2-dots {
+            bottom: 10px; /* Move dots in the second carousel further down */
+        }
+
+        #carousel-2-dots .dot {
+            width: 15px; /* Increase width of dots */
+            height: 15px; /* Increase height of dots */
+        }
+
+        #carousel-1-dots {
+            bottom: 10px; /* Move dots for the first carousel outside the image, like the second carousel */
+        }
+
+        #carousel-1-dots .dot {
+            width: 15px; /* Keep the size consistent with the second carousel */
+            height: 15px;
         }
     </style>
 </head>
@@ -126,37 +248,146 @@
 
         <div class="nav-items" id="nav-items">
             <a href="index.html">Home</a>
-            <a href="OurMission.html">Our Mission</a>
-            <a href="OurImpact.html">Our Impact</a>
+            <div class="dropdown">
+                <a href="javascript:void(0);" onclick="toggleDropdown()">About Us ▾</a>
+                <div class="dropdown-content" id="dropdown-content">
+                    <a href="OurMission.html">Our Mission</a>
+                    <a href="OurImpact.html">Our Impact</a>
+                </div>
+            </div>
             <a href="Lessons.html">Lessons</a>
             <a href="Gallery.html">Gallery</a>
-            <a href="ContactUs.html">Contact Us</a>
+            <a href="ContactUs.html">Join Now</a>
         </div>
     </nav>
 
-    <div class="carousel">
-        <div class="carousel-images">
-            <img src="images/sophnats.jpg" alt="Sophomore Nationals">
-            <img src="images/freshmannats.jpg" alt="Freshman Nationals">
-            <img src="images/statejunior.jpg" alt="State Junior Championship">
+    <div class="gallery-container">
+        <div class="carousel" style="position: relative;">
+            <div class="carousel-images" id="carousel-1">
+                <img src="images/sophnats.jpg" alt="Sophomore Nationals">
+                <img src="images/freshmannats.jpg" alt="Freshman Nationals">
+                <img src="images/statejunior.jpg" alt="State Junior Championship">
+                <img src="images/pic4.jpg" alt="Additional Event">
+                <img src="images/pic5.jpg" alt="New Event">
+            </div>
+            <div class="carousel-dots" id="carousel-1-dots">
+                <span class="dot" onclick="moveToSlide(0)"></span>
+                <span class="dot" onclick="moveToSlide(1)"></span>
+                <span class="dot" onclick="moveToSlide(2)"></span>
+                <span class="dot" onclick="moveToSlide(3)"></span>
+                <span class="dot" onclick="moveToSlide(4)"></span>
+            </div>
         </div>
-        <button class="carousel-button prev" onclick="moveCarousel(-1)">&#10094;</button>
-        <button class="carousel-button next" onclick="moveCarousel(1)">&#10095;</button>
+
+        <div class="carousel" style="position: relative;">
+            <div class="carousel-images" id="carousel-2">
+                <img src="images/pic1.jpg" alt="Picture 1"> <!-- Added pic1.jpg -->
+                <img src="images/pic2.jpg" alt="Picture 2"> <!-- Added pic2.jpg -->
+                <img src="images/pic3.jpg" alt="Picture 3"> <!-- Added pic3.jpg -->
+                <img src="images/pic6.jpg" alt="Picture 6"> <!-- Added pic6.jpg -->
+            </div>
+            <div class="carousel-dots" id="carousel-2-dots">
+                <span class="dot" onclick="moveToSlide2(0)"></span>
+                <span class="dot" onclick="moveToSlide2(1)"></span>
+                <span class="dot" onclick="moveToSlide2(2)"></span>
+                <span class="dot" onclick="moveToSlide2(3)"></span>
+            </div>
+        </div>
     </div>
 
     <script>
-        let currentIndex = 0;
+        let firstCarouselIndex = 0;
+        let secondCarouselIndex = 0;
+        let firstCarouselTimer, secondCarouselTimer;
 
-        function moveCarousel(direction) {
-            const carouselImages = document.querySelector('.carousel-images');
-            const totalImages = document.querySelectorAll('.carousel-images img').length;
+        function moveFirstCarousel(direction) {
+            const carouselImages = document.getElementById('carousel-1');
+            const totalImages = carouselImages.querySelectorAll('img').length;
 
-            currentIndex = (currentIndex + direction + totalImages) % totalImages;
+            firstCarouselIndex = (firstCarouselIndex + direction + totalImages) % totalImages;
 
-            const offset = -currentIndex * 100; // Move by 100% of the container width
+            const offset = -firstCarouselIndex * 100;
             carouselImages.style.transform = `translateX(${offset}%)`;
+
+            updateDots();
+            resetFirstCarouselAutoplay();
+        }
+
+        function moveToSlide(index) {
+            const carouselImages = document.getElementById('carousel-1');
+            const totalImages = carouselImages.querySelectorAll('img').length;
+
+            firstCarouselIndex = index % totalImages;
+
+            const offset = -firstCarouselIndex * 100;
+            carouselImages.style.transform = `translateX(${offset}%)`;
+
+            updateDots();
+            resetFirstCarouselAutoplay();
+        }
+
+        function updateDots() {
+            const dots = document.querySelectorAll('#carousel-1-dots .dot');
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === firstCarouselIndex);
+            });
+        }
+
+        function resetFirstCarouselAutoplay() {
+            clearInterval(firstCarouselTimer);
+            firstCarouselTimer = setInterval(() => moveFirstCarousel(1), 5000);
+        }
+
+        function moveToSlide2(index) {
+            const carouselImages = document.getElementById('carousel-2');
+            const totalImages = carouselImages.querySelectorAll('img').length;
+
+            secondCarouselIndex = index % totalImages;
+
+            const offset = -secondCarouselIndex * 100;
+            carouselImages.style.transform = `translateX(${offset}%)`;
+
+            updateDots2();
+            resetSecondCarouselAutoplay();
+        }
+
+        function updateDots2() {
+            const dots = document.querySelectorAll('#carousel-2-dots .dot');
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === secondCarouselIndex);
+            });
+        }
+
+        function moveSecondCarousel(direction) {
+            const carouselImages = document.getElementById('carousel-2');
+            const totalImages = carouselImages.querySelectorAll('img').length;
+
+            secondCarouselIndex = (secondCarouselIndex + direction + totalImages) % totalImages;
+
+            const offset = -secondCarouselIndex * 100;
+            carouselImages.style.transform = `translateX(${offset}%)`;
+
+            updateDots2();
+            resetSecondCarouselAutoplay();
+        }
+
+        function resetSecondCarouselAutoplay() {
+            clearInterval(secondCarouselTimer);
+            secondCarouselTimer = setInterval(() => moveSecondCarousel(1), 5000);
+        }
+
+        // Initialize autoplay for both carousels
+        firstCarouselTimer = setInterval(() => moveFirstCarousel(1), 5000);
+        secondCarouselTimer = setInterval(() => moveSecondCarousel(1), 5000);
+
+        // Initialize the dots
+        updateDots();
+        updateDots2();
+
+        function toggleDropdown() {
+            const dropdownContent = document.getElementById('dropdown-content');
+            dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
         }
     </script>
 </body>
 </html>
-
