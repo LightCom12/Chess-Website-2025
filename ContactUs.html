@@ -94,6 +94,7 @@
             box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
             z-index: 1;
             border-radius: 5px; /* Added border radius */
+            top: 25px; /* Move the dropdown box closer to the parent element */
         }
 
         .dropdown-content a {
@@ -107,7 +108,8 @@
             background-color: #f1f1f1; /* Updated hover background color */
         }
 
-        .dropdown:hover .dropdown-content {
+        .dropdown:hover .dropdown-content,
+        .dropdown-content:hover {
             display: block;
         }
 
@@ -227,7 +229,7 @@
 <body>
     <nav>
         <div class="logo">
-            <img src="images/chessguru.webp" alt="GuruLogo">
+            <img src="./images/chessguru.webp" alt="GuruLogo"> <!-- Fixed path -->
             <span>The Chess Gurus</span>
         </div>
 
@@ -238,17 +240,24 @@
         </div>
 
         <div class="nav-items" id="nav-items">
-            <a href="index.html">Home</a>
+            <a href="./index.html">Home</a> <!-- Fixed path -->
             <div class="dropdown">
-                <a href="javascript:void(0);" onclick="toggleDropdown()">About Us ▾</a>
-                <div class="dropdown-content" id="dropdown-content">
-                    <a href="OurMission.html">Our Mission</a>
-                    <a href="OurImpact.html">Our Impact</a>
+                <a href="javascript:void(0);">About Us ▾</a>
+                <div class="dropdown-content">
+                    <a href="./OurMission.html">Our Mission</a> <!-- Fixed path -->
+                    <a href="./OurImpact.html">Our Impact</a> <!-- Fixed path -->
                 </div>
             </div>
-            <a href="Lessons.html">Lessons</a>
-            <a href="Gallery.html">Gallery</a>
-            <a href="ContactUs.html">Join Now</a>
+            <div class="dropdown">
+                <a href="javascript:void(0);">Our Team ▾</a>
+                <div class="dropdown-content">
+                    <a href="./OurFounders.html">Our Founders</a> <!-- Fixed path -->
+                    <a href="./OurCoaches.html">Our Coaches</a> <!-- Fixed path -->
+                </div>
+            </div>
+            <a href="./Lessons.html">Lessons</a> <!-- Fixed path -->
+            <a href="./Gallery.html">Gallery</a> <!-- Fixed path -->
+            <a href="./ContactUs.html">Join Now</a> <!-- Fixed path -->
         </div>
     </nav>
 
@@ -262,7 +271,7 @@
 
     <div class="contact-form-container" style="display: flex; flex-direction: column; align-items: center; gap: 40px; max-width: 800px; margin: 40px auto;">
         <div style="width: 100%;">
-            <form action="mailto:chessgurusaz@gmail.com" method="post" style="display: flex; flex-direction: column; gap: 15px; width: 100%;">
+            <form action="submit_form.php" method="POST" style="display: flex; flex-direction: column; gap: 15px; width: 100%;">
                 <label for="name" style="font-size: 16px; color: #333;">Your Name (required):</label>
                 <input type="text" id="name" name="name" required style="padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
 
@@ -282,9 +291,9 @@
                 <input type="text" id="online" name="online" style="padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
 
                 <label for="experience" style="font-size: 16px; color: #333;">How long have you been playing? (required):</label>
-                <input type="text" id="experience" name="experience" required style="padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+                <textarea id="experience" name="experience" required style="padding: 10px; border: 1px solid #ccc; border-radius: 5px;"></textarea>
 
-                <button type="submit" style="padding: 10px 20px; background-color: #333; color: white; border: none; border-radius: 5px; cursor: pointer;">Send Message</button>
+                <button type="submit" name="submit" style="padding: 10px 20px; background-color: #333; color: white; border: none; border-radius: 5px; cursor: pointer;">Send Message</button>
             </form>
 
             <div style="width: 100%; text-align: center; margin-top: 20px;">
@@ -306,5 +315,11 @@
             </div>
         </div>
     </div>
+    <script>
+        function toggleMenu() {
+            const navItems = document.getElementById('nav-items');
+            navItems.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
