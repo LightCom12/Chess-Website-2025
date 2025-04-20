@@ -86,25 +86,32 @@
             .dropdown-content {
                 display: none;
                 position: absolute;
-                background-color: black;
+                background-color: #444;
                 min-width: 160px;
-                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
                 z-index: 1;
+                border-radius: 5px;
+                top: 25px; /* Move the dropdown box closer to the parent element */
             }
 
             .dropdown-content a {
                 color: white;
-                font-weight: bold;
-                padding: 13px 17px;
-                display: block;
-            }
-
-            .dropdown:hover .dropdown-content {
+                padding: 10px 15px;
+                text-decoration: none;
                 display: block;
             }
 
             .dropdown-content a:hover {
-                background-color: gray;
+                background-color: #575757;
+            }
+
+            .dropdown-content.open {
+                display: block;
+            }
+
+            .dropdown:hover .dropdown-content,
+            .dropdown-content:hover {
+                display: block;
             }
 
             body {
@@ -130,8 +137,8 @@
     <body>
         <nav>
             <div class="logo">
-                <a href="index.html">
-                    <img src="images/chessguru.webp" alt="GuruLogo">
+                <a href="./index.html">
+                    <img src="./images/chessguru.webp" alt="GuruLogo">
                     <span>The Chess Gurus</span>
                 </a>
             </div>
@@ -143,19 +150,19 @@
             </div>
 
             <div class="nav-items" id="nav-items">
-                <a href="index.html">Home</a>
+                <a href="./index.html">Home</a>
                 <div class="dropdown">
-                    <a href="javascript:void(0);" onclick="toggleDropdown()">Our Team ▾</a>
+                    <a href="javascript:void(0);" onclick="toggleDropdown(event)">Our Team ▾</a>
                     <div class="dropdown-content" id="dropdown-content">
-                        <a href="OurFounders.html">Our Founders</a>
-                        <a href="OurCoaches.html">Our Coaches</a>
+                        <a href="./OurFounders.html">Our Founders</a>
+                        <a href="./OurCoaches.html">Our Coaches</a>
                     </div>
                 </div>
-                <a href="OurMission.html">Our Mission</a>
-                <a href="OurImpact.html">Our Impact</a>
-                <a href="Lessons.html">Lessons</a>
-                <a href="Gallery.html">Gallery</a>
-                <a href="ContactUs.html">Join Now</a>
+                <a href="./OurMission.html">Our Mission</a>
+                <a href="./OurImpact.html">Our Impact</a>
+                <a href="./Lessons.html">Lessons</a>
+                <a href="./Gallery.html">Gallery</a>
+                <a href="./ContactUs.html">Join Now</a>
             </div>
         </nav>
         <script>
@@ -164,9 +171,24 @@
                 navItems.classList.toggle('active');
             }
 
-            function toggleDropdown(dropdown) {
+            function toggleDropdown(event) {
+                event.stopPropagation(); // Prevent click from propagating
+                const dropdown = event.target.nextElementSibling;
                 dropdown.classList.toggle('open');
             }
+
+            // Close dropdown if clicked outside
+            window.addEventListener('click', function () {
+                const dropdowns = document.querySelectorAll('.dropdown-content');
+                dropdowns.forEach(dropdown => dropdown.classList.remove('open'));
+            });
+
+            // Prevent dropdown from closing when clicked inside
+            document.querySelectorAll('.dropdown-content').forEach(dropdown => {
+                dropdown.addEventListener('click', function (event) {
+                    event.stopPropagation();
+                });
+            });
         </script>
     </body>
 </html>
