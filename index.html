@@ -81,7 +81,7 @@
         .dropdown-content {
             display: none;
             position: absolute;
-            top: 38px;
+            top: 25px; /* Move the dropdown box closer to the parent element */
             background-color: #444;
             min-width: 160px;
             z-index: 1;
@@ -98,7 +98,8 @@
             background-color: #575757;
         }
 
-        .dropdown-content.open {
+        .dropdown:hover .dropdown-content,
+        .dropdown-content:hover {
             display: block;
         }
 
@@ -360,10 +361,17 @@
         <div class="nav-items" id="nav-items">
             <a href="index.html">Home</a>
             <div class="dropdown">
-                <a href="javascript:void(0);" onclick="toggleDropdown()">About Us ▾</a>
-                <div class="dropdown-content" id="dropdown-content">
+                <a href="javascript:void(0);">About Us ▾</a>
+                <div class="dropdown-content">
                     <a href="OurMission.html">Our Mission</a>
                     <a href="OurImpact.html">Our Impact</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="javascript:void(0);">Our Team ▾</a>
+                <div class="dropdown-content">
+                    <a href="OurFounders.html">Our Founders</a>
+                    <a href="OurCoaches.html">Our Coaches</a>
                 </div>
             </div>
             <a href="Lessons.html">Lessons</a>
@@ -418,13 +426,8 @@
 
     <script>
         function toggleMenu() {
-            const nav = document.getElementById('nav-items');
-            nav.classList.toggle('active');
-        }
-
-        function toggleDropdown() {
-            const dropdown = document.getElementById('dropdown-content');
-            dropdown.classList.toggle('open');
+            const navItems = document.getElementById('nav-items');
+            navItems.classList.toggle('active');
         }
 
         let currentIndex = 0;
