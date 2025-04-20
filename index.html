@@ -8,6 +8,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Magik:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@700&display=swap" rel="stylesheet">
     <style>
         * {
             box-sizing: border-box;
@@ -161,15 +163,48 @@
         .circle {
             width: 150px;
             height: 150px;
-            border: 2px solid black;
+            border: 2px solid black; /* Black border */
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            background-color: rgba(255, 255, 255, 0.8);
             font-size: 16px;
             font-weight: bold;
+            color: black; /* Black text */
+            background-color: white; /* White background */
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .circle:hover {
+            transform: scale(1.1); /* Slightly enlarge the circle */
+            background-color: #f4f4f4; /* Light gray background on hover */
+        }
+
+        .circle .original-text {
+            position: absolute;
+            opacity: 1;
+            transition: opacity 0.3s ease;
+        }
+
+        .circle .extra-text {
+            position: absolute;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            text-align: center;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .circle:hover .original-text {
+            opacity: 0; /* Hide original text */
+        }
+
+        .circle:hover .extra-text {
+            opacity: 1; /* Show extra text */
         }
 
         .action-buttons {
@@ -204,10 +239,13 @@
         }
 
         .landing-header p {
-            font-size: 18px;
-            margin-top: 10px;
-            line-height: 1.8; /* Add middle spacing */
+            font-size: 22px; /* Increase font size */
+            margin-top: 20px; /* Add more spacing above */
+            line-height: 2; /* Adjust line height for better readability */
             text-align: center; /* Center align the text */
+            max-width: 800px; /* Limit the width */
+            margin-left: auto; /* Center horizontally */
+            margin-right: auto; /* Center horizontally */
         }
 
         .logo span, 
@@ -215,6 +253,94 @@
             font-family: 'Magik', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; /* Ensure consistent font */
             font-size: 16px; /* Ensure consistent font size */
             font-weight: bold; /* Ensure consistent font weight */
+        }
+
+        .offer-box {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #fff; /* White background */
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+        }
+
+        .offer-box h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .offer-box p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .chess-gurus-heading {
+            font-family: 'Figtree', sans-serif; /* Apply Figtree font */
+            font-size: 50px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .carousel {
+            position: relative;
+            max-width: 800px;
+            margin: 20px auto;
+            overflow: hidden;
+            border-radius: 10px;
+            background-color: #F1DFB4; /* Ensure background matches the page */
+        }
+
+        .carousel-images {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 187.5%; /* Adjust for two images */
+        }
+        .carousel-images img {
+            width: auto; /* Maintain original width */
+            height: 100%; /* Fit the height of the container */
+            max-height: 600px; /* Ensure the image fits within the container */
+            margin: auto; /* Center the image */
+            display: block;
+            object-fit: contain; /* Ensure the entire image is visible */
+        }
+
+        .carousel-images img:nth-child(1),
+        .carousel-images img:nth-child(2),
+        .carousel-images img:nth-child(3) {
+            transform: scale(1); /* Revert scaling to default */
+        }
+
+        .carousel-button {
+            position: absolute;
+            top: 50%; /* Center vertically */
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+            z-index: 1000;
+            width: 40px; /* Ensure consistent size */
+            height: 40px; /* Ensure consistent size */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .carousel-button.prev {
+            left: 20px; /* Equal distance from the left edge */
+        }
+
+        .carousel-button.next {
+            right: 20px; /* Equal distance from the right edge */
+        }
+
+        .carousel-button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
         }
     </style>
 </head>
@@ -243,12 +369,15 @@
             <a href="OurMission.html">Our Mission</a>
             <a href="OurImpact.html">Our Impact</a>
             <a href="Lessons.html">Lessons</a>
+            <a href="Gallery.html">Gallery</a>
             <a href="ContactUs.html">Contact Us</a>
         </div>
     </nav>
 
     <header class="landing-header">
+        <h1 class="chess-gurus-heading">Chess Gurus</h1>
         <h1>Unlocking Your Potential One Move at a Time</h1>
+        <img src="images/guru2.png" alt="Guru Logo 2" style="width: 100%; max-width: 400px; display: block; margin: 20px auto; border-radius: 10px;">
         <p>
             At ChessGurus, we believe chess is more than just a game. 
             It’s a powerful tool for developing critical thinking, 
@@ -256,17 +385,37 @@
             Whether you're a complete beginner or an experienced player, 
             we’re here to guide you every step of the way.
         </p>
+        <div class="carousel">
+            <div class="carousel-images">
+                <img src="images/chess-club.jpg" alt="Chess Club Activity">
+                <img src="images/20241109_120129.jpg" alt="Chess Event 20241109">
+            </div>
+            <button class="carousel-button prev" onclick="moveCarousel(-1)">&#10094;</button>
+            <button class="carousel-button next" onclick="moveCarousel(1)">&#10095;</button>
+        </div>
         <div class="action-buttons">
             <a href="OurMission.html">Our Mission</a>
-            <a href="ContactUs.html" class="contact">Contact Us</a>
+            <a href="OurImpact.html" class="impact" style="background-color: #f4a259; color: white; border-radius: 8px; padding: 15px 30px; text-decoration: none; font-weight: bold; font-size: 18px; transition: background-color 0.3s ease;">Our Impact</a>
         </div>
     </header>
 
     <div class="circle-container">
-        <div class="circle">One-on-One Coaching</div>
-        <div class="circle">Expert Tips</div>
-        <div class="circle">Interactive Tools</div>
-        <div class="circle">Step-by-Step Lessons</div>
+        <div class="circle">
+            <div class="original-text">One-on-One Coaching</div>
+            <div class="extra-text">Personalized guidance from experts.</div>
+        </div>
+        <div class="circle">
+            <div class="original-text">Expert Tips</div>
+            <div class="extra-text">Learn strategies to improve your game.</div>
+        </div>
+        <div class="circle">
+            <div class="original-text">Interactive Tools</div>
+            <div class="extra-text">Practice with puzzles and boards.</div>
+        </div>
+        <div class="circle">
+            <div class="original-text">Step-by-Step Lessons</div>
+            <div class="extra-text">Structured learning for all levels.</div>
+        </div>
     </div>
 
     <script>
@@ -278,6 +427,19 @@
         function toggleDropdown() {
             const dropdown = document.getElementById('dropdown-content');
             dropdown.classList.toggle('open');
+        }
+
+        let currentIndex = 0;
+
+        function moveCarousel(direction) {
+            const carouselImages = document.querySelector('.carousel-images');
+            const totalImages = document.querySelectorAll('.carousel-images img').length;
+
+            currentIndex = (currentIndex + direction + totalImages) % totalImages; // Loop between images
+
+            // Ensure the offset is calculated correctly
+            const offset = -currentIndex * (100 / totalImages); // Adjust for the percentage width of each image
+            carouselImages.style.transform = `translateX(${offset}%)`;
         }
     </script>
 </body>
