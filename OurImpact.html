@@ -160,17 +160,15 @@
         <div class="nav-items" id="nav-items">
             <a href="index.html">Home</a>
             <div class="dropdown">
-                <a href="javascript:void(0);" onclick="toggleDropdown()">Our Team ▾</a>
+                <a href="javascript:void(0);" onclick="toggleDropdown()">About Us ▾</a>
                 <div class="dropdown-content" id="dropdown-content">
-                    <a href="OurFounders.html">Our Founders</a>
-                    <a href="OurCoaches.html">Our Coaches</a>
+                    <a href="OurMission.html">Our Mission</a>
+                    <a href="OurImpact.html">Our Impact</a>
                 </div>
             </div>
-            <a href="OurMission.html">Our Mission</a>
-            <a href="OurImpact.html">Our Impact</a>
             <a href="Lessons.html">Lessons</a>
             <a href="Gallery.html">Gallery</a>
-            <a href="ContactUs.html">Contact Us</a>
+            <a href="ContactUs.html">Join Now</a>
         </div>
     </nav>
 
@@ -188,6 +186,10 @@
         </p>
     </div>
 
+    <div style="text-align: center; margin: 20px auto;">
+        <img src="images/april16ryan.jpg" alt="Chess Impact Event" style="max-width: 50%; height: auto; border-radius: 10px;">
+    </div>
+
     <script>
         function toggleMenu() {
             const nav = document.getElementById('nav-items');
@@ -196,8 +198,16 @@
 
         function toggleDropdown() {
             const dropdown = document.getElementById('dropdown-content');
-            dropdown.classList.toggle('open');
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
         }
+
+        // Optional: Close dropdown if clicked outside
+        window.addEventListener('click', function (e) {
+            const dropdownContent = document.getElementById('dropdown-content');
+            if (!e.target.matches('.dropdown > a')) {
+                dropdownContent.style.display = 'none';
+            }
+        });
     </script>
 </body>
 </html>
