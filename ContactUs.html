@@ -15,95 +15,114 @@
              color: #333;
          }
 
-         nav {
-             position: fixed;
-             top: 0;
-             width: 100%;
-             background-color: #333;
-             color: white;
-             display: flex;
-             justify-content: space-between;
-             align-items: center;
-             padding: 20px 20px;
-             z-index: 1000;
-         }
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #333; 
+            color: white; 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 20px;
+            z-index: 1000;
+        }
 
-         nav .logo {
-             display: flex;
-             align-items: center;
-         }
+        nav a {
+            color: white; 
+            text-decoration: none;
+            padding: 8px 12px;
+            font-weight: bold; 
+        }
 
-         nav .logo img {
-             width: 40px;
-             height: 40px;
-             margin-right: 10px;
-             border-radius: 50%;
-         }
+        nav a:hover {
+            background-color: #575757; 
+            border-radius: 5px; 
+        }
 
-         nav .logo span {
-             font-size: 20px;
-             font-weight: bold;
-         }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+        }
 
-         .nav-items {
-             display: flex;
-             gap: 20px;
-             align-items: center;
-         }
+        .logo img {
+            width: 40px; /* Updated size */
+            height: 40px;
+            border-radius: 50%; /* Make logo rounded */
+            margin-right: 10px;
+        }
 
-         .nav-items a {
-             color: white;
-             text-decoration: none;
-             padding: 8px 12px;
-             font-weight: bold;
-         }
+        .logo span {
+            font-size: 20px; /* Updated font size */
+            font-weight: bold; /* Added font weight */
+        }
 
-         .nav-items a:hover {
-             background-color: #575757;
-             border-radius: 5px;
-         }
+        .nav-items {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
 
-         .dropdown {
-             position: relative;
-         }
+        .nav-items a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px;
+            transition: background-color 0.3s ease;
+        }
 
-         .dropdown-content {
-             display: none;
-             position: absolute;
-             top: 25px; /* Move the dropdown box closer to the parent element */
-             background-color: #444;
-             min-width: 160px;
-             z-index: 1;
-             border-radius: 5px;
-         }
+        .nav-items a:hover {
+            background-color: #575757;
+            border-radius: 5px;
+        }
 
-         .dropdown-content a {
-             display: block;
-             padding: 10px;
-             color: white;
-         }
+        .dropdown {
+            position: relative;
+        }
 
-         .dropdown-content a:hover {
-             background-color: #575757;
-         }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 25px; /* Move the dropdown box closer to the parent element */
+            background-color: #444; /* Updated dropdown background color */
+            min-width: 160px;
+            z-index: 1;
+            border-radius: 5px; /* Added border radius */
+        }
 
-         .dropdown:hover .dropdown-content,
-         .dropdown-content:hover {
-             display: block;
-         }
+        .dropdown-content a {
+            padding: 10px;
+            text-decoration: none;
+            display: block;
+            color: white;
+        }
 
-         .hamburger {
-             display: none;
-             flex-direction: column;
-             cursor: pointer;
-             gap: 5px;
-         }
+        .dropdown-content a:hover {
+            background-color: #575757; /* Updated hover background color */
+        }
 
-         .hamburger div {
-             width: 25px;
-             height: 3px;
-             background-color: white;
-         }
+        .dropdown:hover .dropdown-content,
+        .dropdown-content:hover {
+            display: block;
+        }
+
+        /* Hamburger button */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 4px 0;
+        }
 
          @media (max-width: 768px) {
              .nav-items {
