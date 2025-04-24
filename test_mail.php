@@ -20,7 +20,7 @@ try {
     $mail->setFrom('chessgurusaz@gmail.com', 'Chess Gurus');
     $mail->addAddress('your-email@example.com'); // Replace with your email
     $mail->Subject = 'Test Email';
-    $mail->Body    = 'This is a test email from PHPMailer!';
+    $mail->Body    = 'azchessgurus@gmail.com';
 
     // Send email
     if ($mail->send()) {
