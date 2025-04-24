@@ -4,46 +4,7 @@
     <meta charset="UTF-8">
     <title>Join our Program - The Chess Gurus</title>
     <link href="https://fonts.googleapis.com/css2?family=Magik:wght@400;700&display=swap" rel="stylesheet">
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        console.log("DOM loaded. Initializing EmailJS...");
-        emailjs.init("6LXXHvwLH9-XLJ2Xg"); // Your public key
-
-        const form = document.getElementById("join-form");
-
-        if (form) {
-            form.addEventListener("submit", function (e) {
-                e.preventDefault();
-                console.log("Submitting form...");
-
-                const data = {
-                    fullname: form.fullname.value,
-                    email: form.email.value,
-                    phone: form.phone.value,
-                    uscf: form.uscf.value,
-                    fide: form.fide.value,
-                    online: form.online.value,
-                    experience: form.experience.value
-                };
-
-                emailjs.send("service_gsn0pdo", "template_oo2n46g", data)
-                    .then(() => {
-                        console.log("Email sent successfully!");
-                        alert("Message sent successfully!");
-                        form.reset();
-                    }, (error) => {
-                        console.error("Failed to send email:", error);
-                        alert("Failed to send message:\n" + JSON.stringify(error));
-                    });
-            });
-        } else {
-            console.warn("Form not found.");
-        }
-    });
-</script>
-
-
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <style>
         body {
             margin: 0;
@@ -315,5 +276,52 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById("nav-items");
+            nav.classList.toggle("active");
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            console.log("DOM loaded. Initializing EmailJS...");
+
+            if (typeof emailjs === 'undefined') {
+                console.error("EmailJS failed to load.");
+                return;
+            }
+
+            emailjs.init("6LXXHvwLH9-XLJ2Xg"); // Your public key
+
+            const form = document.getElementById("join-form");
+
+            if (form) {
+                form.addEventListener("submit", function (e) {
+                    e.preventDefault();
+
+                    const data = {
+                        fullname: form.fullname.value,
+                        email: form.email.value,
+                        phone: form.phone.value,
+                        uscf: form.uscf.value,
+                        fide: form.fide.value,
+                        online: form.online.value,
+                        experience: form.experience.value
+                    };
+
+                    emailjs.send("service_gsn0pdo", "template_oo2n46g", data)
+                        .then(() => {
+                            alert("Message sent successfully!");
+                            form.reset();
+                        }, (error) => {
+                            console.error("Failed to send email:", error);
+                            alert("Failed to send message:\n" + JSON.stringify(error));
+                        });
+                });
+            } else {
+                console.warn("Form not found.");
+            }
+        });
+    </script>
 </body>
 </html>
