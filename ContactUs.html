@@ -4,39 +4,45 @@
     <meta charset="UTF-8">
     <title>Join our Program - The Chess Gurus</title>
     <link href="https://fonts.googleapis.com/css2?family=Magik:wght@400;700&display=swap" rel="stylesheet">
-    <script type="text/javascript" src="https://cdn.emailjs.com/sdk/3.2/email.min.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            console.log("DOM loaded. Initializing EmailJS...");
-            emailjs.init("6LXXHvwLH9-XLJ2Xg"); // Your actual public key
+<script type="text/javascript" src="https://cdn.emailjs.com/sdk/3.2/email.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        console.log("DOM loaded. Initializing EmailJS...");
+        emailjs.init("6LXXHvwLH9-XLJ2Xg"); // Your public key
 
-            const form = document.getElementById("join-form");
+        const form = document.getElementById("join-form");
 
-            if (form) {
-                form.addEventListener("submit", function (e) {
-                    e.preventDefault();
-                    console.log("Submitting form via EmailJS...");
+        if (form) {
+            form.addEventListener("submit", function (e) {
+                e.preventDefault();
+                console.log("Submitting form...");
 
-                    emailjs.sendForm("service_gsn0pdo", "template_oo2n46g", this)
-                        .then(function () {
-                            console.log("Email sent successfully!");
-                            alert("Message sent successfully!");
-                            form.reset();
-                        }, function (error) {
-                            console.error("EmailJS error:", error);
-                            alert("Failed to send message:\n" + JSON.stringify(error));
-                        });
-                });
-            } else {
-                console.warn("Form not found.");
-            }
-        });
+                const data = {
+                    fullname: form.fullname.value,
+                    email: form.email.value,
+                    phone: form.phone.value,
+                    uscf: form.uscf.value,
+                    fide: form.fide.value,
+                    online: form.online.value,
+                    experience: form.experience.value
+                };
 
-        function toggleMenu() {
-            const navItems = document.getElementById('nav-items');
-            navItems.classList.toggle('active');
+                emailjs.send("service_gsn0pdo", "template_oo2n46g", data)
+                    .then(() => {
+                        console.log("Email sent successfully!");
+                        alert("Message sent successfully!");
+                        form.reset();
+                    }, (error) => {
+                        console.error("Failed to send email:", error);
+                        alert("Failed to send message:\n" + JSON.stringify(error));
+                    });
+            });
+        } else {
+            console.warn("Form not found.");
         }
-    </script>
+    });
+</script>
+
 
     <style>
         body {
