@@ -18,7 +18,7 @@ try {
 
     // Email headers
     $mail->setFrom('chessgurusaz@gmail.com', 'Chess Gurus');
-    $mail->addAddress('your-email@example.com'); // Replace with your email
+    $mail->addAddress('azchessgurus@gmail.com'); // Replace with your email
     $mail->Subject = 'Test Email';
     $mail->Body    = 'azchessgurus@gmail.com';
 
