@@ -4,24 +4,35 @@
     <meta charset="UTF-8">
     <title>Join our Program - The Chess Gurus</title>
     <link href="https://fonts.googleapis.com/css2?family=Magik:wght@400;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            emailjs.init("6LXXHvwLH9-XLJ2Xg");
+<script type="text/javascript" src="https://cdn.emailjs.com/sdk/3.2/email.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        console.log("DOM loaded. Initializing EmailJS...");
+        emailjs.init("6LXXHvwLH9-XLJ2Xg"); // Your actual public key
 
-            document.getElementById("join-form").addEventListener("submit", function (e) {
+        const form = document.getElementById("join-form");
+
+        if (form) {
+            form.addEventListener("submit", function (e) {
                 e.preventDefault();
+                console.log("Submitting form via EmailJS...");
+
                 emailjs.sendForm("service_gsn0pdo", "template_d8vszn8", this)
                     .then(function () {
+                        console.log("Email sent successfully!");
                         alert("Message sent successfully!");
-                        document.getElementById("join-form").reset();
+                        form.reset();
                     }, function (error) {
+                        console.error("EmailJS error:", error);
                         alert("Failed to send message:\n" + JSON.stringify(error));
                     });
             });
-        });
-    </script>
-    <style>
+        } else {
+            console.warn("Form not found.");
+        }
+    });
+</script>
+
         body {
             margin: 0;
             font-family: 'Magik', sans-serif;
