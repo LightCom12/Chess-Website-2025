@@ -147,19 +147,19 @@
             width: 90%;
             max-width: 1200px;
             margin: 30px auto;
-            justify-content: center;
+            justify-content: space-between;
         }
 
         .profile {
-            flex: 1 1 300px;
-            max-width: 300px;
-            padding: 20px;
-            background-color: white;
-            border: 2px solid #333; /* Add border around each profile */
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
+    flex: 1 1 calc(25% - 20px); /* Ensures four profiles fit in one row */
+    max-width: calc(25% - 20px); /* Adjust width for four profiles */
+    padding: 20px;
+    background-color: white;
+    border: 2px solid #333;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
 
         .profile img {
             width: 150px;
@@ -252,13 +252,31 @@
             <h4>ACP Chess Varsity Player</h4>
             <p>Kasyap has over 8 years of experience in coaching chess at various levels. He has a deep understanding of game strategies and has successfully trained players to compete in national tournaments.</p>
         </div>
-
+    
         <div class="profile">
             <img src="images/Ronak.png" alt="Ronak">
             <h2>Ronak Potnis</h2>
-            <h3>Head Coach</h3>
-            <h4>ACP Chess Player</h4>
+            <h3>Coach </h3>
+            <h4>Ryan Elementary Head Coach</h4>
             <p>Ronak is an expert in endgame strategies and has played competitive chess for over 10 years. His unique insights help players refine their closing tactics and secure wins in critical matches.</p>
+        </div>
+    
+        <!-- New Profile for Jacob -->
+        <div class="profile">
+            <img src="images/jacob.png" alt="Jacob">
+            <h2>Jacob Sperber</h2>
+            <h3>Coach</h3>
+            <h4>National Chess Champion</h4>
+            <p>Jacob has been playing chess competitively for over 7 years and has won multiple national-level tournaments. His expertise lies in opening strategies and teaching players how to gain an early advantage.</p>
+        </div>
+    
+        <!-- New Profile for Michael -->
+        <div class="profile">
+            <img src="images/michael.jpeg" alt="Michael">
+            <h2>Michael Wang</h2>
+            <h3>Coach</h3>
+            <h4>National Chess Champion</h4>
+            <p>Michael has over 15 years of experience in competitive chess. He specializes in middle-game tactics and has mentored numerous players to achieve international rankings.</p>
         </div>
     </div>
 </body>
