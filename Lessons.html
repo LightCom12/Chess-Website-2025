@@ -23,32 +23,41 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background-color: #333; /* Updated background color */
-            color: white; /* Updated text color */
+            background-color: #333; 
+            color: white; 
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 20px;
+            padding: 20px 20px;
             z-index: 1000;
         }
 
         nav a {
-            color: white; /* Updated link color */
+            color: white; 
             text-decoration: none;
             padding: 8px 12px;
-            font-weight: bold; /* Added font weight */
+            font-weight: bold; 
         }
 
         nav a:hover {
-            background-color: #575757; /* Updated hover background color */
-            border-radius: 5px; /* Added border radius */
+            background-color: #575757; 
+            border-radius: 5px; 
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
         }
 
         .logo img {
             width: 40px; /* Updated size */
             height: 40px;
+            border-radius: 50%; /* Make logo rounded */
             margin-right: 10px;
-            border-radius: 50%; /* Make the logo circular */
         }
 
         .logo span {
@@ -62,26 +71,17 @@
             align-items: center;
         }
 
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: white; /* Updated dropdown background color */
-            min-width: 160px;
-            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-            z-index: 1;
-            border-radius: 5px; /* Added border radius */
-            top: 25px; /* Move the dropdown box closer to the parent element */
-        }
-
-        .dropdown-content a {
-            color: black; /* Updated dropdown link color */
-            padding: 20px 20px;
+        .nav-items a {
+            color: white;
             text-decoration: none;
-            display: block;
+            font-weight: bold;
+            padding: 8px;
+            transition: background-color 0.3s ease;
         }
 
-        .dropdown-content a:hover {
-            background-color: #575757; /* Updated hover background color */
+        .nav-items a:hover {
+            background-color: #575757;
+            border-radius: 5px;
         }
 
         .dropdown {
@@ -91,21 +91,22 @@
         .dropdown-content {
             display: none;
             position: absolute;
-            top: 25px;
-            background-color: #444;
+            top: 25px; /* Move the dropdown box closer to the parent element */
+            background-color: #444; /* Updated dropdown background color */
             min-width: 160px;
             z-index: 1;
-            border-radius: 5px;
+            border-radius: 5px; /* Added border radius */
         }
 
         .dropdown-content a {
-            display: block;
             padding: 10px;
+            text-decoration: none;
+            display: block;
             color: white;
         }
 
         .dropdown-content a:hover {
-            background-color: #575757;
+            background-color: #575757; /* Updated hover background color */
         }
 
         .dropdown:hover .dropdown-content,
@@ -113,18 +114,20 @@
             display: block;
         }
 
+        /* Hamburger button */
         .hamburger {
             display: none;
             flex-direction: column;
             cursor: pointer;
-            gap: 5px;
         }
 
         .hamburger div {
             width: 25px;
             height: 3px;
-            background-color: white;
+            background: white;
+            margin: 4px 0;
         }
+
 
         @media (max-width: 768px) {
             .nav-items {
