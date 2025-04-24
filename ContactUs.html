@@ -7,200 +7,203 @@
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="https://www.google.com/recaptcha/api.js?render=6LeSdiIrAAAAAO6dyAsRfzQGHB7MdygEiB0iY-__"></script>
     <style>
-        body {
-            margin: 0;
-            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-            background-color: #F1DFB4;
-            color: #333;
-        }
+        /* ... (Keep all your existing CSS styles here) ... */
+         body {
+             margin: 0;
+             font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+             background-color: #F1DFB4;
+             color: #333;
+         }
 
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: #333;
-            color: white;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 20px;
-            z-index: 1000;
-        }
+         nav {
+             position: fixed;
+             top: 0;
+             width: 100%;
+             background-color: #333;
+             color: white;
+             display: flex;
+             justify-content: space-between;
+             align-items: center;
+             padding: 20px 20px;
+             z-index: 1000;
+         }
 
-        nav .logo {
-            display: flex;
-            align-items: center;
-        }
+         nav .logo {
+             display: flex;
+             align-items: center;
+         }
 
-        nav .logo img {
-            width: 40px;
-            height: 40px;
-            margin-right: 10px;
-            border-radius: 50%;
-        }
+         nav .logo img {
+             width: 40px;
+             height: 40px;
+             margin-right: 10px;
+             border-radius: 50%;
+         }
 
-        nav .logo span {
-            font-size: 20px;
-            font-weight: bold;
-        }
+         nav .logo span {
+             font-size: 20px;
+             font-weight: bold;
+         }
 
-        .nav-items {
-            display: flex;
-            gap: 20px;
-            align-items: center;
-        }
+         .nav-items {
+             display: flex;
+             gap: 20px;
+             align-items: center;
+         }
 
-        .nav-items a {
-            color: white;
-            text-decoration: none;
-            padding: 8px 12px;
-            font-weight: bold;
-        }
+         .nav-items a {
+             color: white;
+             text-decoration: none;
+             padding: 8px 12px;
+             font-weight: bold;
+         }
 
-        .nav-items a:hover {
-            background-color: #575757;
-            border-radius: 5px;
-        }
+         .nav-items a:hover {
+             background-color: #575757;
+             border-radius: 5px;
+         }
 
-        .dropdown {
-            position: relative;
-        }
+         .dropdown {
+             position: relative;
+         }
 
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            top: 25px; /* Move the dropdown box closer to the parent element */
-            background-color: #444;
-            min-width: 160px;
-            z-index: 1;
-            border-radius: 5px;
-        }
+         .dropdown-content {
+             display: none;
+             position: absolute;
+             top: 25px; /* Move the dropdown box closer to the parent element */
+             background-color: #444;
+             min-width: 160px;
+             z-index: 1;
+             border-radius: 5px;
+         }
 
-        .dropdown-content a {
-            display: block;
-            padding: 10px;
-            color: white;
-        }
+         .dropdown-content a {
+             display: block;
+             padding: 10px;
+             color: white;
+         }
 
-        .dropdown-content a:hover {
-            background-color: #575757;
-        }
+         .dropdown-content a:hover {
+             background-color: #575757;
+         }
 
-        .dropdown:hover .dropdown-content,
-        .dropdown-content:hover {
-            display: block;
-        }
+         .dropdown:hover .dropdown-content,
+         .dropdown-content:hover {
+             display: block;
+         }
 
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            gap: 5px;
-        }
+         .hamburger {
+             display: none;
+             flex-direction: column;
+             cursor: pointer;
+             gap: 5px;
+         }
 
-        .hamburger div {
-            width: 25px;
-            height: 3px;
-            background-color: white;
-        }
+         .hamburger div {
+             width: 25px;
+             height: 3px;
+             background-color: white;
+         }
 
-        @media (max-width: 768px) {
-            .nav-items {
-                display: none;
-                flex-direction: column;
-                background-color: #333;
-                position: absolute;
-                top: 60px;
-                right: 0;
-                width: 200px;
-                padding: 10px 0;
-            }
+         @media (max-width: 768px) {
+             .nav-items {
+                 display: none;
+                 flex-direction: column;
+                 background-color: #333;
+                 position: absolute;
+                 top: 60px;
+                 right: 0;
+                 width: 200px;
+                 padding: 10px 0;
+             }
 
-            .nav-items.active {
-                display: flex;
-            }
+             .nav-items.active {
+                 display: flex;
+             }
 
-            .hamburger {
-                display: flex;
-            }
-        }
+             .hamburger {
+                 display: flex;
+             }
+         }
 
-        .contact-header {
-            font-size: 36px;
-            font-weight: bold;
-            text-align: center;
-            margin-top: 40px;
-        }
+         .contact-header {
+             font-size: 36px;
+             font-weight: bold;
+             text-align: center;
+             margin-top: 80px; /* Adjusted margin-top to account for fixed nav */
+             padding-top: 20px; /* Added padding top */
+         }
 
-        .contact-paragraph {
-            font-size: 18px;
-            line-height: 1.6;
-            text-align: center;
-            margin: 20px auto;
-            max-width: 700px;
-            padding: 0 20px;
-        }
+         .contact-paragraph {
+             font-size: 18px;
+             line-height: 1.6;
+             text-align: center;
+             margin: 20px auto;
+             max-width: 700px;
+             padding: 0 20px;
+         }
 
-        .contact-form-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 40px;
-            max-width: 800px;
-            margin: 40px auto;
-        }
+         .contact-form-container {
+             display: flex;
+             flex-direction: column;
+             align-items: center;
+             gap: 40px;
+             max-width: 800px;
+             margin: 40px auto;
+             padding: 0 20px; /* Add padding for smaller screens */
+         }
 
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            width: 100%;
-        }
+         form {
+             display: flex;
+             flex-direction: column;
+             gap: 15px;
+             width: 100%;
+         }
 
-        label {
-            font-weight: bold;
-        }
+         label {
+             font-weight: bold;
+         }
 
-        input, textarea {
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 16px;
-        }
+         input, textarea {
+             padding: 10px;
+             border: 1px solid #ccc;
+             border-radius: 5px;
+             font-size: 16px;
+         }
 
-        button {
-            background-color: #333;
-            color: white;
-            padding: 12px 20px;
-            font-size: 16px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
+         button {
+             background-color: #333;
+             color: white;
+             padding: 12px 20px;
+             font-size: 16px;
+             border: none;
+             border-radius: 5px;
+             cursor: pointer;
+             transition: background-color 0.3s ease;
+         }
 
-        button:hover {
-            background-color: #555;
-        }
+         button:hover {
+             background-color: #555;
+         }
 
-        h3 {
-            font-size: 24px;
-            color: #333;
-            text-align: center;
-        }
+         h3 {
+             font-size: 24px;
+             color: #333;
+             text-align: center;
+         }
 
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            align-items: center;
-            margin: 0;
-        }
+         .social-icons {
+             display: flex;
+             justify-content: center;
+             gap: 40px;
+             align-items: center;
+             margin: 0;
+         }
 
-        .social-icons a img {
-            width: 50px;
-            height: 50px;
-        }
+         .social-icons a img {
+             width: 50px;
+             height: 50px;
+         }
     </style>
 </head>
 <body>
@@ -273,11 +276,10 @@
         <div>
             <h3>Social Media</h3>
             <div class="social-icons">
-                <a href="https://www.instagram.com/azchessgurus" target="_blank">
+                 <a href="https://www.instagram.com/azchessgurus" target="_blank">
                     <img src="images/instalogo.png" alt="Instagram">
                 </a>
-                <a href="https://www.youtube.com/@AZChessGurus" target="_blank">
-                    <img src="images/ytlogo.png" alt="YouTube">
+                <a href="https://www.youtube.com/@AZChessGurus" target="_blank"> <img src="images/ytlogo.png" alt="YouTube">
                 </a>
                 <a href="https://www.linkedin.com/in/az-chessgurus-b73740319/" target="_blank">
                     <img src="images/linklogo.png" alt="LinkedIn">
@@ -296,42 +298,102 @@
         }
 
         document.addEventListener("DOMContentLoaded", function () {
-            console.log("DOM loaded. Initializing EmailJS...");
+            console.log("DOM loaded.");
 
+            // --- EmailJS Initialization ---
             if (typeof emailjs === 'undefined') {
                 console.error("EmailJS failed to load.");
+                alert("Error initializing contact form. Please try again later.");
+                return;
+            }
+            try {
+                 // IMPORTANT: Replace with YOUR EmailJS Public Key
+                emailjs.init("6LXXHvwLH9-XLJ2Xg");
+                console.log("EmailJS Initialized.");
+            } catch (error) {
+                console.error("EmailJS initialization failed:", error);
+                alert("Error initializing contact form. Please try again later.");
                 return;
             }
 
-            emailjs.init("6LXXHvwLH9-XLJ2Xg"); // Your public key
+            // --- reCAPTCHA v3 Configuration ---
+            // IMPORTANT: Replace with YOUR ACTUAL reCAPTCHA v3 SITE KEY
+            const RECAPTCHA_SITE_KEY = '6LeSdiIrAAAAAO6dyAsRfzQGHB7MdygEiB0iY-__';
 
+            // --- Form Handling ---
             const form = document.getElementById("join-form");
+            const submitButton = form.querySelector('button[type="submit"]'); // Get the submit button
 
-            if (form) {
+            if (form && submitButton) {
                 form.addEventListener("submit", function (e) {
-                    e.preventDefault();
+                    e.preventDefault(); // Prevent default form submission
 
-                    const data = {
-                        fullname: form.fullname.value,
-                        email: form.email.value,
-                        phone: form.phone.value,
-                        uscf: form.uscf.value,
-                        fide: form.fide.value,
-                        online: form.online.value,
-                        experience: form.experience.value
-                    };
+                    // Disable button to prevent multiple submissions
+                    submitButton.disabled = true;
+                    submitButton.textContent = 'Sending...';
 
-                    emailjs.send("service_gsn0pdo", "template_oo2n46g", data)
-                        .then(() => {
-                            alert("We have received your information! Please give us 3-5 business days for us to get back with you regarding further information to join the program! Hope to meet you soon!");
-                            form.reset();
-                        }, (error) => {
-                            console.error("Failed to send email:", error);
-                            alert("Failed to send message:\n" + JSON.stringify(error));
-                        });
+                    console.log("Form submitted. Executing reCAPTCHA...");
+
+                    // Check if grecaptcha is loaded
+                    if (typeof grecaptcha === 'undefined' || typeof grecaptcha.execute === 'undefined') {
+                         console.error("reCAPTCHA script not loaded correctly.");
+                         alert("reCAPTCHA error. Please refresh the page and try again.");
+                         submitButton.disabled = false; // Re-enable button
+                         submitButton.textContent = 'Send Message';
+                         return;
+                     }
+
+                    grecaptcha.ready(function() {
+                        grecaptcha.execute(RECAPTCHA_SITE_KEY, {action: 'submit_join_form'}) // Use a descriptive action name
+                            .then(function(token) {
+                                console.log("reCAPTCHA token received:", token);
+
+                                // Collect form data
+                                const data = {
+                                    fullname: form.fullname.value,
+                                    email: form.email.value,
+                                    phone: form.phone.value,
+                                    uscf: form.uscf.value,
+                                    fide: form.fide.value,
+                                    online: form.online.value,
+                                    experience: form.experience.value,
+                                    'g-recaptcha-response': token // Include the token in the data sent to EmailJS
+                                };
+
+                                // --- Send Email via EmailJS ---
+                                // IMPORTANT: Replace with YOUR EmailJS Service ID and Template ID
+                                const SERVICE_ID = "service_gsn0pdo";
+                                const TEMPLATE_ID = "template_oo2n46g";
+
+                                console.log("Sending data via EmailJS:", data);
+
+                                emailjs.send(SERVICE_ID, TEMPLATE_ID, data)
+                                    .then(() => {
+                                        console.log("EmailJS success.");
+                                        alert("We have received your information! Please give us 3-5 business days for us to get back with you regarding further information to join the program! Hope to meet you soon!");
+                                        form.reset();
+                                    }, (error) => {
+                                        console.error("EmailJS failed:", error);
+                                        alert("Failed to send message. Please check your connection or try again later.\nError: " + JSON.stringify(error));
+                                    })
+                                    .finally(() => {
+                                         // Re-enable button regardless of success or failure
+                                         submitButton.disabled = false;
+                                         submitButton.textContent = 'Send Message';
+                                    });
+
+                            })
+                            .catch(function(error) {
+                                console.error("reCAPTCHA execution failed:", error);
+                                alert("Could not verify you're human. Please refresh the page and try again.");
+                                // Re-enable button on reCAPTCHA error
+                                submitButton.disabled = false;
+                                submitButton.textContent = 'Send Message';
+                            });
+                    });
                 });
             } else {
-                console.warn("Form not found.");
+                console.warn("Form with ID 'join-form' or its submit button not found.");
             }
         });
     </script>
