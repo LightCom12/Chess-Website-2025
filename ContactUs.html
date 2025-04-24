@@ -4,35 +4,41 @@
     <meta charset="UTF-8">
     <title>Join our Program - The Chess Gurus</title>
     <link href="https://fonts.googleapis.com/css2?family=Magik:wght@400;700&display=swap" rel="stylesheet">
-<script type="text/javascript" src="https://cdn.emailjs.com/sdk/3.2/email.min.js"></script>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        console.log("DOM loaded. Initializing EmailJS...");
-        emailjs.init("6LXXHvwLH9-XLJ2Xg"); // Your actual public key
+    <script type="text/javascript" src="https://cdn.emailjs.com/sdk/3.2/email.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            console.log("DOM loaded. Initializing EmailJS...");
+            emailjs.init("6LXXHvwLH9-XLJ2Xg"); // Your actual public key
 
-        const form = document.getElementById("join-form");
+            const form = document.getElementById("join-form");
 
-        if (form) {
-            form.addEventListener("submit", function (e) {
-                e.preventDefault();
-                console.log("Submitting form via EmailJS...");
+            if (form) {
+                form.addEventListener("submit", function (e) {
+                    e.preventDefault();
+                    console.log("Submitting form via EmailJS...");
 
-                emailjs.sendForm("service_gsn0pdo", "template_oo2n46g", this)
-                    .then(function () {
-                        console.log("Email sent successfully!");
-                        alert("Message sent successfully!");
-                        form.reset();
-                    }, function (error) {
-                        console.error("EmailJS error:", error);
-                        alert("Failed to send message:\n" + JSON.stringify(error));
-                    });
-            });
-        } else {
-            console.warn("Form not found.");
+                    emailjs.sendForm("service_gsn0pdo", "template_oo2n46g", this)
+                        .then(function () {
+                            console.log("Email sent successfully!");
+                            alert("Message sent successfully!");
+                            form.reset();
+                        }, function (error) {
+                            console.error("EmailJS error:", error);
+                            alert("Failed to send message:\n" + JSON.stringify(error));
+                        });
+                });
+            } else {
+                console.warn("Form not found.");
+            }
+        });
+
+        function toggleMenu() {
+            const navItems = document.getElementById('nav-items');
+            navItems.classList.toggle('active');
         }
-    });
-</script>
+    </script>
 
+    <style>
         body {
             margin: 0;
             font-family: 'Magik', sans-serif;
@@ -303,12 +309,5 @@
             </div>
         </div>
     </div>
-
-    <script>
-        function toggleMenu() {
-            const navItems = document.getElementById('nav-items');
-            navItems.classList.toggle('active');
-        }
-    </script>
 </body>
 </html>
