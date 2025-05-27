@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LG282EH3FV"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-LG282EH3FV');
-</script>
     <meta charset="UTF-8">
     <title>The Chess Gurus - Our Mission</title>
     <link rel="icon" type="image/png" href="chessguru.webp">
@@ -110,11 +101,11 @@
         .dropdown-content {
             display: none;
             position: absolute;
-            top: 25px; /* Move the dropdown box closer to the parent element */
-            background-color: #444; /* Updated dropdown background color */
+            top: 25px;
+            background-color: #333; /* Match home page black */
             min-width: 160px;
             z-index: 1;
-            border-radius: 5px; /* Added border radius */
+            border-radius: 5px;
         }
 
         .dropdown-content a {
@@ -153,7 +144,7 @@
                 display: none;
                 flex-direction: column;
                 width: 100%;
-                background: gray;
+                background: #222; /* Match screenshot black */
                 position: absolute;
                 top: 60px;
                 left: 0;
@@ -166,20 +157,17 @@
 
             .dropdown-content {
                 position: static;
-                background-color: #eee;
+                background-color: #222 !important; /* Match screenshot black */
                 box-shadow: none;
-            }
-
-            .dropdown:hover .dropdown-content {
                 display: none;
             }
 
-            .dropdown > .dropbtn::after {
-                content: ' ▼';
+            .dropdown.open .dropdown-content {
+                display: block; /* Show only if parent has .open */
             }
 
-            .dropdown.open .dropdown-content {
-                display: block;
+            .dropdown:hover .dropdown-content {
+                display: none; /* Prevent hover from opening on mobile */
             }
 
             .hamburger {
@@ -210,6 +198,37 @@
             width: 80%;
             max-width: 900px;
             font-family: 'Magik', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; /* Ensure consistent font */
+        }
+
+        @media (max-width: 900px) {
+            p {
+                max-width: 98vw;
+                padding: 0 2vw;
+            }
+        }
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px 5px;
+            }
+            .logo {
+                margin-bottom: 10px;
+            }
+            .nav-items {
+                flex-direction: column;
+                gap: 10px;
+                width: 100%;
+                overflow-x: auto;
+            }
+            header {
+                font-size: 24px;
+                margin-top: 70px;
+            }
+            p {
+                font-size: 15px;
+                padding: 0 2vw;
+            }
         }
     </style>
 </head>
@@ -242,9 +261,9 @@
                     <a href="OurCoaches.html">Our Coaches</a>
                 </div>
             </div>
-            <a href="Lessons.html">Lessons</a>
-            <a href="Gallery.html">Gallery</a>
             <a href="ContactUs.html">Join Now</a>
+            <a href="Lessons.html">For Coaches</a>
+            <a href="Gallery.html">Gallery</a>
         </div>
     </nav>
 
@@ -277,6 +296,92 @@
             const navItems = document.getElementById('nav-items');
             navItems.classList.toggle('active');
         }
+
+        // Fix mobile dropdowns for About Us and Our Team
+        document.addEventListener('DOMContentLoaded', function () {
+            function isMobile() {
+                return window.innerWidth <= 768;
+            }
+
+            // Remove hover open on mobile
+            function updateDropdownHover() {
+                document.querySelectorAll('.dropdown').forEach(function (dd) {
+                    if (isMobile()) {
+                        dd.onmouseenter = null;
+                        dd.onmouseleave = null;
+                    } else {
+                        dd.onmouseenter = null;
+                        dd.onmouseleave = null;
+                        // Remove any inline style set by JS for desktop
+                        var content = dd.querySelector('.dropdown-content');
+                        if (content) content.style.display = '';
+                    }
+                });
+            }
+
+            // Setup click for dropdown toggles
+            function setupDropdownClicks() {
+                document.querySelectorAll('.dropdown > a').forEach(function (el) {
+                    el.onclick = null; // Remove previous listeners to avoid duplicates
+                    el.addEventListener('click', function (e) {
+                        if (isMobile()) {
+                            e.preventDefault();
+                            // Close all dropdowns except this one
+                            document.querySelectorAll('.dropdown').forEach(function (dd) {
+                                if (dd !== el.parentElement) {
+                                    dd.classList.remove('open');
+                                    var content = dd.querySelector('.dropdown-content');
+                                    if (content) content.style.display = 'none';
+                                }
+                            });
+                            // Toggle this dropdown
+                            var parent = el.parentElement;
+                            var content = parent.querySelector('.dropdown-content');
+                            var isOpen = parent.classList.contains('open');
+                            if (!isOpen) {
+                                parent.classList.add('open');
+                                if (content) content.style.display = 'block';
+                            } else {
+                                parent.classList.remove('open');
+                                if (content) content.style.display = 'none';
+                            }
+                        }
+                    });
+                });
+            }
+
+            // Close dropdowns when clicking outside
+            document.addEventListener('click', function (e) {
+                if (isMobile()) {
+                    document.querySelectorAll('.dropdown').forEach(function (dd) {
+                        if (!dd.contains(e.target)) {
+                            dd.classList.remove('open');
+                            var content = dd.querySelector('.dropdown-content');
+                            if (content) content.style.display = 'none';
+                        }
+                    });
+                }
+            });
+
+            // On resize, reset dropdowns and update hover/click logic
+            window.addEventListener('resize', function () {
+                document.querySelectorAll('.dropdown').forEach(function (dd) {
+                    dd.classList.remove('open');
+                    var content = dd.querySelector('.dropdown-content');
+                    if (content) {
+                        if (isMobile()) {
+                            content.style.display = 'none';
+                        } else {
+                            content.style.display = '';
+                        }
+                    }
+                });
+                updateDropdownHover();
+            });
+
+            setupDropdownClicks();
+            updateDropdownHover();
+        });
     </script>
 </body>
 </html>
