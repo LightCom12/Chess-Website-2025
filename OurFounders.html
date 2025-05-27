@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LG282EH3FV"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-LG282EH3FV');
-</script>
     <meta charset="UTF-8">
     <title>Our Team - The Chess Gurus</title>
     <link rel="icon" type="image/png" href="./images/chessguru.webp">
@@ -206,6 +197,57 @@
             font-size: 16px; /* Ensure consistent font size */
             font-weight: bold; /* Ensure consistent font weight */
         }
+
+        @media (max-width: 900px) {
+            .container {
+                max-width: 98vw;
+                padding: 0 2vw;
+            }
+        }
+
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px 5px;
+            }
+            .logo {
+                margin-bottom: 10px;
+            }
+            .nav-items {
+                flex-direction: column;
+                gap: 10px;
+                width: 100%;
+                overflow-x: auto;
+            }
+            .AboutUsHeader {
+                font-size: 24px;
+                margin-top: 70px;
+                padding-bottom: 5px;
+            }
+            .container {
+                flex-direction: column;
+                gap: 15px;
+                padding: 0 2vw;
+            }
+            .profile {
+                max-width: 98vw;
+                padding: 10px;
+            }
+            .profile img {
+                width: 100px;
+                height: 100px;
+            }
+            .profile h2 {
+                font-size: 18px;
+            }
+            .profile h3, .profile h4 {
+                font-size: 14px;
+            }
+            .profile p {
+                font-size: 13px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -237,9 +279,9 @@
                     <a href="OurCoaches.html">Our Coaches</a>
                 </div>
             </div>
-            <a href="Lessons.html">Lessons</a>
-            <a href="Gallery.html">Gallery</a>
             <a href="ContactUs.html">Join Now</a>
+            <a href="Lessons.html">For Coaches</a>
+            <a href="Gallery.html">Gallery</a>
         </div>
     </nav>
 
@@ -250,7 +292,7 @@
             <img src="images/Amudan.png" alt="Amudan Mangudi">
             <h2>Amudan Mangudi</h2>
             <h3>Co-Founder</h3>
-            <h4>Project Manager</h4>
+            <h4>Project Manager/Coach</h4>
             <h5>USCF Candidate Master</h4>
             <p>
                 As a multiple-time state champion and the 2nd board of the ACP High School chess team, Amudan Mangudi is a chess expert currently ranked within the top 50 chess players in Arizona. He has enthusiastically participated in various chess tournaments for 10 years and boasts a rating of over 2000. Furthermore, he represented Arizona College Prep High School during the 2023 and 2024 K-12 National High School Championships, contributing to both a 5th and 9th place team finish. In addition, Amudan is the current president of ACP's Chess Club and has extensive experience volunteering to teach chess to kids through different non-profit organizations. He is devoted to serving and inspiring the Arizona community while creating a lasting impact through the Chess Gurus Organization.
@@ -261,7 +303,7 @@
             <img src="images/SamikM.jpg" alt="Samik Mathur">
             <h2>Samik Mathur</h2>
             <h3>Co-Founder</h3>
-            <h4>Chief Financial Officer</h4>
+            <h4>Chief Financial Officer/Coach</h4>
             <p>
                 Samik was a Co-founder of The Chess Gurus in early 2024. Being one of the top JV players in Arizona, he has a driving passion to share his skills with aspiring chess players. Samik has placed first at JV tournaments over his chess career, and consistently ranks in the top 3. As the AZ Chess Guru's Chief Financial Officer and Outreach Lead, Samik will be helping to manage finances and connect with other organizations.
             </p>
@@ -271,7 +313,7 @@
             <img src="images/Kapil.jpg" alt="Kapil Inguva">
             <h2>Kapil Inguva</h2>
             <h3>Co-Founder</h3>
-            <h4>Head of Technology/Coach</h4>
+            <h4>CIO/CTO/Coach</h4>
             <p>
                 As a JV state finalist, Kapil has had a driving passion towards chess for over 4 years. In 2022, he has represented Arizona's JV Chess Team, placing 7th regionally and at States. Furthermore, Kapil has represented Arizona College Prep High School at the 2024 K-12 National High School Championships placing in the top percentiles as a new player. He has also won awards in many local/regional tournaments showcasing his newfound dedication towards chess. He is currently the secretary of ACP High School's chess club and intends to serve the Arizona community through creating a meaningful impact on his peers.
             </p>
