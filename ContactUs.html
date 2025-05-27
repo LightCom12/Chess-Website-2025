@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LG282EH3FV"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-LG282EH3FV');
-</script>
     <meta charset="UTF-8">
     <title>Join our Program - The Chess Gurus</title>
     <link href="https://fonts.googleapis.com/css2?family=Magik:wght@400;700&display=swap" rel="stylesheet">
@@ -20,8 +11,9 @@
          body {
              margin: 0;
              font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-             background-color: #F1DFB4;
+             background-color: #f6e3bb; /* Match index.html background color */
              color: #333;
+             overflow-y: scroll; /* Always show vertical scrollbar to prevent nav shift */
          }
 
         nav {
@@ -74,6 +66,7 @@
             display: flex;
             gap: 20px;
             align-items: center;
+            padding-right: 40px; /* Add space to prevent "Join Now" from being cut off */
         }
 
         .nav-items a {
@@ -232,6 +225,59 @@
              width: 50px;
              height: 50px;
          }
+
+         @media (max-width: 900px) {
+            .contact-form-container {
+                max-width: 98vw;
+                padding: 0 2vw;
+            }
+        }
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px 5px;
+            }
+            .logo {
+                margin-bottom: 10px;
+            }
+            .nav-items {
+                flex-direction: column;
+                gap: 10px;
+                width: 100%;
+                overflow-x: auto;
+                padding-right: 0;
+            }
+            .contact-header {
+                font-size: 26px;
+                margin-top: 70px;
+                padding-top: 10px;
+            }
+            .contact-paragraph {
+                font-size: 15px;
+                padding: 0 5vw;
+            }
+            .contact-form-container {
+                gap: 20px;
+                margin: 20px auto;
+                padding: 0 2vw;
+            }
+            form {
+                gap: 10px;
+            }
+            input, textarea {
+                font-size: 15px;
+                padding: 8px;
+            }
+            button {
+                font-size: 15px;
+                padding: 10px 10px;
+            }
+            .social-icons a img {
+                width: 36px;
+                height: 36px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -263,9 +309,9 @@
                     <a href="./OurCoaches.html">Our Coaches</a>
                 </div>
             </div>
-            <a href="./Lessons.html">Lessons</a>
-            <a href="./Gallery.html">Gallery</a>
             <a href="./ContactUs.html">Join Now</a>
+            <a href="./Lessons.html">For Coaches</a>
+            <a href="./Gallery.html">Gallery</a>
         </div>
     </nav>
 
