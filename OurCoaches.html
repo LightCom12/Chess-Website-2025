@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LG282EH3FV"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-LG282EH3FV');
-</script>
     <title>Coaches - The Chess Gurus</title>
     <link rel="icon" type="image/png" href="chessguru.webp">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -135,6 +126,55 @@
                 display: flex;
             }
         }
+        @media (max-width: 900px) {
+            .container {
+                max-width: 98vw;
+                padding: 0 2vw;
+            }
+        }
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px 5px;
+            }
+            .logo {
+                margin-bottom: 10px;
+            }
+            .nav-items {
+                flex-direction: column;
+                gap: 10px;
+                width: 100%;
+                overflow-x: auto;
+            }
+            .CoachesHeader {
+                font-size: 24px;
+                margin-top: 70px;
+                padding-bottom: 5px;
+            }
+            .container {
+                flex-direction: column;
+                gap: 15px;
+                padding: 0 2vw;
+            }
+            .profile {
+                max-width: 98vw;
+                padding: 10px;
+            }
+            .profile img {
+                width: 100px;
+                height: 100px;
+            }
+            .profile h2 {
+                font-size: 18px;
+            }
+            .profile h3, .profile h4 {
+                font-size: 14px;
+            }
+            .profile p {
+                font-size: 13px;
+            }
+        }
 
         /* Main Styles */
         body {
@@ -238,9 +278,9 @@
                     <a href="OurCoaches.html">Our Coaches</a>
                 </div>
             </div>
-            <a href="Lessons.html">Lessons</a>
-            <a href="Gallery.html">Gallery</a>
             <a href="ContactUs.html">Join Now</a>
+            <a href="Lessons.html">For Coaches</a>
+            <a href="Gallery.html">Gallery</a>
         </div>
     </nav>
 
@@ -276,16 +316,16 @@
             <h2>Jacob Sperber</h2>
             <h3>Coach</h3>
             <h4>National Chess Champion</h4>
-            <p>Jacob has been playing chess competitively for over 7 years and has won multiple national-level tournaments. His expertise lies in opening strategies and teaching players how to gain an early advantage.</p>
+            <p>Jacob is an expert-strength player ranked in the top 100 18-year-olds nationally. He has been teaching chess for over 2 years, and is a certified tournament director. A great believer in the power of hard work, Jacob helps his students develop a simple and personalized study plan that they can execute on their own.</p>
         </div>
     
         <!-- New Profile for Michael -->
         <div class="profile">
-            <img src="images/michael.jpeg" alt="Michael">
+            <img src="images/Michael_Wang.jpg" alt="Michael">
             <h2>Michael Wang</h2>
             <h3>Coach</h3>
-            <h4>National Chess Champion</h4>
-            <p>Michael has over 15 years of experience in competitive chess. He specializes in middle-game tactics and has mentored numerous players to achieve international rankings.</p>
+            <h4>National Master</h4>
+            <p> National Master Michael Lei Wang has been playing competitive chess for around 15 years. His expertise is in middlegame planning and the psychology of practical play. He is eager to share his passion for chess through teaching and mentoring others, often taking the time to help players improve their understanding of the game. </p>
         </div>
     </div>
 </body>
