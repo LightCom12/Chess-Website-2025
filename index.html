@@ -1,28 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LG282EH3FV"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-LG282EH3FV');
-</script>
-
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "AZChessGurus",
-  "url": "https://www.azchessgurus.org",
-  "logo": "https://www.azchessgurus.org/images/chessguru.png"
-}
-</script>
-
-<link rel="icon" href="https://www.azchessgurus.org/images/chessguru.png" type="image/png">
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Chess Gurus - Home</title> <!-- Ensure consistent title -->
@@ -315,19 +293,18 @@
             border-radius: 10px;
             background-color: #F1DFB4; /* Ensure background matches the page */
         }
-
         .carousel-images {
             display: flex;
             transition: transform 0.5s ease-in-out;
             width: 187.5%; /* Adjust for two images */
         }
         .carousel-images img {
-            width: auto; /* Maintain original width */
-            height: 100%; /* Fit the height of the container */
-            max-height: 600px; /* Ensure the image fits within the container */
-            margin: auto; /* Center the image */
+            width: auto;
+            height: 100%;
+            max-height: 600px;
+            margin: auto;
             display: block;
-            object-fit: contain; /* Ensure the entire image is visible */
+            object-fit: contain;
         }
 
         .carousel-images img:nth-child(1),
@@ -365,6 +342,80 @@
         .carousel-button:hover {
             background-color: rgba(0, 0, 0, 0.8);
         }
+
+        @media (max-width: 900px) {
+            .circle-container {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            .carousel {
+                max-width: 95vw;
+            }
+        }
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px 5px;
+            }
+            .logo {
+                margin-bottom: 10px;
+            }
+            .nav-items {
+                flex-direction: column;
+                gap: 10px;
+                width: 100%;
+                overflow-x: auto;
+            }
+            .landing-header {
+                margin-top: 70px;
+            }
+            .landing-header h1 {
+                font-size: 26px;
+            }
+            .chess-gurus-heading {
+                font-size: 32px;
+            }
+            .circle-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+            .circle {
+                width: 90vw;
+                height: 60px;
+                font-size: 15px;
+            }
+            .carousel {
+                max-width: 100vw;
+                height: 320px; /* Bigger carousel on mobile */
+                border-radius: 8px;
+            }
+            .carousel-images img {
+                width: 100%;
+                max-width: 100%;
+                height: 320px;
+                max-height: 320px;
+                object-fit: contain;
+                background: transparent;
+            }
+            .carousel-button {
+                width: 32px;
+                height: 32px;
+                padding: 0;
+                font-size: 22px;
+            }
+            .carousel-button.prev {
+                left: 8px; /* Arrows closer to image */
+            }
+            .carousel-button.next {
+                right: 8px;
+            }
+            .action-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -396,9 +447,9 @@
                     <a href="OurCoaches.html">Our Coaches</a>
                 </div>
             </div>
-            <a href="Lessons.html">Lessons</a>
-            <a href="Gallery.html">Gallery</a>
             <a href="ContactUs.html">Join Now</a>
+            <a href="Lessons.html">For Coaches</a>
+            <a href="Gallery.html">Gallery</a>
         </div>
     </nav>
 
