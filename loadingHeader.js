@@ -19,4 +19,3 @@ document.addEventListener("DOMContentLoaded", function() {
             console.error('Error fetching header.html:', error);
         });
 });
-
