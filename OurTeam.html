@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LG282EH3FV"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-LG282EH3FV');
-</script>
     <meta charset="UTF-8">
     <title>Our Team - The Chess Gurus</title>
     <link rel="icon" type="image/png" href="chessguru.webp">
@@ -158,6 +149,66 @@
             line-height: 1.5;
             text-align: left;
         }
+
+        @media (max-width: 900px) {
+            .container {
+                max-width: 98vw;
+                padding: 0 2vw;
+            }
+        }
+
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px 5px;
+            }
+
+            .logo {
+                margin-bottom: 10px;
+            }
+
+            .nav-items {
+                flex-direction: column;
+                gap: 10px;
+                width: 100%;
+                overflow-x: auto;
+            }
+
+            .team-header {
+                font-size: 24px;
+                margin-top: 70px;
+                padding-bottom: 5px;
+            }
+
+            .container {
+                flex-direction: column;
+                gap: 15px;
+                padding: 0 2vw;
+            }
+
+            .profile {
+                max-width: 98vw;
+                padding: 10px;
+            }
+
+            .profile img {
+                width: 100px;
+                height: 100px;
+            }
+
+            .profile h2 {
+                font-size: 18px;
+            }
+
+            .profile h3, .profile h4 {
+                font-size: 14px;
+            }
+
+            .profile p {
+                font-size: 13px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -177,9 +228,9 @@
                 </div>
             </div>
             <a href="OurTeam.html">Our Team</a>
-            <a href="Lessons.html">Lessons</a>
-            <a href="Gallery.html">Gallery</a>
             <a href="ContactUs.html">Join Now</a>
+            <a href="Lessons.html">For Coaches</a>
+            <a href="Gallery.html">Gallery</a>
         </div>
     </nav>
 
