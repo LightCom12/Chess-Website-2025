@@ -1,18 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LG282EH3FV"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-LG282EH3FV');
-</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Chess Gurus - Lessons</title> <!-- Ensure consistent title -->
+    <title>The Chess Gurus - For Coaches</title> <!-- Updated title -->
     <link rel="icon" type="image/png" href="chessguru.webp">
     <link href="https://fonts.googleapis.com/css2?family=Magik:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -194,6 +185,38 @@
             font-size: 16px; /* Ensure consistent font size */
             font-weight: bold; /* Ensure consistent font weight */
         }
+
+        @media (max-width: 900px) {
+            .lesson-info {
+                max-width: 98vw;
+                padding: 0 2vw;
+            }
+        }
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px 5px;
+            }
+            .logo {
+                margin-bottom: 10px;
+            }
+            .nav-items {
+                flex-direction: column;
+                gap: 10px;
+                width: 100%;
+                overflow-x: auto;
+            }
+            .lesson-info {
+                font-size: 1.1em;
+                margin: 60px auto 20px auto;
+                padding: 0 2vw;
+            }
+            .form-link a {
+                font-size: 1em;
+                padding: 10px 10px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -225,9 +248,9 @@
                     <a href="./OurCoaches.html">Our Coaches</a> <!-- Fixed path -->
                 </div>
             </div>
-            <a href="./Lessons.html">Lessons</a> <!-- Fixed path -->
-            <a href="./Gallery.html">Gallery</a> <!-- Fixed path -->
             <a href="./ContactUs.html">Join Now</a> <!-- Fixed path -->
+            <a href="./Lessons.html">For Coaches</a> <!-- Updated nav label -->
+            <a href="./Gallery.html">Gallery</a> <!-- Fixed path -->
         </div>
     </nav>
 
