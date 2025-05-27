@@ -8,6 +8,9 @@
         </div>
     </header>
     <nav class="menu">
+        <a href="index.html">
+            <button type="button" class="Home">Home</button>
+        </a>
         <div class="dropdown">
             <a href="javascript:void(0);" onclick="toggleDropdown()">About Us ▾</a>
             <div class="dropdown-content" id="dropdown-content">
@@ -54,7 +57,7 @@
             padding: 20px;
         }
 
-        .OurTeam, .AboutUs, .Lessons, .Gallery, .ContactUs {
+        .OurTeam, .AboutUs, .Lessons, .Gallery, .ContactUs, .Home {
             background-color: #537a5a; /* Cactus Green */
             color: white;
             height: 45px;
@@ -69,7 +72,7 @@
             transition: background-color 0.3s ease;
         }
 
-        .OurTeam:hover, .AboutUs:hover, .Lessons:hover, .Gallery:hover {
+        .OurTeam:hover, .AboutUs:hover, .Lessons:hover, .Gallery:hover, .Home:hover {
             background-color: #46694d; /* Darker Cactus Green on hover */
         }
 
