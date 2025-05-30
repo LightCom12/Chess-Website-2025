@@ -165,12 +165,12 @@
                         grecaptcha.execute(RECAPTCHA_SITE_KEY, {action: 'submit_coach_application'})
                             .then(function(token) {
                                 const data = {
-                                    fullname: form.fullname.value,
+                                    full_name: form.fullname.value,
                                     email: form.email.value,
                                     phone: form.phone.value,
-                                    uscf_fide_id: form['uscf-fide-id'].value,
-                                    chess_exp: form['chess-exp'].value,
-                                    why_coach: form['why-coach'].value,
+                                    uscf: form['uscf-fide-id'].value,
+                                    experience: form['chess-exp'].value,
+                                    why: form['why-coach'].value,
                                     'g-recaptcha-response': token
                                 };
                                 // Replace with your EmailJS Service ID and Template ID
