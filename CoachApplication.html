@@ -7,7 +7,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="https://www.google.com/recaptcha/api.js?render=6LeSdiIrAAAAAO6dyAsRfzQGHB7MdygEiB0iY-__"></script>
     <style>
-        /* Use the same CSS as ContactUs.html for consistency */
         body { margin: 0; font-family: 'Trebuchet MS', Arial, sans-serif; background-color: #f6e3bb; color: #333; overflow-y: scroll; }
         nav { position: fixed; top: 0; width: 100%; background-color: #333; color: white; display: flex; justify-content: space-between; align-items: center; padding: 20px 20px; z-index: 1000; }
         nav a { color: white; text-decoration: none; padding: 8px 12px; font-weight: bold; }
@@ -111,20 +110,14 @@
             <label for="phone">Phone Number (required):</label>
             <input type="text" id="phone" name="phone" required>
 
-            <label for="chess-exp">Chess Experience & Ratings (briefly describe your background, and include any USCF/FIDE/online ratings):</label>
+            <label for="uscf-fide-id">USCF or FIDE ID (number only):</label>
+            <input type="number" id="uscf-fide-id" name="uscf-fide-id" pattern="\d*" inputmode="numeric">
+
+            <label for="chess-exp">Chess Experience & Ratings (briefly describe your background, and include any online ratings):</label>
             <textarea id="chess-exp" name="chess-exp" required></textarea>
 
             <label for="why-coach">Why do you want to coach with us?</label>
             <textarea id="why-coach" name="why-coach" required></textarea>
-
-            <label for="teaching-exp">Do you have any teaching or mentoring experience? Please describe.</label>
-            <textarea id="teaching-exp" name="teaching-exp"></textarea>
-
-            <label for="availability">What days and times are you typically available?</label>
-            <input type="text" id="availability" name="availability" required>
-
-            <label for="reference">Reference (optional):</label>
-            <input type="text" id="reference" name="reference">
 
             <button type="submit">Submit Application</button>
         </form>
@@ -175,11 +168,9 @@
                                     fullname: form.fullname.value,
                                     email: form.email.value,
                                     phone: form.phone.value,
+                                    uscf_fide_id: form['uscf-fide-id'].value,
                                     chess_exp: form['chess-exp'].value,
                                     why_coach: form['why-coach'].value,
-                                    teaching_exp: form['teaching-exp'].value,
-                                    availability: form.availability.value,
-                                    reference: form.reference.value,
                                     'g-recaptcha-response': token
                                 };
                                 // Replace with your EmailJS Service ID and Template ID
