@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Join Our Chess Program</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+    header {
+      background-color: #273c75;
+      color: white;
+      padding: 1rem 2rem;
+      text-align: center;
+    }
+    nav {
+      background-color: #192a56;
+      padding: 0.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav a {
+      color: white;
+      margin-left: 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    section {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    h1, h2 {
+      color: #192a56;
+    }
+    form {
+      display: grid;
+      gap: 1rem;
+    }
+    label {
+      font-weight: bold;
+    }
+    input, select, button {
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+    button {
+      background-color: #44bd32;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #4cd137;
+    }
+    .gallery {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+    .gallery img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      flex: 1 1 calc(50% - 1rem);
+    }
+    footer {
+      background-color: #192a56;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 3rem;
+    }
+    .contact {
+      margin-top: 2rem;
+    }
+    .social a {
+      margin: 0 10px;
+      color: white;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div><strong>Your Organization</strong></div>
+    <div>
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/join">Join</a>
+      <a href="/contact">Contact</a>
+    </div>
+  </nav>
+
+  <header>
+    <h1>Join Our Chess Program</h1>
+    <p>Unlock your potential through chess!</p>
+  </header>
+
+  <section>
+    <h2>📝 Registration Form</h2>
+    <form id="registrationForm">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" required />
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" required />
+
+      <label for="location">Location</label>
+      <select id="location">
+        <option>Arizona</option>
+        <option>Other</option>
+      </select>
+
+      <label for="ratings">Chess Ratings (Optional)</label>
+      <input type="text" id="ratings" placeholder="USCF, FIDE, Lichess, etc." />
+
+      <label for="experience">Experience Level</label>
+      <select id="experience">
+        <option>Less than 3 months</option>
+        <option>3 months to 1 year</option>
+        <option>1-2 years</option>
+        <option>3-5 years</option>
+        <option>Over 5 years</option>
+      </select>
+
+      <label for="referral">Referral Source</label>
+      <select id="referral">
+        <option>Friend or Family</option>
+        <option>Coach</option>
+        <option>Website</option>
+        <option>Social Media</option>
+        <option>Other</option>
+      </select>
+
+      <button type="submit">Submit Application</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 Your Organization Name. All rights reserved. | <a href="#" style="color:white; text-decoration:underline;">Privacy Policy</a></p>
+  </footer>
+
+  <script>
+    document.getElementById("registrationForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      alert("Thank you for joining our program as a coach! We'll be in touch soon.");
+    });
+  </script>
+</body>
+</html>
