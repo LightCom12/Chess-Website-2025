@@ -1,18 +1,4 @@
 <html>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-K86JFRHP');</script>
-    <!-- End Google Tag Manager -->
-    <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript>
-      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K86JFRHP"
-              height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
-    <!-- End Google Tag Manager (noscript) -->
     <header class="mainheader">
         <div class="header-container">
             <div class="logo-container">
@@ -21,6 +7,116 @@
             </div>
         </div>
     </header>
-    <!-- ...rest of file unchanged... -->
-    </body>
+    <nav class="menu">
+        <a href="index.html">
+            <button type="button" class="Home">Home</button>
+        </a>
+        <div class="dropdown">
+            <a href="javascript:void(0);" onclick="toggleDropdown()">About Us ▾</a>
+            <div class="dropdown-content" id="dropdown-content">
+                <a href="OurMission.html">Our Mission</a>
+                <a href="OurImpact.html">Our Impact</a>
+            </div>
+        </div>
+        <a href="OurTeam.html">
+            <button type="button" class="OurTeam">Our Team</button>
+        </a>
+        <a href="Lessons.html">
+            <button type="button" class="Lessons">Lessons</button>
+        </a>
+        <a href="Gallery.html">
+            <button type="button" class="Gallery">Gallery</button>
+        </a>
+        <a href="ContactUs.html">
+            <button type="button" class="ContactUs">Join Now</button>
+        </a>
+    </nav>
+
+    <style>
+        * {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        .gurulogo {
+            border-radius: 50px;
+            width: 50px;
+            margin-right: 10px;
+        }
+
+        .mainheader {
+            font-size: 30px;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            text-align: center;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .OurTeam, .AboutUs, .Lessons, .Gallery, .ContactUs, .Home {
+            background-color: #537a5a; /* Cactus Green */
+            color: white;
+            height: 45px;
+            width: 110px;
+            font-weight: bold;
+            font-size: 15px;
+            cursor: pointer;
+            border: none;
+            border-radius: 7px;
+            line-height: 45px;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .OurTeam:hover, .AboutUs:hover, .Lessons:hover, .Gallery:hover, .Home:hover {
+            background-color: #46694d; /* Darker Cactus Green on hover */
+        }
+
+        .ContactUs {
+            background-color: #f4a259; /* Orange Sun */
+        }
+
+        .ContactUs:hover {
+            background-color: #d9883f; /* Darker Orange Sun on hover */
+        }
+
+        .menu {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
 </html>
