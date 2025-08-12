@@ -1,15 +1,187 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-K86JFRHP');</script>
-<!-- End Google Tag Manager -->
+    <meta charset="UTF-8">
+    <title>Chess Hours Submission - The Chess Gurus</title>
+    <link rel="icon" type="image/png" href="./images/chessguru.webp">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
 
+        body {
+            background-color: #F1DFB4;
+            padding-top: 80px;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 20px;
+            z-index: 1000;
+        }
+
+        nav .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        nav .logo img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+
+        nav .logo span {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .nav-items {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .nav-items a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 12px;
+        }
+
+        .nav-items a:hover {
+            background-color: #575757;
+            border-radius: 5px;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 25px;
+            background-color: #444;
+            min-width: 160px;
+            z-index: 1;
+            border-radius: 5px;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 10px;
+            color: white;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #575757;
+        }
+
+        .dropdown:hover .dropdown-content,
+        .dropdown-content:hover {
+            display: block;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+        }
+
+        @media (max-width: 768px) {
+            .nav-items {
+                display: none;
+                flex-direction: column;
+                background-color: #333;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: 200px;
+                padding: 10px 0;
+            }
+
+            .nav-items.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+        }
+
+        .logo span, 
+        .nav-items a {
+            font-family: 'Magik', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
+    <nav>
+        <div class="logo">
+            <img src="images/chessguru.webp" alt="GuruLogo">
+            <span>The Chess Gurus</span>
+        </div>
+
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <div class="nav-items" id="nav-items">
+            <a href="index.html">Home</a>
+            <div class="dropdown">
+                <a href="javascript:void(0);">About Us &#9662;</a>
+                <div class="dropdown-content">
+                    <a href="OurMission.html">Our Mission</a>
+                    <a href="OurImpact.html">Our Impact</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="javascript:void(0);">Our Team &#9662;</a>
+                <div class="dropdown-content">
+                    <a href="OurFounders.html">Our Founders</a>
+                    <a href="OurCoaches.html">Our Coaches</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="javascript:void(0);">Coaches &#9662;</a>
+                <div class="dropdown-content">
+                    <a href="./ChessHoursSubmission">Volunteer Hours Submission</a>
+                    <a href="./CoachApplication">Coach Application</a>
+                </div>
+            </div>
+            <a href="ContactUs.html">Join Now</a>
+            <a href="Gallery.html">Gallery</a>
+        </div>
+    </nav>
+    <!-- Place your Chess Hours Submission content below this line -->
+
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById('nav-items');
+            nav.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
