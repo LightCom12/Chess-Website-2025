@@ -1,13 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-K86JFRHP');</script>
-    <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Chess Gurus - Gallery</title>
@@ -19,16 +12,445 @@
             padding: 0;
             font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         }
-        /* ... rest of CSS unchanged ... */
+
+        body {
+            background-color: #F1DFB4;
+            padding-top: 80px;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 20px;
+            z-index: 1000;
+        }
+
+        nav .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        nav .logo img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+
+        nav .logo span {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .nav-items {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .nav-items a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 12px;
+            font-weight: bold;
+        }
+
+        .nav-items a:hover {
+            background-color: #575757;
+            border-radius: 5px;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 25px;
+            background-color: #333;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            /* revert to default for two-line dropdown */
+            white-space: normal;
+            min-width: 160px;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 8px 12px;
+            text-decoration: none;
+            display: block; /* Show links on separate lines */
+        }
+
+        .dropdown-content a:hover {
+            background-color: #575757;
+        }
+
+        .dropdown:hover .dropdown-content,
+        .dropdown-content:hover {
+            display: block;
+        }
+
+        .gallery-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+
+        .gallery-container .carousel:first-child {
+            margin-top: 70px; /* Existing margin to move the first carousel down */
+            border: none; /* Remove the border */
+            border-radius: 0; /* Reset border radius */
+        }
+
+        .gallery-container .carousel:nth-child(2) {
+            margin-top: 70px; /* Move the second carousel down */
+            margin-left: 20px; /* Add margin to move the second carousel to the right */
+            position: relative; /* Ensure dots are positioned relative to the second carousel */
+        }
+
+        .carousel {
+            flex: 1;
+            max-width: 48%; /* Adjust width to fit two carousels side by side */
+            overflow: hidden;
+            border-radius: 10px;
+            background-color: #F1DFB4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative; /* Ensure dots are positioned relative to the carousel */
+        }
+
+        .carousel-images {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: calc(100% * 5); /* Adjust width for five images */
+        }
+
+        .carousel-images#carousel-2 {
+            width: calc(100% * 7); /* Adjust width for seven images */
+        }
+
+        .carousel-images img {
+            width: 100%;
+            height: auto;
+            flex-shrink: 0;
+            object-fit: contain;
+            margin: 0 auto;
+        }
+
+        #carousel-1 img:nth-child(3) {
+            object-fit: cover; /* Ensure the third image fits within the border */
+            width: 100%; /* Maintain full width */
+            height: 100%; /* Maintain full height */
+        }
+
+        .carousel-button {
+            position: absolute;
+            top: 50%; /* Center vertically */
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5); /* Revert arrow background to original */
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+            z-index: 1000;
+            width: 40px; /* Ensure consistent size */
+            height: 40px; /* Ensure consistent size */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .carousel-button.prev {
+            left: 1000px; /* Adjusted to ensure visibility */
+        }
+
+        .carousel-button.next {
+            right: 10px; /* Adjusted to ensure visibility */
+        }
+
+        .carousel-button:hover {
+            background-color: rgba(0, 0, 0, 0.8); /* Keep hover effect consistent */
+        }
+
+        .carousel-button.first-carousel-prev {
+            left: 70px; /* Custom position for the first carousel's previous button */
+        }
+
+        .carousel-button.first-carousel-next {
+            right: 690px; /* Custom position for the first carousel's next button */
+        }
+
+        .carousel-button.prev {
+            left: 1000px; /* Adjusted to ensure visibility */
+        }
+
+        .carousel-button.next {
+            right: 10px; /* Adjusted to ensure visibility */
+        }
+
+        .carousel-button.first-carousel-prev:hover,
+        .carousel-button.first-carousel-next:hover {
+            background-color: rgba(255, 255, 255, 0.8); /* Custom hover effect */
+            color: black; /* Change arrow color on hover */
+        }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            bottom: 20px; /* Move dots slightly higher */
+            width: 100%;
+            gap: 10px;
+        }
+
+        .carousel-dots .dot {
+            width: 12px;
+            height: 12px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .carousel-dots .dot.active {
+            background-color: black;
+        }
+
+        #carousel-2-dots {
+            bottom: 10px; /* Move dots in the second carousel further down */
+        }
+
+        #carousel-2-dots .dot {
+            width: 15px; /* Increase width of dots */
+            height: 15px; /* Increase height of dots */
+        }
+
+        #carousel-1-dots {
+            bottom: 10px; /* Move dots for the first carousel outside the image, like the second carousel */
+        }
+
+        #carousel-1-dots .dot {
+            width: 15px; /* Keep the size consistent with the second carousel */
+            height: 15px;
+        }
+
+        @media (max-width: 900px) {
+            .gallery-container {
+                flex-direction: column;
+                gap: 30px;
+                max-width: 98vw;
+                margin: 10px auto;
+            }
+            .carousel {
+                max-width: 100%;
+            }
+        }
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px 5px;
+            }
+            .logo {
+                margin-bottom: 10px;
+            }
+            .nav-items {
+                flex-direction: column;
+                gap: 10px;
+                width: 100%;
+                overflow-x: auto;
+            }
+            .gallery-container {
+                gap: 15px;
+                padding: 0 2vw;
+            }
+            .carousel {
+                max-width: 100vw;
+                border-radius: 6px;
+            }
+            .carousel-images img {
+                width: 100vw;
+                max-width: 100vw;
+                height: auto;
+            }
+        }
     </style>
 </head>
 <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript>
-      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K86JFRHP"
-              height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
-    <!-- End Google Tag Manager (noscript) -->
-<!-- ...rest of file unchanged... -->
+    <nav>
+        <div class="logo">
+            <img src="images/chessguru.webp" alt="GuruLogo">
+            <span>The Chess Gurus</span>
+            <a href="https://www.instagram.com/azchessgurus" target="_blank" style="margin-left:10px; margin-right:0; display:inline-block; vertical-align:middle;">
+                <img src="images/instalogo.png" alt="Instagram" style="width:32px; height:32px; border-radius:8px; vertical-align:middle;">
+            </a>
+            <a href="https://discord.gg/Nxmx5KsBdx" target="_blank" style="margin-left:6px; display:inline-block; vertical-align:middle;">
+                <img src="images/discord.png" alt="Discord" style="width:32px; height:32px; border-radius:8px; vertical-align:middle;">
+            </a>
+        </div>
+
+        <div class="nav-items" id="nav-items">
+            <a href="./index.html">Home</a> <!-- Fixed path -->
+            <div class="dropdown">
+                <a href="javascript:void(0);">About Us ▾</a>
+                <div class="dropdown-content">
+                    <a href="./OurMission.html">Our Mission</a> <!-- Fixed path -->
+                    <a href="./OurImpact.html">Our Impact</a> <!-- Fixed path -->
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="javascript:void(0);">Our Team ▾</a>
+                <div class="dropdown-content">
+                    <a href="./OurFounders.html">Our Founders</a> <!-- Fixed path -->
+                    <a href="./OurCoaches.html">Our Coaches</a> <!-- Fixed path -->
+                </div>
+            </div>
+            <a href="./ContactUs.html">Join Now</a> <!-- Fixed path -->
+            <a href="./Lessons.html">For Coaches</a> <!-- Updated nav label -->
+            <a href="./Gallery.html">Gallery</a> <!-- Fixed path -->
+        </div>
+    </nav>
+
+    <div class="gallery-container">
+        <div class="carousel" style="position: relative;">
+            <div class="carousel-images" id="carousel-1">
+                <img src="images/sophnats.jpg" alt="Sophomore Nationals">
+                <img src="images/freshmannats.jpg" alt="Freshman Nationals">
+                <img src="images/statejunior.jpg" alt="State Junior Championship">
+                <img src="images/pic4.jpg" alt="Additional Event">
+                <img src="images/pic5.jpg" alt="New Event">
+            </div>
+            <div class="carousel-dots" id="carousel-1-dots">
+                <span class="dot" onclick="moveToSlide(0)"></span>
+                <span class="dot" onclick="moveToSlide(1)"></span>
+                <span class="dot" onclick="moveToSlide(2)"></span>
+                <span class="dot" onclick="moveToSlide(3)"></span>
+                <span class="dot" onclick="moveToSlide(4)"></span>
+            </div>
+        </div>
+
+        <div class="carousel" style="position: relative;">
+            <div class="carousel-images" id="carousel-2">
+                <img src="images/pic1.jpg" alt="Picture 1"> <!-- Added pic1.jpg -->
+                <img src="images/pic2.jpg" alt="Picture 2"> <!-- Added pic2.jpg -->
+                <img src="images/pic3.jpg" alt="Picture 3"> <!-- Added pic3.jpg -->
+                <img src="images/pic6.jpg" alt="Picture 6"> <!-- Added pic6.jpg -->
+            </div>
+            <div class="carousel-dots" id="carousel-2-dots">
+                <span class="dot" onclick="moveToSlide2(0)"></span>
+                <span class="dot" onclick="moveToSlide2(1)"></span>
+                <span class="dot" onclick="moveToSlide2(2)"></span>
+                <span class="dot" onclick="moveToSlide2(3)"></span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let firstCarouselIndex = 0;
+        let secondCarouselIndex = 0;
+        let firstCarouselTimer, secondCarouselTimer;
+
+        function moveFirstCarousel(direction) {
+            const carouselImages = document.getElementById('carousel-1');
+            const totalImages = carouselImages.querySelectorAll('img').length;
+
+            firstCarouselIndex = (firstCarouselIndex + direction + totalImages) % totalImages;
+
+            const offset = -firstCarouselIndex * 100;
+            carouselImages.style.transform = `translateX(${offset}%)`;
+
+            updateDots();
+            resetFirstCarouselAutoplay();
+        }
+
+        function moveToSlide(index) {
+            const carouselImages = document.getElementById('carousel-1');
+            const totalImages = carouselImages.querySelectorAll('img').length;
+
+            firstCarouselIndex = index % totalImages;
+
+            const offset = -firstCarouselIndex * 100;
+            carouselImages.style.transform = `translateX(${offset}%)`;
+
+            updateDots();
+            resetFirstCarouselAutoplay();
+        }
+
+        function updateDots() {
+            const dots = document.querySelectorAll('#carousel-1-dots .dot');
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === firstCarouselIndex);
+            });
+        }
+
+        function resetFirstCarouselAutoplay() {
+            clearInterval(firstCarouselTimer);
+            firstCarouselTimer = setInterval(() => moveFirstCarousel(1), 5000);
+        }
+
+        function moveToSlide2(index) {
+            const carouselImages = document.getElementById('carousel-2');
+            const totalImages = carouselImages.querySelectorAll('img').length;
+
+            secondCarouselIndex = index % totalImages;
+
+            const offset = -secondCarouselIndex * 100;
+            carouselImages.style.transform = `translateX(${offset}%)`;
+
+            updateDots2();
+            resetSecondCarouselAutoplay();
+        }
+
+        function updateDots2() {
+            const dots = document.querySelectorAll('#carousel-2-dots .dot');
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === secondCarouselIndex);
+            });
+        }
+
+        function moveSecondCarousel(direction) {
+            const carouselImages = document.getElementById('carousel-2');
+            const totalImages = carouselImages.querySelectorAll('img').length;
+
+            secondCarouselIndex = (secondCarouselIndex + direction + totalImages) % totalImages;
+
+            const offset = -secondCarouselIndex * 100;
+            carouselImages.style.transform = `translateX(${offset}%)`;
+
+            updateDots2();
+            resetSecondCarouselAutoplay();
+        }
+
+        function resetSecondCarouselAutoplay() {
+            clearInterval(secondCarouselTimer);
+            secondCarouselTimer = setInterval(() => moveSecondCarousel(1), 5000);
+        }
+
+        // Initialize autoplay for both carousels
+        firstCarouselTimer = setInterval(() => moveFirstCarousel(1), 5000);
+        secondCarouselTimer = setInterval(() => moveSecondCarousel(1), 5000);
+
+        // Initialize the dots
+        updateDots();
+        updateDots2();
+
+        function toggleMenu() {
+            const navItems = document.getElementById('nav-items');
+            navItems.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
