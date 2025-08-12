@@ -1,13 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-K86JFRHP');</script>
-    <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <title>Our Team - The Chess Gurus</title>
     <link rel="icon" type="image/png" href="chessguru.webp">
@@ -19,16 +12,294 @@
             padding: 0;
             font-family: 'Magik', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         }
-        /* ... rest of CSS unchanged ... */
+
+        body {
+            background-color: #F1DFB4;
+            padding-top: 80px;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 20px;
+            z-index: 1000;
+        }
+
+        nav .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        nav .logo img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+
+        nav .logo span {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .nav-items {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .nav-items a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 12px;
+        }
+
+        .nav-items a:hover {
+            background-color: #575757;
+            border-radius: 5px;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 8px 12px;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #575757;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .team-header {
+            font-size: 35px;
+            margin-top: 50px;
+            text-align: center;
+            padding-bottom: 10px;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            width: 90%;
+            max-width: 1200px;
+            margin: 30px auto;
+            justify-content: center;
+        }
+
+        .profile {
+            flex: 1 1 300px;
+            max-width: 300px;
+            padding: 20px;
+            background-color: white;
+            border: 2px solid #333;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .profile img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        .profile h2 {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .profile h3 {
+            font-size: 18px;
+            margin-top: 0;
+        }
+
+        .profile h4 {
+            font-size: 16px;
+            margin-top: 5px;
+            margin-bottom: 20px;
+        }
+
+        .profile p {
+            font-size: 15px;
+            line-height: 1.5;
+            text-align: left;
+        }
+
+        @media (max-width: 900px) {
+            .container {
+                max-width: 98vw;
+                padding: 0 2vw;
+            }
+        }
+
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px 5px;
+            }
+
+            .logo {
+                margin-bottom: 10px;
+            }
+
+            .nav-items {
+                flex-direction: column;
+                gap: 10px;
+                width: 100%;
+                overflow-x: auto;
+            }
+
+            .team-header {
+                font-size: 24px;
+                margin-top: 70px;
+                padding-bottom: 5px;
+            }
+
+            .container {
+                flex-direction: column;
+                gap: 15px;
+                padding: 0 2vw;
+            }
+
+            .profile {
+                max-width: 98vw;
+                padding: 10px;
+            }
+
+            .profile img {
+                width: 100px;
+                height: 100px;
+            }
+
+            .profile h2 {
+                font-size: 18px;
+            }
+
+            .profile h3, .profile h4 {
+                font-size: 14px;
+            }
+
+            .profile p {
+                font-size: 13px;
+            }
+        }
     </style>
 </head>
 <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript>
-      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K86JFRHP"
-              height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
-    <!-- End Google Tag Manager (noscript) -->
-<!-- ...rest of file unchanged... -->
+    <nav>
+        <div class="logo">
+            <img src="images/chessguru.webp" alt="GuruLogo">
+            <span>The Chess Gurus</span>
+        </div>
+
+        <div class="nav-items" id="nav-items">
+            <a href="index.html">Home</a>
+            <div class="dropdown">
+                <a href="javascript:void(0);" onclick="toggleDropdown()">About Us ▾</a>
+                <div class="dropdown-content">
+                    <a href="OurMission.html">Our Mission</a>
+                    <a href="OurImpact.html">Our Impact</a>
+                </div>
+            </div>
+            <a href="OurTeam.html">Our Team</a>
+            <a href="ContactUs.html">Join Now</a>
+            <a href="Lessons.html">For Coaches</a>
+            <a href="Gallery.html">Gallery</a>
+        </div>
+    </nav>
+
+    <header class="team-header">Our Founders</header>
+    <div class="container">
+        <!-- Founders Section -->
+        <div class="profile">
+            <img src="images/Amudan.png" alt="Amudan Mangudi">
+            <h2>Amudan Mangudi</h2>
+            <h3>Co-Founder</h3>
+            <h4>Project Manager</h4>
+            <p>
+                As a multiple-time state champion and the 2nd board of the ACP High School chess team, Amudan Mangudi is a chess expert currently ranked within the top 50 chess players in Arizona...
+            </p>
+        </div>
+        <div class="profile">
+            <img src="images/SamikM.jpg" alt="Samik Mathur">
+            <h2>Samik Mathur</h2>
+            <h3>Co-Founder</h3>
+            <h4>Chief Financial Officer</h4>
+            <p>
+                Samik was a Co-founder of The Chess Gurus in early 2024. Being one of the top JV players in Arizona, he has a driving passion to share his skills with aspiring chess players...
+            </p>
+        </div>
+        <div class="profile">
+            <img src="images/Kapil.jpg" alt="Kapil Inguva">
+            <h2>Kapil Inguva</h2>
+            <h3>Co-Founder</h3>
+            <h4>CIO/CTO/Coach</h4>
+            <p>
+                As a JV state finalist, Kapil has had a driving passion towards chess for over 4 years. In 2022, he has represented Arizona's JV Chess Team, placing 7th regionally and at States...
+            </p>
+        </div>
+        <div class="profile">
+            <img src="images/lee.png" alt="Jayden Lee">
+            <h2>Jayden Lee</h2>
+            <h3>Co-Founder</h3>
+            <h4>Head Coach (USCF National Master)</h4>
+            <p>
+                National Master Jayden Lee is the team captain for the (nationally placing) ACP-HS chess team as well as the reigning AIA Champion, multiple-time state champion...
+            </p>
+        </div>
+    </div>
+
+    <header class="team-header">Our Coaches</header>
+    <div class="container">
+        <!-- Coaches Section -->
+        <div class="profile">
+            <img src="images/Kasyap.jpg" alt="Kasyap">
+            <h2>Kasyap Avancha</h2>
+            <h3>Coach</h3>
+            <h4>ACP Chess Varsity Player</h4>
+            <p>
+                Kasyap has over 8 years of experience in coaching chess at various levels. He has a deep understanding of game strategies and has successfully trained players to compete in national tournaments.
+            </p>
+        </div>
+        <div class="profile">
+            <img src="images/Ronak.png" alt="Ronak">
+        <p>
+            At ChessGurus, we believe the impact of chess goes far beyond the board. We’ve seen how it helps students develop focus, patience, and problem-solving skills — all while having fun and building confidence.
+        </p>
+        <p>
+            We’re proud to bring our teaching into schools like Ryan Elementary, where we introduce young minds to the power of strategic thinking through engaging lessons and playful competition. Watching students grow, not just in skill, but in mindset, is at the heart of what we do.
+        </p>
+        <p>
+            Whether it’s guiding a beginner through their first checkmate or helping a player sharpen their strategy, we’re here to support meaningful growth, one move at a time.
+        </p>
+    </div>
+
+    <script src="loadingHeader.js"></script>
 </body>
 </html>
