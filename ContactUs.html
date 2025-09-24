@@ -331,7 +331,13 @@
                     <a href="./CoachApplication">Coach Application</a> 
                 </div>
             </div>
-            <a href="ContactUs.html">Join Now</a>
+            <div class="dropdown">
+                <a href="javascript:void(0);">Join Now ▾</a>
+                <div class="dropdown-content">
+                    <a href="ContactUs.html">Join Now</a>
+                    <a href="Tournaments.html">Tournaments</a>
+                </div>
+            </div>
             <a href="Gallery.html">Gallery</a>
         </div>
     </nav>
@@ -345,14 +351,14 @@
 
     <div class="contact-form-container">
         <form id="join-form">
-            <label for="fullname">Full Name (required):</label>
+            <label for="fullname">Name or Discord Name (required):</label>
             <input type="text" id="fullname" name="fullname" required>
 
             <label for="email">Your Email (required):</label>
             <input type="email" id="email" name="email" required>
 
-            <label for="phone">Phone Number (required):</label>
-            <input type="text" id="phone" name="phone" required>
+            <label for="phone">Phone Number (optional):</label>
+            <input type="text" id="phone" name="phone">
 
             <label for="uscf">USCF Rating (if applicable):</label>
             <input type="text" id="uscf" name="uscf">
