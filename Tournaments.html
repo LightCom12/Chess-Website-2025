@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tournaments - The Chess Gurus</title>
+    <link rel="icon" type="image/png" href="chessguru.webp">
+    <link href="https://fonts.googleapis.com/css2?family=Magik:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Magik', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #F1DFB4;
+            padding-top: 80px;
+        }
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 20px;
+            z-index: 1000;
+        }
+        nav .logo {
+            display: flex;
+            align-items: center;
+        }
+        nav .logo img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+        nav .logo span {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .nav-items {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        .nav-items a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 12px;
+        }
+        .nav-items a:hover {
+            background-color: #575757;
+            border-radius: 5px;
+        }
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 25px;
+            background-color: #444;
+            min-width: 160px;
+            z-index: 1;
+            border-radius: 5px;
+        }
+        .dropdown-content a {
+            display: block;
+            padding: 10px;
+            color: white;
+        }
+        .dropdown-content a:hover {
+            background-color: #575757;
+        }
+        .dropdown-content.open {
+            display: block;
+        }
+        .dropdown:hover .dropdown-content,
+        .dropdown-content:hover {
+            display: block;
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+        }
+        @media (max-width: 768px) {
+            .nav-items {
+                display: none;
+                flex-direction: column;
+                background-color: #333;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: 200px;
+                padding: 10px 0;
+            }
+            .nav-items.active {
+                display: flex;
+            }
+            .hamburger {
+                display: flex;
+            }
+        }
+        .tournaments-header {
+            font-size: 35px;
+            margin-top: 50px;
+            text-align: center;
+            padding-bottom: 10px;
+        }
+        .tournaments-content {
+            font-size: 18px;
+            text-align: center;
+            margin: 20px auto;
+            line-height: 1.75;
+            padding-bottom: 20px;
+            max-width: 800px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="images/chessguru.webp" alt="GuruLogo">
+            <span>The Chess Gurus</span>
+            <a href="https://www.instagram.com/azchessgurus" target="_blank" style="margin-left:10px; margin-right:0; display:inline-block; vertical-align:middle;">
+                <img src="images/instalogo.png" alt="Instagram" style="width:32px; height:32px; border-radius:8px; vertical-align:middle;">
+            </a>
+            <a href="https://discord.gg/Nxmx5KsBdx" target="_blank" style="margin-left:6px; display:inline-block; vertical-align:middle;">
+                <img src="images/discord.png" alt="Discord" style="width:32px; height:32px; border-radius:8px; vertical-align:middle;">
+            </a>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="nav-items" id="nav-items">
+            <a href="index.html">Home</a>
+            <div class="dropdown">
+                <a href="javascript:void(0);">About Us ▾</a>
+                <div class="dropdown-content">
+                    <a href="OurMission.html">Our Mission</a>
+                    <a href="OurImpact.html">Our Impact</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="javascript:void(0);">Our Team ▾</a>
+                <div class="dropdown-content">
+                    <a href="OurFounders.html">Our Founders</a>
+                </div>
+            </div>
+            <a href="OurCoaches.html">Coaches</a>
+            <div class="dropdown">
+                <a href="javascript:void(0);">Join Now ▾</a>
+                <div class="dropdown-content">
+                    <a href="ContactUs.html">Join Now</a>
+                    <a href="Tournaments.html">Tournaments</a>
+                </div>
+            </div>
+            <a href="Gallery.html">Gallery</a>
+        </div>
+    </nav>
+    <header class="tournaments-header">Tournaments</header>
+    <div style="text-align:center; font-size:20px; color:#B85C00; font-weight:bold; margin-bottom:18px;">Over the Board Tournaments will be coming soon!</div>
+    <div class="tournaments-content" style="padding: 32px 24px; margin-top: 30px;">
+        <h2 style="color: #333; margin-bottom: 18px;">Weekly Chess.com Arenas</h2>
+        <p style="font-size: 17px; margin-bottom: 16px;">Join our growing chess community and compete in our weekly online arenas for prizes! All skill levels are welcome.</p>
+        <div style="margin-bottom: 20px;">
+            <a href="https://www.chess.com/club/az-chess-gurus" target="_blank" style="display:inline-block; background:#4CAF50; color:#000; font-weight:bold; padding:10px 18px; border-radius:8px; text-decoration:none; box-shadow:0 1px 4px rgba(0,0,0,0.10); margin-bottom:8px;">Join the AZ Chess Gurus Club</a><br>
+            <a href="https://www.chess.com/play/arena/4469379?clubId=784310" target="_blank" style="display:inline-block; background:#FFA500; color:#000; font-weight:bold; padding:10px 18px; border-radius:8px; text-decoration:none; box-shadow:0 1px 4px rgba(0,0,0,0.07);">This Week's Arena</a>
+        </div>
+        <ul style="text-align:left; max-width:600px; margin:0 auto 18px auto; font-size:16px; color:#444;">
+            <li>Live tournaments every week</li>
+            <li>Open to all ages and skill levels</li>
+            <li>Diamond membership prizes for the top 3 finishers</li>
+            <li>Friendly environment</li>
+        </ul>
+        <div style="margin-top:24px;">
+            <h3 style="color:#333; margin-bottom:10px;">How to Join</h3>
+            <ol style="text-align:left; max-width:600px; margin:0 auto; font-size:16px; color:#444;">
+                <li>Click the club link above and join AZ Chess Gurus on chess.com.</li>
+                <li>Check the club page for upcoming arena events.</li>
+                <li>Click the arena link above to join the next tournament.</li>
+                <li>Play, have fun, and connect with fellow chess enthusiasts!</li>
+            </ol>
+        </div>
+        <div style="margin-top:32px;">
+            <h3 style="color:#000; margin-bottom:10px;">Recent Winners</h3>
+            <table style="width:100%; border-collapse:collapse; background:#FFA500; border-radius:8px; box-shadow:0 1px 4px rgba(0,0,0,0.07); color:#000;">
+                <thead>
+                    <tr style="background:#FFA500; color:#000;">
+                        <th style="padding:10px; border-bottom:1px solid #fff;">Date</th>
+                        <th style="padding:10px; border-bottom:1px solid #fff; text-align:left; padding-left:64px;">Winners</th>
+                        <th style="padding:10px; border-bottom:1px solid #fff;">Link</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="padding:10px; border-bottom:1px solid #fff;">August 24, 2025</td>
+                        <td style="padding:10px; border-bottom:1px solid #fff; text-align:left; padding-left:32px;">
+                            1. Mr.Valkire<br>
+                            2. FluffyKane<br>
+                            3. levinemachinellc
+                        </td>
+                        <td style="padding:10px; border-bottom:1px solid #fff;"><a href="https://www.chess.com/tournament/live/arena/azchessgurus-august2425-32-area-4405107" target="_blank" style="color:#000; text-decoration:underline; font-weight:bold;">Link</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById('nav-items');
+            nav.classList.toggle('active');
+        }
+        function toggleDropdown() {
+            const dropdown = document.getElementById('dropdown-content');
+            dropdown.classList.toggle('open');
+        }
+    </script>
+</body>
+</html>
