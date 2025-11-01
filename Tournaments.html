@@ -12,10 +12,13 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
+            font-size: 16px;
         }
         body {
             background-color: #F1DFB4;
             padding-top: 80px;
+            text-align: left;
+            margin-left: 0;
         }
         nav {
             position: fixed;
@@ -127,9 +130,37 @@
             padding-bottom: 20px;
             max-width: 800px;
         }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: orange;
+            text-align: left;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+        caption {
+            font-weight: bold;
+            text-align: center;
+        }
+        .shift-down {
+            transform: translate(50%, 50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .shift-down table {
+            width: auto;
+            margin: 0 auto;
+        }
     </style>
 </head>
 <body>
+
+
     <nav>
         <div class="logo">
             <img src="images/chessguru.webp" alt="GuruLogo">
@@ -166,60 +197,157 @@
                 <a href="javascript:void(0);">Join Now ▾</a>
                 <div class="dropdown-content">
                     <a href="ContactUs.html">Join Now</a>
-                    <a href="Tournaments.html">Tournaments</a>
+                    <a href="Tournaments.html" style="transform: translateX(100%);">Tournaments</a>
                 </div>
             </div>
             <a href="Gallery.html">Gallery</a>
+            <a href="Resources.html" style="background-color:#333; color:#fff; border-radius:5px; font-weight:bold; margin-left:5px;">Resources</a>
         </div>
     </nav>
-    <header class="tournaments-header">Tournaments</header>
-    <div style="text-align:center; font-size:20px; color:#B85C00; font-weight:bold; margin-bottom:18px;">Over the Board Tournaments will be coming soon!</div>
-    <div class="tournaments-content" style="padding: 32px 24px; margin-top: 30px;">
-        <h2 style="color: #333; margin-bottom: 18px;">Weekly Chess.com Arenas</h2>
-        <p style="font-size: 17px; margin-bottom: 16px;">Join our growing chess community and compete in our weekly online arenas for prizes! All skill levels are welcome.</p>
-        <div style="margin-bottom: 20px;">
-            <a href="https://www.chess.com/club/az-chess-gurus" target="_blank" style="display:inline-block; background:#4CAF50; color:#000; font-weight:bold; padding:10px 18px; border-radius:8px; text-decoration:none; box-shadow:0 1px 4px rgba(0,0,0,0.10); margin-bottom:8px;">Join the AZ Chess Gurus Club</a><br>
-            <a href="https://www.chess.com/play/arena/4469379?clubId=784310" target="_blank" style="display:inline-block; background:#FFA500; color:#000; font-weight:bold; padding:10px 18px; border-radius:8px; text-decoration:none; box-shadow:0 1px 4px rgba(0,0,0,0.07);">This Week's Arena</a>
+
+    <!-- Tournament Section -->
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; width: 100%; padding: 20px;">
+        <div style="width: 60%; padding-right: 20px;">
+            <header class="tournaments-header" style="font-size: 50px; font-weight: bold; text-decoration: underline; text-align: center; transform: translateX(35%);">Tournaments</header>
+            <div class="tournaments-content" style="padding: 32px 24px; margin-top: 30px; text-align: left;">
+                <h2 style="font-size: 40px;">OTB December 6th Tournament</h2>
+                <p><span style="color: blue;"><b>Location:</b> Unity Chess Club; 985 W Chandler Heights Rd Suite 2, Chandler, AZ 85248</span><br>
+                <span style="color: red;"><b>Format:</b> 4-round Swiss tournament</span></p>
+                <p><span style="color: green;"><b>Time Control:</b> G/45;+5</span></p>
+                <p>Players within 100 points of the rating floor of a higher section may play up for an additional $5.</p>
+                <p><span style="color: purple;"><b>Important:</b><br>
+                All sections USCF rated except Non-USCF<br>
+                USCF membership required (may join or renew here: <a href="https://new.uschess.org/join-uscf" target="_blank">USCF join or renew</a> or on site).<br>
+                December 2025 USCF Regular ratings will be used for section eligibility, pairings, and prize eligibility.<br>
+                Other ratings may be used if higher. The decision of the Chief Tournament Director regarding eligibility, rating adjustments, conversions, unofficial ratings, or other rating issues is final.<br>
+                A maximum of two half-point byes are available. Half-point byes must be requested no later than 30 minutes before the round starts for rounds 1-2. Half-point byes for rounds 3-4 must be requested before the start of round 2 and may not be revoked after round 2 starts.<br>
+                Boards, sets, AND clocks will be provided for all sections.</span></p>
+                <p><span style="color: darkred;"><b>Prizes: $400 Prize Fund (based on 40 paid entries, will increase if more):</b><br>
+                1800+: 1st -- $80, 2nd -- $60, 3rd -- $35<br>
+                1400-1800: 1st -- $60, 2th -- $40, 3rd -- $25<br>
+                U1400: 1st -- $50, 2th -- $30, 3rd -- $20<br>
+                <b>Non-USCF:</b> Trophies to Top 3</span></p>
+                <p><span style="color: darkgreen;"><b>Round timings:</b><br>
+                Rd 1: 9:00 am<br>
+                Rd 2: 11:15 am<br>
+                Rd 3: 2 pm (30 minute lunch break)<br>
+                Rd 4: 4:15 pm</span></p>
+                <p><span style="color: purple;"><b>Entry Fees:</b><br>
+                $20 for 1800+, 1400-1800, and U1400 by Thursday night 11:59pm and $25 on Friday or Saturday<br>
+                $10 for Non-USCF by Thursday night 11:59pm and $15 on Friday or Saturday<br>
+                Free entry for any GM/WGM/IM/WIM/FM/WFM and $5 for NM<br>
+                No prize deduction for FIDE-titled players if entered on or before December 4th (Thursday) 11:59pm<br>
+                $20 deducted from FIDE-titled players' prize winnings if entered after December 4th (Thursday) 11:59pm<br>
+                <b>Re-entry:</b> Players may re-enter after 1st or 2nd round with half-point byes for previous rounds.<br>
+                <b>Re-entry fees:</b> $5 after round 1 or round 2.<br>
+                <b>Registration:</b> Register through this Google form/Website Questionnaire, the time you submit is the time you will be charged, or text 480-803-4978 to signup</span></p>
+                <p><strong>Payment:</strong> Zelle to this # or Cash at the door during Check-in</p>
+                <p><strong>Contact:</strong> Amudan Mangudi, Text/Voice/Call 480-803-4978, <a href="mailto:chessgurusaz@gmail.com">chessgurusaz@gmail.com</a></p>
+            </div>
         </div>
-        <ul style="text-align:left; max-width:600px; margin:0 auto 18px auto; font-size:16px; color:#444;">
+        
+        <div style="width: 40%;">
+            <div style="margin-bottom: 20px; text-align: center; transform: translateY(350%); font-size: 35px; padding: 10px 20px; border-radius: 5px; text-decoration: none;">
+                Register Here!
+            </div>
+            <div style="margin-bottom: 20px; text-align: center; transform: translate(-5%, 20%);">
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScwp-zJO4HAtwyTQ0V-uYMMqU8uYg6GeN5-Td4CkhGJjmzDVw/viewform?embedded=true" 
+                        width="640" height="1050" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+            </div>
+    
+            </iframe>
+        </div>
+    </div>
+<div style="text-align: center; font-size: 24px; font-weight: bold; margin: 20px 0; transform: translateX(25%);">
+                Entry List
+            </div>
+            <iframe id="tournaments-sheet" 
+                    src="https://docs.google.com/spreadsheets/d/1csQTV3wmpbLhf88V_Jvp99jj3WbudxDM-MctR0sjurE/htmlembed?gid=0&widget=true&headers=false&chrome=false" 
+                    style="width: 50%; height: 420px; border: none; margin: 0 auto; transform: translateX(100%);">
+            </iframe>
+
+            <div style="text-align: center; margin: 20px 0; transform: translate(-27%, -100%);">
+                <iframe src="https://www.canva.com/design/DAG10OTQTss/abaIKmfEHZSk2N1de76upA/view?embed" 
+                        style="width: 25.264%; height: 515.8px; border: black; margin: 0 auto; display: block;">
+                </iframe>
+            </div>
+
+                    
+                    
+
+    
+    
+    </div>
+    <!-- Weekly Chess.com Arenas Section -->
+    <section style="background-color:#F1DFB4; padding:40px; margin-top:60px; text-align:center; transform: translateY(-60%);">
+        <h2 style="font-size:32px; font-weight:bold; margin-bottom:10px;">Weekly Chess.com Arenas</h2>
+        <p style="max-width:700px; margin:0 auto 25px; line-height:1.6;">
+            Join our growing chess community and compete in our weekly online arenas for prizes! 
+            All skill levels are welcome.
+        </p>
+
+        <div style="margin-bottom:30px;">
+            <a href="https://www.chess.com/club/az-chess-gurus" target="_blank" 
+               style="background-color:green; color:white; padding:12px 25px; font-size:18px; font-weight:bold; border-radius:8px; text-decoration:none; margin-right:10px;">
+               Join the AZ Chess Gurus Club
+            </a>
+            <a href="https://www.chess.com/club/az-chess-gurus/tournaments" target="_blank" 
+               style="background-color:orange; color:black; padding:12px 25px; font-size:18px; font-weight:bold; border-radius:8px; text-decoration:none;">
+               This Week’s Arena
+            </a>
+        </div>
+
+        <ul style="list-style-type:disc; text-align:left; display:inline-block; margin:0 auto 30px; line-height:1.8;">
             <li>Live tournaments every week</li>
             <li>Open to all ages and skill levels</li>
             <li>Diamond membership prizes for the top 3 finishers</li>
             <li>Friendly environment</li>
         </ul>
-        <div style="margin-top:24px;">
-            <h3 style="color:#333; margin-bottom:10px;">How to Join</h3>
-            <ol style="text-align:left; max-width:600px; margin:0 auto; font-size:16px; color:#444;">
-                <li>Click the club link above and join AZ Chess Gurus on chess.com.</li>
-                <li>Check the club page for upcoming arena events.</li>
-                <li>Click the arena link above to join the next tournament.</li>
-                <li>Play, have fun, and connect with fellow chess enthusiasts!</li>
-            </ol>
-        </div>
-        <div style="margin-top:32px;">
-            <h3 style="color:#000; margin-bottom:10px;">Recent Winners</h3>
-            <table style="width:100%; border-collapse:collapse; background:#FFA500; border-radius:8px; box-shadow:0 1px 4px rgba(0,0,0,0.07); color:#000;">
-                <thead>
-                    <tr style="background:#FFA500; color:#000;">
-                        <th style="padding:10px; border-bottom:1px solid #fff;">Date</th>
-                        <th style="padding:10px; border-bottom:1px solid #fff; text-align:left; padding-left:64px;">Winners</th>
-                        <th style="padding:10px; border-bottom:1px solid #fff;">Link</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td style="padding:10px; border-bottom:1px solid #fff;">August 24, 2025</td>
-                        <td style="padding:10px; border-bottom:1px solid #fff; text-align:left; padding-left:32px;">
-                            1. Mr.Valkire<br>
-                            2. FluffyKane<br>
-                            3. levinemachinellc
-                        </td>
-                        <td style="padding:10px; border-bottom:1px solid #fff;"><a href="https://www.chess.com/tournament/live/arena/azchessgurus-august2425-32-area-4405107" target="_blank" style="color:#000; text-decoration:underline; font-weight:bold;">Link</a></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
+
+        <h3 style="margin-top:20px; font-weight:bold;">How to Join</h3>
+        <ol style="text-align:left; display:inline-block; margin:15px auto; max-width:600px; line-height:1.8;">
+            <li>Click the club link above and join AZ Chess Gurus on chess.com.</li>
+            <li>Check the club page for upcoming arena events.</li>
+            <li>Click the arena link above to join the next tournament.</li>
+            <li>Play, have fun, and connect with fellow chess enthusiasts!</li>
+        </ol>
+
+        <h3 style="margin-top:40px; font-weight:bold;">Recent Winners</h3>
+        <table style="margin:20px auto; border-collapse:collapse; background-color:orange; width:80%; max-width:600px;">
+            <thead>
+                <tr style="background-color:#f7c04a;">
+                    <th style="border:1px solid black; padding:10px;">Date</th>
+                    <th style="border:1px solid black; padding:10px;">Winners</th>
+                    <th style="border:1px solid black; padding:10px;">Link</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="border:1px solid black; padding:10px;">August 24, 2025</td>
+                    <td style="border:1px solid black; padding:10px;">
+                        1. Mr.Valkire<br>
+                        2. FluffyKane<br>
+                        3. levinemachinellc
+                    </td>
+                    <td style="border:1px solid black; padding:10px;">
+                        <a href="https://www.chess.com/tournament/live/arena/azchessgurus-august2425-32-area-4405107" style="color:blue; text-decoration:underline;">Link</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="border:1px solid black; padding:10px;">September 15, 2025</td>
+                    <td style="border:1px solid black; padding:10px;">
+                        1. happysunegg<br>
+                        2. NM tactic<br>
+                        3. TDCchess
+                    </td>
+                    <td style="border:1px solid black; padding:10px;">
+                        <a href="https://www.chess.com/tournament/live/arena/azchessgurus-sept-25-4469379" style="color:blue; text-decoration:underline;">Link</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
     <script>
         function toggleMenu() {
             const nav = document.getElementById('nav-items');
