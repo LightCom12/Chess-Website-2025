@@ -12,7 +12,7 @@
 </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - The Chess Gurus</title>
+    <title>About Us ▾ - The Chess Gurus</title>
     <link rel="icon" type="image/png" href="chessguru.webp">
     <link href="https://fonts.googleapis.com/css2?family=Magik:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -85,27 +85,23 @@
         .dropdown-content {
             display: none;
             position: absolute;
-            top: 25px; /* Move the dropdown box closer to the parent element */
+            top: 25px;
             background-color: #444;
             min-width: 160px;
             z-index: 1;
             border-radius: 5px;
         }
-
         .dropdown-content a {
             display: block;
             padding: 10px;
             color: white;
         }
-
         .dropdown-content a:hover {
             background-color: #575757;
         }
-
         .dropdown-content.open {
             display: block;
         }
-
         .dropdown:hover .dropdown-content,
         .dropdown-content:hover {
             display: block;
@@ -194,51 +190,93 @@
             <div></div>
         </div>
 
-        <div class="nav-items" id="nav-items">
-            <a href="index.html">Home</a>
-            <div class="dropdown">
-                <a href="javascript:void(0);" onclick="toggleDropdown()">About Us ▾</a>
-                <div class="dropdown-content">
-                    <a href="OurMission.html">Our Mission</a>
-                    <a href="OurImpact.html">Our Impact</a>
+                <div class="nav-items" id="nav-items">
+                <a href="index.html">Home</a>
+                <div class="dropdown">
+                    <a href="javascript:void(0);">About Us </a>
+                    <div class="dropdown-content">
+                        <a href="OurMission.html">Our Mission</a>
+                        <a href="OurImpact.html">Our Impact</a>
+                    </div>
                 </div>
-            </div>
-            <div class="dropdown">
-                <a href="javascript:void(0);" onclick="toggleDropdown()">Our Team ▾</a>
-                <div class="dropdown-content">
-                    <a href="OurFounders.html">Our Founders</a>
-                    <a href="OurCoaches.html">Our Coaches</a>
+                <div class="dropdown">
+                    <a href="javascript:void(0);">Our Team    ▾</a>
+                    <div class="dropdown-content">
+                        <a href="OurFounders.html">Our Founders</a>
+                        <a href="OurCoaches.html">Our Coaches</a>
+                    </div>
                 </div>
-            </div>
-            <a href="Lessons.html">Lessons</a>
-            <a href="Gallery.html">Gallery</a>
-            <div class="dropdown">
-                <a href="javascript:void(0);">Join Now ▾</a>
-                <div class="dropdown-content">
-                    <a href="ContactUs.html">Join Now</a>
-                    <a href="Tournaments.html">Tournaments</a>
+                <div class="dropdown">
+                    <a href="javascript:void(0);">Tournaments    ▾</a>
+                    <div class="dropdown-content">
+                        <a href="Tournaments.html">OTB Tournaments Info</a>
+                        <a href="TournamentsWinners.html">OTB Tournament Winners</a>
+                        <a href="ChessComOnlineTournaments.html">Chess.com Online Tournaments</a>
+                    </div>
                 </div>
+                <a href="Testimonials.html">Testimonials</a>
+                <div class="dropdown">
+                    <a href="javascript:void(0);">Join Now ▾</a>
+                    <div class="dropdown-content">
+                        <a href="CoachApplication.html">Join as a Coach</a>
+                        <a href="ContactUs.html">Join as a Student</a>
+                    </div>
+                </div>
+                <a href="Gallery.html">Gallery</a>
             </div>
-        </div>
     </nav>
 
-    <header class="about-header">About Us</header>
 
-    <div class="about-content">
-        <p>At ChessGurus, we help you unlock your full potential in the timeless game of chess.</p>
-        <p>We believe chess is more than just a game, it’s a powerful tool for developing critical thinking, improving cognitive abilities, patience, and strategy. Whether you're a complete beginner or an experienced player aiming to sharpen your skills, we’re here to guide you every step of the way.</p>
+    <div class="contact-header">Join our Program</div>
+    <div class="contact-paragraph">
+        At AZChessGurus, our goal is to make chess accessible to everyone—and our free lessons program is a great example of that mission in action. We welcome students of all experience levels, from complete beginners to advanced players, and all lessons are offered at no cost. If you’re interested in free lessons, please fill out the form below. A coach from the AZChessGurus team will contact you to schedule your sessions.
     </div>
 
-    <ul class="about-list">
-        <li>One-on-one Online Coaching with Chess Masters</li>
-        <li>Expert tips and strategies</li>
-        <li>Puzzles, practice boards, and interactive tools</li>
-        <li>Step-by-step lessons for all levels</li>
-    </ul>
+    <div class="contact-form-container">
+        <form id="join-form">
+            <label for="fullname">Name or Discord Name (required):</label>
+            <input type="text" id="fullname" name="fullname" required>
 
-    <div class="about-content">
-        <p>Our team is made up of passionate chess lovers, qualified instructors, and tournament players dedicated to helping you grow. With ChessGurus, you're not just learning moves – you're learning how to think like a champion.</p>
-        <p>Join ChessGurus today, let's make every move count!</p>
+            <label for="email">Your Email (required):</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone Number (optional):</label>
+            <input type="text" id="phone" name="phone">
+
+            <label for="uscf">USCF Rating (if applicable):</label>
+            <input type="text" id="uscf" name="uscf">
+
+            <label for="fide">FIDE Rating (if applicable):</label>
+            <input type="text" id="fide" name="fide">
+
+            <label for="online">Online Rating (if applicable):</label>
+            <input type="text" id="online" name="online">
+
+            <label for="experience">How long have you been playing? (required):</label>
+            <textarea id="experience" name="experience" required></textarea>
+
+            <button type="submit" name="submit">Send Message</button>
+        </form>
+
+        <div>
+            <h3>Social Media</h3>
+            <div class="social-icons">
+                 <a href="https://www.instagram.com/azchessgurus" target="_blank">
+                    <img src="images/instalogo.png" alt="Instagram">
+                </a>
+                <a href="https://www.youtube.com/@AZChessGurus" target="_blank"> <img src="images/ytlogo.png" alt="YouTube">
+                </a>
+                <a href="https://www.linkedin.com/in/az-chessgurus-b73740319/" target="_blank">
+                    <img src="images/linklogo.png" alt="LinkedIn">
+                </a>
+                <a href="mailto:chessgurusaz@gmail.com">
+                    <img src="images/maillogo.png" alt="Gmail">
+                </a>
+                <a href="https://discord.gg/Nxmx5KsBdx" target="_blank">
+                    <img src="images/discord.png" alt="Discord" style="width:60px;height:60px;">
+                </a>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -254,3 +292,16 @@
     </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
