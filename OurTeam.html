@@ -81,23 +81,25 @@
         .dropdown-content {
             display: none;
             position: absolute;
-            background-color: #333;
-            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            top: 25px;
+            background-color: #444;
+            min-width: 160px;
             z-index: 1;
+            border-radius: 5px;
         }
-
         .dropdown-content a {
-            color: white;
-            text-decoration: none;
             display: block;
-            padding: 8px 12px;
+            padding: 10px;
+            color: white;
         }
-
         .dropdown-content a:hover {
             background-color: #575757;
         }
-
-        .dropdown:hover .dropdown-content {
+        .dropdown-content.open {
+            display: block;
+        }
+        .dropdown:hover .dropdown-content,
+        .dropdown-content:hover {
             display: block;
         }
 
@@ -227,25 +229,40 @@
             <span>The Chess Gurus</span>
         </div>
 
-        <div class="nav-items" id="nav-items">
+                <div class="nav-items" id="nav-items">
             <a href="index.html">Home</a>
             <div class="dropdown">
-                <a href="javascript:void(0);" onclick="toggleDropdown()">About Us ▾</a>
+                <a href="javascript:void(0);">About Us    ▾</a>
                 <div class="dropdown-content">
                     <a href="OurMission.html">Our Mission</a>
                     <a href="OurImpact.html">Our Impact</a>
                 </div>
             </div>
-            <a href="OurTeam.html">Our Team</a>
+            <div class="dropdown">
+                <a href="javascript:void(0);">Our Team    ▾</a>
+                <div class="dropdown-content">
+                    <a href="OurFounders.html">Our Founders</a>
+                    <a href="OurCoaches.html">Our Coaches</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="javascript:void(0);">Tournaments    ▾</a>
+                <div class="dropdown-content">
+                    <a href="Tournaments.html">OTB Tournaments Info</a>
+                    <a href="TournamentsWinners.html">OTB Tournament Winners</a>
+                    <a href="ChessComOnlineTournaments.html">Chess.com Online Tournaments</a>
+                </div>
+            </div>
+            <a href="Testimonials.html">Testimonials</a>
             <div class="dropdown">
                 <a href="javascript:void(0);">Join Now ▾</a>
                 <div class="dropdown-content">
-                    <a href="ContactUs.html">Join Now</a>
-                    <a href="Tournaments.html">Tournaments</a>
+                    <a href="CoachApplication.html">Join as a Coach</a>
+                    <a href="ContactUs.html">Join as a Student</a>
                 </div>
             </div>
-            <a href="Lessons.html">For Coaches</a>
             <a href="Gallery.html">Gallery</a>
+
         </div>
     </nav>
 
@@ -318,3 +335,16 @@
     <script src="loadingHeader.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
