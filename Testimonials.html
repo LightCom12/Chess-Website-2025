@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonials - The Chess Gurus</title>
+    <link rel="icon" type="image/png" href="chessguru.webp">
+    <link href="https://fonts.googleapis.com/css2?family=Magik:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Magik', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-size: 16px;
+        }
+        body {
+            background-color: #F1DFB4;
+            padding-top: 80px;
+            text-align: left;
+            margin-left: 0;
+        }
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 20px;
+            z-index: 1000;
+        }
+        nav .logo {
+            display: flex;
+            align-items: center;
+        }
+        nav .logo img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+        nav .logo span {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .nav-items {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        .nav-items a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 12px;
+        }
+        .nav-items a:hover {
+            background-color: #575757;
+            border-radius: 5px;
+        }
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 25px;
+            background-color: #444;
+            min-width: 160px;
+            z-index: 1;
+            border-radius: 5px;
+        }
+        .dropdown-content a {
+            display: block;
+            padding: 10px;
+            color: white;
+        }
+        .dropdown-content a:hover {
+            background-color: #575757;
+        }
+        .dropdown-content.open {
+            display: block;
+        }
+        .dropdown:hover .dropdown-content,
+        .dropdown-content:hover {
+            display: block;
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+        }
+        @media (max-width: 768px) {
+            .nav-items {
+                display: none;
+                flex-direction: column;
+                background-color: #333;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: 200px;
+                padding: 10px 0;
+            }
+            .nav-items.active {
+                display: flex;
+            }
+            .hamburger {
+                display: flex;
+            }
+        }
+        .testimonials-header {
+            font-size: 50px;
+            font-weight: bold;
+            text-decoration: underline;
+            text-align: center;
+            margin-top: 50px;
+            padding-bottom: 10px;
+        }
+        .testimonials-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+        .testimonial-card {
+            background-color: white;
+            border-left: 5px solid orange;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .testimonial-text {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            font-style: italic;
+            color: #333;
+        }
+        .testimonial-author {
+            font-weight: bold;
+            color: #000;
+            font-size: 16px;
+        }
+        .testimonial-role {
+            color: orange;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        .stars {
+            color: gold;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">
+            <img src="images/chessguru.webp" alt="GuruLogo">
+            <span>The Chess Gurus</span>
+            <a href="https://www.instagram.com/azchessgurus" target="_blank" style="margin-left:10px; margin-right:0; display:inline-block; vertical-align:middle;">
+                <img src="images/instalogo.png" alt="Instagram" style="width:32px; height:32px; border-radius:8px; vertical-align:middle;">
+            </a>
+            <a href="https://discord.gg/Nxmx5KsBdx" target="_blank" style="margin-left:6px; display:inline-block; vertical-align:middle;">
+                <img src="images/discord.png" alt="Discord" style="width:32px; height:32px; border-radius:8px; vertical-align:middle;">
+            </a>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="nav-items" id="nav-items">
+            <a href="index.html">Home</a>
+            <div class="dropdown">
+                <a href="javascript:void(0);">About Us    ▾</a>
+                <div class="dropdown-content">
+                    <a href="OurMission.html">Our Mission</a>
+                    <a href="OurImpact.html">Our Impact</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="javascript:void(0);">Our Team    ▾</a>
+                <div class="dropdown-content">
+                    <a href="OurFounders.html">Our Founders</a>
+                    <a href="OurCoaches.html">Our Coaches</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="javascript:void(0);">Tournaments    ▾</a>
+                <div class="dropdown-content">
+                    <a href="Tournaments.html">OTB Tournaments Info</a>
+                    <a href="TournamentsWinners.html">OTB Tournament Winners</a>
+                    <a href="ChessComOnlineTournaments.html">Chess.com Online Tournaments</a>
+                </div>
+            </div>
+            <a href="Testimonials.html">Testimonials</a>
+            <div class="dropdown">
+                <a href="javascript:void(0);">Join Now ▾</a>
+                <div class="dropdown-content">
+                    <a href="CoachApplication.html">Join as a Coach</a>
+                    <a href="ContactUs.html">Join as a Student</a>
+                </div>
+            </div>
+            <a href="Gallery.html">Gallery</a>
+        </div>
+    </nav>
+
+    <!-- Testimonials Section -->
+    <div class="testimonials-container">
+        <header class="testimonials-header">Testimonials</header>
+        
+        <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <div class="testimonial-text">"The Chess Gurus have completely transformed my understanding of the game. The coaching is exceptional and tailored to my skill level. Highly recommended!"</div>
+            <div class="testimonial-author">Alex Johnson</div>
+            <div class="testimonial-role">Student</div>
+        </div>
+
+        <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <div class="testimonial-text">"I've been training with The Chess Gurus for over a year and my progression has been incredible. The coaches are knowledgeable, patient, and really care about their students' success."</div>
+            <div class="testimonial-author">Maria Garcia</div>
+            <div class="testimonial-role">Competitive Player</div>
+        </div>
+
+        <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <div class="testimonial-text">"As a parent, I'm thrilled with how much my child has learned and grown through The Chess Gurus program. The tournaments and community are fantastic!"</div>
+            <div class="testimonial-author">Robert Chen</div>
+            <div class="testimonial-role">Parent</div>
+        </div>
+
+        <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <div class="testimonial-text">"The online tournaments organized by The Chess Gurus are well-run and provide great opportunities to compete. The community is welcoming and supportive."</div>
+            <div class="testimonial-author">Sarah Williams</div>
+            <div class="testimonial-role">Online Tournament Participant</div>
+        </div>
+
+        <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <div class="testimonial-text">"Outstanding chess instruction! The team's passion for helping others improve is evident in every lesson. I've recommended them to all my chess-loving friends."</div>
+            <div class="testimonial-author">David Martinez</div>
+            <div class="testimonial-role">Student</div>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById('nav-items');
+            nav.classList.toggle('active');
+        }
+        function toggleDropdown() {
+            const dropdown = document.getElementById('dropdown-content');
+            dropdown.classList.toggle('open');
+        }
+    </script>
+    
+</body>
+</html>
