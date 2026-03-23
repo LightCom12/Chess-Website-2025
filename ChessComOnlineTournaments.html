@@ -1,1 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Chess.com Online Tournaments - The Chess Gurus</title>
+	<link rel="icon" type="image/png" href="chessguru.webp">
+	<link href="https://fonts.googleapis.com/css2?family=Magik:wght@400;700&display=swap" rel="stylesheet">
+	<style>
+	* { font-family: 'Magik', 'Trebuchet MS', Arial, sans-serif; box-sizing: border-box; margin: 0; padding: 0; font-size: 16px; }
+	body { background-color: #F1DFB4; padding-top: 80px; text-align: left; margin-left: 0; }
+	nav { position: fixed; top: 0; width: 100%; background-color: #333; color: white; display: flex; justify-content: space-between; align-items: center; padding: 20px 20px; z-index: 1000; }
+	nav .logo { display: flex; align-items: center; }
+	nav .logo img { width: 40px; height: 40px; margin-right: 10px; border-radius: 50%; }
+	nav .logo span { font-size: 20px; font-weight: bold; }
+	.nav-items { display: flex; gap: 20px; align-items: center; }
+	.nav-items a { color: white; text-decoration: none; padding: 8px 12px; }
+	.nav-items a:hover { background-color: #575757; border-radius: 5px; }
+	.dropdown { position: relative; }
+	.dropdown-content { display: none; position: absolute; top: 25px; background-color: #444; min-width: 160px; z-index: 1; border-radius: 5px; }
+	.dropdown-content a { display: block; padding: 10px; color: white; }
+	.dropdown-content a:hover { background-color: #575757; }
+	.dropdown-content.open { display: block; }
+	.dropdown:hover .dropdown-content, .dropdown-content:hover { display: block; }
+	.hamburger { display: none; flex-direction: column; cursor: pointer; gap: 5px; }
+	.hamburger div { width: 25px; height: 3px; background-color: white; }
+	@media (max-width: 768px) { .nav-items { display: none; flex-direction: column; background-color: #333; position: absolute; top: 60px; right: 0; width: 200px; padding: 10px 0; } .nav-items.active { display: flex; } .hamburger { display: flex; } }
+	</style>
+</head>
+<body>
+	<nav>
+		<div class="logo">
+			<img src="images/chessguru.webp" alt="GuruLogo">
+			<span>The Chess Gurus</span>
+			<a href="https://www.instagram.com/azchessgurus" target="_blank" style="margin-left:10px; margin-right:0; display:inline-block; vertical-align:middle;">
+				<img src="images/instalogo.png" alt="Instagram" style="width:32px; height:32px; border-radius:8px; vertical-align:middle;">
+			</a>
+			<a href="https://discord.gg/Nxmx5KsBdx" target="_blank" style="margin-left:6px; display:inline-block; vertical-align:middle;">
+				<img src="images/discord.png" alt="Discord" style="width:32px; height:32px; border-radius:8px; vertical-align:middle;">
+			</a>
+		</div>
+		<div class="hamburger" onclick="toggleMenu()">
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+		<div class="nav-items" id="nav-items">
+			<a href="index.html">Home</a>
+			<div class="dropdown">
+				<a href="javascript:void(0);">About Us    ▾</a>
+				<div class="dropdown-content">
+					<a href="OurMission.html">Our Mission</a>
+					<a href="OurImpact.html">Our Impact</a>
+				</div>
+			</div>
+			<div class="dropdown">
+				<a href="javascript:void(0);">Our Team    ▾</a>
+				<div class="dropdown-content">
+					<a href="OurFounders.html">Our Founders</a>
+					<a href="OurCoaches.html">Our Coaches</a>
+				</div>
+			</div>
+			<div class="dropdown">
+				<a href="javascript:void(0);">Tournaments    ▾</a>
+				<div class="dropdown-content">
+					<a href="Tournaments.html">OTB Tournaments Info</a>
+					<a href="TournamentsWinners.html">OTB Tournament Winners</a>
+					<a href="ChessComOnlineTournaments.html">Chess.com Online Tournaments</a>
+				</div>
+			</div>
+			<a href="Testimonials.html">Testimonials</a>
+			<div class="dropdown">
+				<a href="javascript:void(0);">Join Now ▾</a>
+				<div class="dropdown-content">
+					<a href="CoachApplication.html">Join as a Coach</a>
+					<a href="ContactUs.html">Join as a Student</a>
+				</div>
+			</div>
+			<a href="Gallery.html">Gallery</a>
+		</div>
+	</nav>
+	<!-- Add your Chess.com Online Tournaments content here -->
+	<br><br><br><br><br><br><br>
+</body>
+<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Chess.com Online Tournaments - The Chess Gurus</title>
+	<link href="https://fonts.googleapis.com/css2?family=Trebuchet+MS:wght@400;700&display=swap" rel="stylesheet">
+	<style>
+		body {
+			background-color: #F1DFB4;
+			font-family: 'Trebuchet MS', Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+		.container {
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 40px 20px;
+			text-align: center;
+		}
+		h2 {
+			font-size: 2.5em;
+			font-weight: bold;
+			margin-bottom: 10px;
+		}
+		.subtitle {
+			font-size: 1.1em;
+			margin-bottom: 30px;
+		}
+		.button-group {
+			margin-bottom: 25px;
+		}
+		.button-group a {
+			display: inline-block;
+			padding: 12px 25px;
+			font-size: 1.1em;
+			font-weight: bold;
+			border-radius: 8px;
+			text-decoration: none;
+			margin: 0 8px 0 0;
+			transition: background 0.2s, color 0.2s;
+		}
+		.button-group a.club {
+			background-color: #188a1a;
+			color: #fff;
+		}
+		.button-group a.club:hover {
+			background-color: #106010;
+		}
+		.button-group a.arena {
+			background-color: #ffb300;
+			color: #222;
+		}
+		.button-group a.arena:hover {
+			background-color: #e09c00;
+		}
+		ul.tournament-features {
+			list-style-type: disc;
+			text-align: left;
+			display: inline-block;
+			margin: 0 auto 30px auto;
+			line-height: 1.8;
+			font-size: 1.1em;
+		}
+		.how-to-join {
+			font-weight: bold;
+			margin: 30px 0 10px 0;
+		}
+		ol.how-to-list {
+			text-align: left;
+			display: inline-block;
+			margin: 0 auto 30px auto;
+			max-width: 600px;
+			line-height: 1.8;
+			font-size: 1.1em;
+			font-weight: normal;
+		}
+		.recent-winners {
+			font-weight: bold;
+			margin: 30px 0 10px 0;
+		}
+		table.winners-table {
+			margin: 0 auto 30px auto;
+			border-collapse: collapse;
+			background-color: orange;
+			width: 100%;
+			max-width: 600px;
+			font-size: 1.1em;
+		}
+		table.winners-table th, table.winners-table td {
+			border: 1px solid #222;
+			padding: 10px;
+		}
+		table.winners-table th {
+			background-color: #f7c04a;
+		}
+		table.winners-table a {
+			color: blue;
+			text-decoration: underline;
+		}
+		@media (max-width: 600px) {
+			.container {
+				padding: 20px 5px;
+			}
+			h2 {
+				font-size: 1.5em;
+			}
+			table.winners-table {
+				font-size: 0.95em;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h2>Weekly Chess.com Arenas</h2>
+		<div class="subtitle">
+			Join our growing chess community and compete in our weekly online arenas for prizes! All skill levels are welcome.
+		</div>
+		<div class="button-group">
+			<a href="https://www.chess.com/club/az-chess-gurus" target="_blank" class="club">Join the AZ Chess Gurus Club</a>
+			<a href="https://www.chess.com/club/az-chess-gurus/tournaments" target="_blank" class="arena">This Week’s Arena</a>
+		</div>
+		<ul class="tournament-features">
+			<li>Live tournaments every week</li>
+			<li>Open to all ages and skill levels</li>
+			<li>Diamond membership prizes for the top 3 finishers</li>
+			<li>Friendly environment</li>
+		</ul>
+		<div class="how-to-join">How to Join</div>
+		<ol class="how-to-list">
+			<li>Click the club link above and join AZ Chess Gurus on chess.com.</li>
+			<li>Check the club page for upcoming arena events.</li>
+			<li>Click the arena link above to join the next tournament.</li>
+			<li>Play, have fun, and connect with fellow chess enthusiasts!</li>
+		</ol>
+		<div class="recent-winners">Recent Winners</div>
+		<table class="winners-table">
+			<thead>
+				<tr>
+					<th>Date</th>
+					<th>Winners</th>
+					<th>Link</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>August 24, 2025</td>
+					<td>1. Mr.Valkire<br>2. FluffyKane<br>3. levinemachinellc</td>
+					<td><a href="https://www.chess.com/tournament/live/arena/azchessgurus-august2425-32-area-4405107" target="_blank">Link</a></td>
+				</tr>
+				<tr>
+					<td>September 25, 2025</td>
+					<td>1. happysunegg<br>2. NM tactic<br>3. TDCchess</td>
+					<td><a href="https://www.chess.com/tournament/live/arena/azchessgurus-sept-25-4469379" target="_blank">Link</a></td>
+				</tr>
+				<tr>
+					<td>December 22, 2025</td>
+					<td>1. Middle Game<br>2. Zqx2009<br>3. ankaramessi100000</td>
+					<td><a href="https://www.chess.com/tournament/live/arena/azchessgurus-tournament-4623431" target="_blank">Link</a></td>
+				</tr>
+			<tr>
+				<td>January 5, 2026</td>
+				<td>1. BugMeLater<br>2. David_Krahn<br>3. rithsacdal</td>
+				<td><a href="https://www.chess.com/tournament/live/arena/azchessgurus-0105-4641423" target="_blank">Link</a></td>
+			</tr>
+			<tr>
+				<td>February 24, 2026</td>
+				<td>1. Anmari07<br>2. David_Krahn<br>3. MrValkrie</td>
+				<td><a href="https://www.chess.com/tournament/live/arena/azchessgurus-0224-arena-31023593" target="_blank">Link</a></td>
+			</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
 
