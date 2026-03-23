@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>OTB Tournament Winners - The Chess Gurus</title>
+	<link rel="icon" type="image/png" href="chessguru.webp">
+	<link href="https://fonts.googleapis.com/css2?family=Magik:wght@400;700&display=swap" rel="stylesheet">
+	<style>
+		* { font-family: 'Magik', 'Trebuchet MS', Arial, sans-serif; box-sizing: border-box; margin: 0; padding: 0; font-size: 16px; }
+		body { background-color: #F1DFB4; padding-top: 80px; text-align: left; margin-left: 0; }
+		nav { position: fixed; top: 0; width: 100%; background-color: #333; color: white; display: flex; justify-content: space-between; align-items: center; padding: 20px 20px; z-index: 1000; }
+		nav .logo { display: flex; align-items: center; }
+		nav .logo img { width: 40px; height: 40px; margin-right: 10px; border-radius: 50%; }
+		nav .logo span { font-size: 20px; font-weight: bold; }
+		.nav-items { display: flex; gap: 20px; align-items: center; }
+		.nav-items a { color: white; text-decoration: none; padding: 8px 12px; }
+		.nav-items a:hover { background-color: #575757; border-radius: 5px; }
+		.dropdown { position: relative; }
+		.dropdown-content { display: none; position: absolute; top: 25px; background-color: #444; min-width: 160px; z-index: 1; border-radius: 5px; }
+		.dropdown-content a { display: block; padding: 10px; color: white; }
+		.dropdown-content a:hover { background-color: #575757; }
+		.dropdown-content.open { display: block; }
+		.dropdown:hover .dropdown-content, .dropdown-content:hover { display: block; }
+		.hamburger { display: none; flex-direction: column; cursor: pointer; gap: 5px; }
+		.hamburger div { width: 25px; height: 3px; background-color: white; }
+		@media (max-width: 768px) { .nav-items { display: none; flex-direction: column; background-color: #333; position: absolute; top: 60px; right: 0; width: 200px; padding: 10px 0; } .nav-items.active { display: flex; } .hamburger { display: flex; } }
+	</style>
+</head>
+<body>
+	<nav>
+		<div class="logo">
+			<img src="images/chessguru.webp" alt="GuruLogo">
+			<span>The Chess Gurus</span>
+			<a href="https://www.instagram.com/azchessgurus" target="_blank" style="margin-left:10px; margin-right:0; display:inline-block; vertical-align:middle;">
+				<img src="images/instalogo.png" alt="Instagram" style="width:32px; height:32px; border-radius:8px; vertical-align:middle;">
+			</a>
+			<a href="https://discord.gg/Nxmx5KsBdx" target="_blank" style="margin-left:6px; display:inline-block; vertical-align:middle;">
+				<img src="images/discord.png" alt="Discord" style="width:32px; height:32px; border-radius:8px; vertical-align:middle;">
+			</a>
+		</div>
+		<div class="hamburger" onclick="toggleMenu()">
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+		<div class="nav-items" id="nav-items">
+			<a href="index.html">Home</a>
+			<div class="dropdown">
+				<a href="javascript:void(0);">About Us    ▾</a>
+				<div class="dropdown-content">
+					<a href="OurMission.html">Our Mission</a>
+					<a href="OurImpact.html">Our Impact</a>
+				</div>
+			</div>
+			<div class="dropdown">
+				<a href="javascript:void(0);">Our Team    ▾</a>
+				<div class="dropdown-content">
+					<a href="OurFounders.html">Our Founders</a>
+					<a href="OurCoaches.html">Our Coaches</a>
+				</div>
+			</div>
+			<div class="dropdown">
+				<a href="javascript:void(0);">Tournaments    ▾</a>
+				<div class="dropdown-content">
+					<a href="Tournaments.html">OTB Tournaments Info</a>
+					<a href="TournamentsWinners.html">OTB Tournament Winners</a>
+					<a href="ChessComOnlineTournaments.html">Chess.com Online Tournaments</a>
+				</div>
+			</div>
+			<a href="Testimonials.html">Testimonials</a>
+			<div class="dropdown">
+				<a href="javascript:void(0);">Join Now ▾</a>
+				<div class="dropdown-content">
+					<a href="CoachApplication.html">Join as a Coach</a>
+					<a href="ContactUs.html">Join as a Student</a>
+				</div>
+			</div>
+			<a href="Gallery.html">Gallery</a>
+		</div>
+	</nav>
+	<div class="content" style="max-width:900px;margin:90px auto 60px;padding:20px;font-family:'Magik','Trebuchet MS',Arial,sans-serif;color:#222;text-align:left;">
+		<h1 style="font-size:28px;margin-bottom:12px;color:#111;text-align:left;">AZ Chess Gurus: 2025 OTB Tournament Recap</h1>
+		<p style="line-height:1.6;margin-bottom:12px;text-align:left;">AZ Chess Gurus hosted a successful tournament on December 6th at the Unity Chess Club venue, drawing 42 players across three sections. The event also served as a fundraiser for Global Grace Health, which provides affordable cancer screenings worldwide.</p>
+		<p style="line-height:1.6;margin-bottom:12px;text-align:left;">We appreciate Unity Chess Club for providing the venue and supporting this event. The tournament was primarily organized and led by Amudan Mangudi and Rushil, whose effort and coordination made the entire event possible. From planning logistics and managing registrations to ensuring everything ran smoothly on the day of the tournament, they played a major role in its success.</p>
+		<p style="line-height:1.6;margin-bottom:12px;text-align:left;">Unity Chess Club Website: <a href="https://www.unitychess.com/" target="_blank">https://www.unitychess.com/</a></p>
+		<p style="line-height:1.6;margin-bottom:12px;text-align:left;">Through this tournament, we were able to raise $451 for Global Grace Health. Thank you to all participants for supporting this important cause. These funds will help provide affordable cancer screenings to communities in need worldwide.</p>
+		<p style="line-height:1.6;margin-bottom:12px;text-align:left;">Global Grace Health: <a href="https://globalgracehealth.org/" target="_blank">https://globalgracehealth.org/</a></p>
+		<p style="line-height:1.6;margin-bottom:12px;text-align:left;"><a href="https://www.zeffy.com/en-US/donation-form/donate-to-screen-for-cancer-and-change-lives-global-grace-health" target="_blank">Donation / Give to Global Grace Health</a></p>
+		<div style="display:flex;gap:15px;margin-top:30px;justify-content:flex-start;">
+			<img src="images/photo_2026-03-21_18-13-59.jpg" alt="Tournament photo" style="width:400px;height:auto;box-shadow:0 4px 10px rgba(0,0,0,0.08);">
+			<img src="images/photo_2026-03-21_20-58-39.jpg" alt="Tournament photo" style="width:400px;height:auto;box-shadow:0 4px 10px rgba(0,0,0,0.08);">
+		</div>
+		<h2 style="font-size:20px;margin-top:18px;margin-bottom:10px;color:#111;text-align:left;">Tournament Results</h2>
+		<p style="line-height:1.6;margin-bottom:12px;text-align:left;">Full ratings and crosstables are available on US Chess: <a href="https://ratings.uschess.org/event/202512060533" target="_blank">https://ratings.uschess.org/event/202512060533</a></p>
+		<p style="line-height:1.6;margin-bottom:12px;text-align:left;">Unity Chess Club Website: <a href="https://www.unitychess.com/" target="_blank">https://www.unitychess.com/</a></p>
+		<p style="line-height:1.6;margin-bottom:12px;text-align:left;">Through this tournament, we were able to raise $451 for Global Grace Health. Thank you to all participants for supporting this important cause. These funds will help provide affordable cancer screenings to communities in need worldwide.</p>
+		<p style="line-height:1.6;margin-bottom:12px;text-align:left;">Global Grace Health: <a href="https://globalgracehealth.org/" target="_blank">https://globalgracehealth.org/</a></p>
+		<p style="line-height:1.6;margin-bottom:12px;text-align:left;"><a href="https://www.zeffy.com/en-US/donation-form/donate-to-screen-for-cancer-and-change-lives-global-grace-health" target="_blank">https://www.zeffy.com/en-US/donation-form/donate-to-screen-for-cancer-and-change-lives-global-grace-health</a></p>
+		<h2 style="font-size:20px;margin-top:18px;margin-bottom:10px;color:#111;text-align:left;">Open Section:</h2>
+		<p style="line-height:1.6;margin-bottom:8px;text-align:left;">After 4 hard-fought rounds FM Jayden Lee and Rohan Mittal emerged victorious to take shared 1st and 2nd place with 3.5 points. Behind them, were FM Pedram Atoufi, Artin Atoufi, and Joshua Lee with 3 points. Thank you to all of our masters and participants in the Open Section!</p>
+		<div style="display:flex;gap:15px;margin-top:30px;justify-content:flex-start;margin-left:-85px;">
+			<img src="images/photo_2026-03-21_18-15-00.jpg" alt="Tournament photo 1" style="width:350px;height:auto;box-shadow:0 4px 10px rgba(0,0,0,0.08);">
+			<img src="images/photo_2026-03-21_18-13-58.jpg" alt="Tournament photo 2" style="width:380px;height:auto;box-shadow:0 4px 10px rgba(0,0,0,0.08);">
+			<img src="images/photo_2026-03-21_18-13-58 (2).jpg" alt="Tournament photo 3" style="width:280px;height:auto;box-shadow:0 4px 5px rgba(0,0,0,0.08);">
+		</div>
+				<p style="line-height:1.6;margin-bottom:8px;text-align:left;">Unity Chess Club Website: <a href="https://www.unitychess.com/" target="_blank">https://www.unitychess.com/</a></p>
+		<h2 style="font-size:20px;margin-top:18px;margin-bottom:10px;color:#111;text-align:left;">Under 1800 Section:</h2>
+		<p style="line-height:1.6;margin-bottom:8px;text-align:left;">Eric Gan topped the U1800 Section with a dominant 3.5/4, claiming clear first place. Sreshtha Janaparedddy and Vedant Mudaliar battled their way to a shared 2nd/3rd finish, each finishing with 2.5 points.Sreshtha Janaparedddy and Vedant Mudaliar battled their way to a shared 2nd/3rd finish, each finishing with 2.5 points.Congratulations to all of our U1800 participants!</p>
+		<div style="display:flex;gap:15px;margin-top:30px;justify-content:flex-start;"></div>
+			<img src="images/photo_2026-03-22_13-04-32.jpg"alt="Tournament photo 1" style="width:400px;height:auto;box-shadow:0 4px 10px rgba(0,0,0,0.08);">
+			<img src="images/photo_2026-03-22_13-04-42.jpg" alt="Tournament photo 2" style="width:400px;height:auto;box-shadow:0 4px 10px rgba(0,0,0,0.08);">
+		<h2 style="font-size:20px;margin-top:18px;margin-bottom:10px;color:#111;text-align:left;">Under 1400 Section:</h2>
+		<p style="line-height:1.6;margin-bottom:8px;text-align:left;">The U1400 Section came down to the wire, with Vidyuth Atreya and Elliot Glatman, at 3.5 points, sharing the top spot in a tie for 1st and 2nd place. Just behind them, Samik Mathur, Rithvik Sachesh, and Alejandro Ortiz Olivas all finished level in a three-way tie for 3rd at 3 points. Thank you to all of our U1400 participants!</p>
+		<div style="display:flex;gap:15px;margin-top:30px;justify-content:flex-start;margin-left:-85px;">
+			<img src="images/Screenshot 2026-03-22 131420.png" alt="Tournament photo 1" style="width:280px;height:auto;box-shadow:0 4px 10px rgba(0,0,0,0.08);">
+			<img src="images/Screenshot 2026-03-22 131540.png" alt="Tournament photo 2" style="width:280px;height:auto;box-shadow:0 4px 10px rgba(0,0,0,0.08);">
+			<img src="images/photo_2026-03-21_18-15-01.jpg" alt="Tournament photo 3" style="width:400px;height:auto;box-shadow:0 4px 5px rgba(0,0,0,0.08);">
+		</div>
+		<h2 style="font-size:20px;margin-top:18px;margin-bottom:10px;color:#111;text-align:left;">Unrated Section:</h2>
+		<p style="line-height:1.6;margin-bottom:8px;text-align:left;">The Unrated Section wrapped up with Matthew Register claiming clear 1st place, followed by Vivia Powers in 2nd. Yi-Cheng (Eason) Lu rounded out the podium with a solid 3rd place finish. Thank you to all of our Unrated Section participants!</p>
+		<div style="display:flex;gap:15px;margin-top:30px;justify-content:flex-start;">
+			<img src="images/photo_2026-03-21_18-13-58 (3).jpg" alt="Tournament photo 1" style="width:280px;height:auto;box-shadow:0 4px 10px rgba(0,0,0,0.08);">
+			<img src="images/photo_2026-03-21_18-13-58 (5).jpg" alt="Tournament photo 2" style="width:280px;height:auto;box-shadow:0 4px 10px rgba(0,0,0,0.08);">
+			<img src="images/photo_2026-03-21_18-13-58 (4).jpg" alt="Tournament photo 3" style="width:280px;height:auto;box-shadow:0 4px 5px rgba(0,0,0,0.08);">
+		</div>
+		<h2 style="font-size:20px;margin-top:18px;margin-bottom:10px;color:#111;text-align:center;">Thanks to all participants for their support of both competitive chess in Arizona and Global Grace Health's initiative!</h2>
+		<div style="display:flex;gap:15px;margin-top:30px;justify-content:flex-start;margin-left:-120px;">
+			<img src="images/photo_2026-03-21_18-13-58 (6).jpg" alt="Tournament photo 1" style="width:500px;height:auto;box-shadow:0 4px 10px rgba(0,0,0,0.08);">
+			<img src="images/photo_2026-03-21_18-15-01 (2).jpg" alt="Tournament photo 2" style="width:280px;height:auto;box-shadow:0 4px 10px rgba(0,0,0,0.08);">
+			<img src="images/photo_2026-03-21_18-14-59.jpg" alt="Tournament photo 3" style="width:280px;height:auto;box-shadow:0 4px 5px rgba(0,0,0,0.08);">
+	</body>
+</html>
+
+
